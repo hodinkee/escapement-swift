@@ -34,7 +34,7 @@
 		3B1756C01B8B9B2C001E55A2 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756C41B8B9B2C001E55A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B1756C51B8B9B2C001E55A2 /* Escapement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Escapement.h; sourceTree = "<group>"; };
-		3B1756CB1B8B9B2C001E55A2 /* EscapementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EscapementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B1756CB1B8B9B2C001E55A2 /* Escapement iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756D11B8B9B2C001E55A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapementTests.swift; sourceTree = "<group>"; };
 		3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringConvertible.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				3B1756C21B8B9B2C001E55A2 /* Escapement */,
-				3B1756CF1B8B9B2C001E55A2 /* EscapementTests */,
+				3B1756CF1B8B9B2C001E55A2 /* Escapement Tests */,
 				3B1756C11B8B9B2C001E55A2 /* Products */,
 				3B1756EA1B8B9DC6001E55A2 /* Frameworks */,
 			);
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				3B1756C01B8B9B2C001E55A2 /* Escapement.framework */,
-				3B1756CB1B8B9B2C001E55A2 /* EscapementTests.xctest */,
+				3B1756CB1B8B9B2C001E55A2 /* Escapement iOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,13 +103,13 @@
 			path = Escapement;
 			sourceTree = "<group>";
 		};
-		3B1756CF1B8B9B2C001E55A2 /* EscapementTests */ = {
+		3B1756CF1B8B9B2C001E55A2 /* Escapement Tests */ = {
 			isa = PBXGroup;
 			children = (
 				3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */,
 				3B1756D11B8B9B2C001E55A2 /* Info.plist */,
 			);
-			path = EscapementTests;
+			path = "Escapement Tests";
 			sourceTree = "<group>";
 		};
 		3B1756EA1B8B9DC6001E55A2 /* Frameworks */ = {
@@ -168,7 +168,7 @@
 			);
 			name = "Escapement iOS Tests";
 			productName = EscapementTests;
-			productReference = 3B1756CB1B8B9B2C001E55A2 /* EscapementTests.xctest */;
+			productReference = 3B1756CB1B8B9B2C001E55A2 /* Escapement iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -400,7 +400,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = EscapementTests/Info.plist;
+				INFOPLIST_FILE = "Escapement Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -414,7 +414,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = EscapementTests/Info.plist;
+				INFOPLIST_FILE = "Escapement Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
