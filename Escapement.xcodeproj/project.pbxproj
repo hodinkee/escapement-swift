@@ -10,6 +10,14 @@
 		3B1756C61B8B9B2C001E55A2 /* Escapement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B1756C51B8B9B2C001E55A2 /* Escapement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B1756CC1B8B9B2C001E55A2 /* Escapement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */; };
 		3B1756D31B8B9B2C001E55A2 /* EscapementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */; };
+		3B1756E31B8B9D8F001E55A2 /* AttributedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */; };
+		3B1756E41B8B9D8F001E55A2 /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */; };
+		3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
+		3B1756E61B8B9D8F001E55A2 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
+		3B1756E71B8B9D8F001E55A2 /* FontDescriptorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */; };
+		3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
+		3B1756E91B8B9D8F001E55A2 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */; };
+		3B1756ED1B8B9E04001E55A2 /* Alexander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1756EB1B8B9DDC001E55A2 /* Alexander.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,15 @@
 		3B1756CB1B8B9B2C001E55A2 /* EscapementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EscapementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756D11B8B9B2C001E55A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapementTests.swift; sourceTree = "<group>"; };
+		3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringConvertible.swift; sourceTree = "<group>"; };
+		3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringExtensions.swift; sourceTree = "<group>"; };
+		3B1756DE1B8B9D8F001E55A2 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		3B1756DF1B8B9D8F001E55A2 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDescriptorExtensions.swift; sourceTree = "<group>"; };
+		3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
+		3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
+		3B1756EB1B8B9DDC001E55A2 /* Alexander.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alexander.framework; path = Carthage/Build/iOS/Alexander.framework; sourceTree = "<group>"; };
+		3B1756EC1B8B9DE4001E55A2 /* Alexander.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alexander.framework; path = Carthage/Build/Mac/Alexander.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1756ED1B8B9E04001E55A2 /* Alexander.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +71,7 @@
 		3B1756B61B8B9B2C001E55A2 = {
 			isa = PBXGroup;
 			children = (
+				3B1756EA1B8B9DC6001E55A2 /* Frameworks */,
 				3B1756C21B8B9B2C001E55A2 /* Escapement */,
 				3B1756CF1B8B9B2C001E55A2 /* EscapementTests */,
 				3B1756C11B8B9B2C001E55A2 /* Products */,
@@ -72,17 +91,16 @@
 			isa = PBXGroup;
 			children = (
 				3B1756C51B8B9B2C001E55A2 /* Escapement.h */,
-				3B1756C31B8B9B2C001E55A2 /* Supporting Files */,
-			);
-			path = Escapement;
-			sourceTree = "<group>";
-		};
-		3B1756C31B8B9B2C001E55A2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
+				3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */,
+				3B1756DE1B8B9D8F001E55A2 /* Document.swift */,
+				3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */,
+				3B1756DF1B8B9D8F001E55A2 /* Entity.swift */,
+				3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */,
+				3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */,
+				3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */,
 				3B1756C41B8B9B2C001E55A2 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = Escapement;
 			sourceTree = "<group>";
 		};
 		3B1756CF1B8B9B2C001E55A2 /* EscapementTests */ = {
@@ -100,6 +118,15 @@
 				3B1756D11B8B9B2C001E55A2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B1756EA1B8B9DC6001E55A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B1756EB1B8B9DDC001E55A2 /* Alexander.framework */,
+				3B1756EC1B8B9DE4001E55A2 /* Alexander.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */,
+				3B1756E71B8B9D8F001E55A2 /* FontDescriptorExtensions.swift in Sources */,
+				3B1756E61B8B9D8F001E55A2 /* Entity.swift in Sources */,
+				3B1756E41B8B9D8F001E55A2 /* AttributedStringExtensions.swift in Sources */,
+				3B1756E91B8B9D8F001E55A2 /* Stylesheet.swift in Sources */,
+				3B1756E31B8B9D8F001E55A2 /* AttributedStringConvertible.swift in Sources */,
+				3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,25 +357,36 @@
 		3B1756D71B8B9B2C001E55A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Escapement/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		3B1756D81B8B9B2C001E55A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Escapement/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -399,6 +444,7 @@
 				3B1756D81B8B9B2C001E55A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B1756D91B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "EscapementTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +453,7 @@
 				3B1756DB1B8B9B2C001E55A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
