@@ -20,7 +20,7 @@ Given a `JSON` object, you can get a `Document?` by performing the following:
 let document = JSON.flatMap(Document.decode)
 ```
 
-(`Document`s are also `JSONEndocable` so you can serialize and save them.)
+(`Document`s are also `JSONEncodable` so you can serialize and save them.)
 
 Now you can render an `NSAttributedString` with the following:
 
@@ -34,4 +34,4 @@ let stylesheet = Styleheet(rules: [
 let attributedString = document?.attributedStringWithStylesheet(stylesheet)
 ```
 
-A `Stylesheet` allows you to decorate HTML markup with `NSAttributedString` attributes. Any attributes applied to the `*` selector are given to the attributed string upon initialization before other rules are applied. Rules are applied uniquely to each selector.
+A `Stylesheet` allows you to decorate HTML markup with `NSAttributedString` attributes. Any attributes applied to the `*` selector are given to the attributed string upon initialization before other rules are applied. Attributes are computed for a given selector by performing a distinct union of all attributes that match that selector in the stylesheet.
