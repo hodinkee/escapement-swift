@@ -143,9 +143,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3B1756BF1B8B9B2C001E55A2 /* Escapement */ = {
+		3B1756BF1B8B9B2C001E55A2 /* Escapement iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B1756D61B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement" */;
+			buildConfigurationList = 3B1756D61B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement iOS" */;
 			buildPhases = (
 				3B1756BB1B8B9B2C001E55A2 /* Sources */,
 				3B1756BC1B8B9B2C001E55A2 /* Frameworks */,
@@ -156,7 +156,7 @@
 			);
 			dependencies = (
 			);
-			name = Escapement;
+			name = "Escapement iOS";
 			productName = Escapement;
 			productReference = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */;
 			productType = "com.apple.product-type.framework";
@@ -208,7 +208,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B1756BF1B8B9B2C001E55A2 /* Escapement */,
+				3B1756BF1B8B9B2C001E55A2 /* Escapement iOS */,
 				3B1756CA1B8B9B2C001E55A2 /* EscapementTests */,
 			);
 		};
@@ -259,7 +259,7 @@
 /* Begin PBXTargetDependency section */
 		3B1756CE1B8B9B2C001E55A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3B1756BF1B8B9B2C001E55A2 /* Escapement */;
+			target = 3B1756BF1B8B9B2C001E55A2 /* Escapement iOS */;
 			targetProxy = 3B1756CD1B8B9B2C001E55A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -282,7 +282,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -302,12 +301,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -330,7 +327,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -344,10 +340,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -358,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -368,10 +363,12 @@
 				);
 				INFOPLIST_FILE = Escapement/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Escapement;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -379,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -389,15 +387,18 @@
 				);
 				INFOPLIST_FILE = Escapement/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Escapement;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		3B1756DA1B8B9B2C001E55A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -415,6 +416,7 @@
 		3B1756DB1B8B9B2C001E55A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -437,7 +439,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B1756D61B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement" */ = {
+		3B1756D61B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B1756D71B8B9B2C001E55A2 /* Debug */,
