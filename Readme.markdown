@@ -35,3 +35,5 @@ let attributedString = document?.attributedStringWithStylesheet(stylesheet)
 ```
 
 A `Stylesheet` allows you to decorate HTML markup with `NSAttributedString` attributes. Any attributes applied to the `*` selector are given to the attributed string upon initialization before other rules are applied. Attributes are computed for a given selector by performing a distinct union of all attributes that match that selector in the stylesheet.
+
+Escapement will render `a`, `strong`, `b`, `em`, `i`, `s`, and `del` tags by default.
