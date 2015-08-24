@@ -7,5 +7,5 @@
 //
 
 public protocol AttributedStringConvertible {
-    func attributedStringWithStyleSheet(stylesheet: Stylesheet) -> NSAttributedString
+    func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString
 }

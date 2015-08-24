@@ -60,7 +60,7 @@ extension Paragraph: JSONEncodable {
 // MARK: - AttributedStringConvertible
 
 extension Paragraph: AttributedStringConvertible {
-    func attributedStringWithStyleSheet(stylesheet: Stylesheet) -> NSAttributedString {
+    func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString {
         let baseFont = stylesheet["*"][NSFontAttributeName] as? UIFont ?? UIFont.systemFontOfSize(UIFont.systemFontSize())
 
         var baseAttributes = stylesheet["*"]

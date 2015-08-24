@@ -48,14 +48,14 @@ extension Document: JSONEncodable {
 // MARK: - AttributedStringConvertible
 
 extension Document: AttributedStringConvertible {
-    public func attributedStringWithStyleSheet(stylesheet: Stylesheet) -> NSAttributedString {
+    public func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: "")
 
         for (index, paragraph) in enumerate(paragraphs) {
             if index != 0 {
                 mutableAttributedString.appendAttributedString(NSAttributedString(string: "\n"))
             }
-            mutableAttributedString.appendAttributedString(paragraph.attributedStringWithStyleSheet(stylesheet))
+            mutableAttributedString.appendAttributedString(paragraph.attributedStringWithStylesheet(stylesheet))
         }
 
         return NSAttributedString(attributedString: mutableAttributedString)
