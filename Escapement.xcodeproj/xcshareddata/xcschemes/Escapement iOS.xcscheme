@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B1756CA1B8B9B2C001E55A2"
-               BuildableName = "EscapementTests.xctest"
-               BlueprintName = "EscapementTests"
+               BuildableName = "Escapement iOS Tests.xctest"
+               BlueprintName = "Escapement iOS Tests"
                ReferencedContainer = "container:Escapement.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B1756CA1B8B9B2C001E55A2"
-               BuildableName = "EscapementTests.xctest"
-               BlueprintName = "EscapementTests"
+               BuildableName = "Escapement iOS Tests.xctest"
+               BlueprintName = "Escapement iOS Tests"
                ReferencedContainer = "container:Escapement.xcodeproj">
             </BuildableReference>
          </TestableReference>

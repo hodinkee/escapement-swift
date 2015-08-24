@@ -1,6 +1,6 @@
 //
 //  Stylesheet.swift
-//  HodinkeeMobile
+//  Escapement
 //
 //  Created by Caleb Davenport on 7/29/15.
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
@@ -48,6 +48,7 @@ extension Stylesheet {
         var selectors: [String]
 
         var attributes: [String: AnyObject]
+        
 
         // MARK: - Initializers
 

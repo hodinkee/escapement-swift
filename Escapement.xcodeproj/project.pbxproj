@@ -71,10 +71,10 @@
 		3B1756B61B8B9B2C001E55A2 = {
 			isa = PBXGroup;
 			children = (
-				3B1756EA1B8B9DC6001E55A2 /* Frameworks */,
 				3B1756C21B8B9B2C001E55A2 /* Escapement */,
 				3B1756CF1B8B9B2C001E55A2 /* EscapementTests */,
 				3B1756C11B8B9B2C001E55A2 /* Products */,
+				3B1756EA1B8B9DC6001E55A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,17 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */,
-				3B1756D01B8B9B2C001E55A2 /* Supporting Files */,
-			);
-			path = EscapementTests;
-			sourceTree = "<group>";
-		};
-		3B1756D01B8B9B2C001E55A2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
 				3B1756D11B8B9B2C001E55A2 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = EscapementTests;
 			sourceTree = "<group>";
 		};
 		3B1756EA1B8B9DC6001E55A2 /* Frameworks */ = {
@@ -161,9 +153,9 @@
 			productReference = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3B1756CA1B8B9B2C001E55A2 /* EscapementTests */ = {
+		3B1756CA1B8B9B2C001E55A2 /* Escapement iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B1756D91B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "EscapementTests" */;
+			buildConfigurationList = 3B1756D91B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement iOS Tests" */;
 			buildPhases = (
 				3B1756C71B8B9B2C001E55A2 /* Sources */,
 				3B1756C81B8B9B2C001E55A2 /* Frameworks */,
@@ -174,7 +166,7 @@
 			dependencies = (
 				3B1756CE1B8B9B2C001E55A2 /* PBXTargetDependency */,
 			);
-			name = EscapementTests;
+			name = "Escapement iOS Tests";
 			productName = EscapementTests;
 			productReference = 3B1756CB1B8B9B2C001E55A2 /* EscapementTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -209,7 +201,7 @@
 			projectRoot = "";
 			targets = (
 				3B1756BF1B8B9B2C001E55A2 /* Escapement iOS */,
-				3B1756CA1B8B9B2C001E55A2 /* EscapementTests */,
+				3B1756CA1B8B9B2C001E55A2 /* Escapement iOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -448,7 +440,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B1756D91B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "EscapementTests" */ = {
+		3B1756D91B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B1756DA1B8B9B2C001E55A2 /* Debug */,
