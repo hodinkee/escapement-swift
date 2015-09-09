@@ -19,7 +19,7 @@ public struct Stylesheet {
         get {
             var dictionary = [String: AnyObject]()
 
-            for rule in rules.filter({ contains($0.selectors, selector) }) {
+            for rule in rules.filter({ $0.selectors.contains(selector) }) {
                 for (key, value) in rule.attributes {
                     dictionary[key] = value
                 }
