@@ -16,7 +16,7 @@ private let ItalicTagAttributeName = "com.hodinkee.Escapement.ItalicTag"
 
 // MARK: - Types
 
-struct Paragraph: AttributedStringConvertible {
+struct Paragraph {
     var text: String
     var entities: [Entity]
 }

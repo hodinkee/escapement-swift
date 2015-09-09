@@ -51,7 +51,7 @@ extension Document: AttributedStringConvertible {
     public func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: "")
 
-        for (index, paragraph) in enumerate(paragraphs) {
+        for (index, paragraph) in paragraphs.enumerate() {
             if index != 0 {
                 mutableAttributedString.appendAttributedString(NSAttributedString(string: "\n"))
             }

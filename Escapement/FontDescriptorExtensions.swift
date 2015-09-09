@@ -8,10 +8,10 @@
 
 extension UIFontDescriptor {
     var boldFontDescriptor: UIFontDescriptor {
-        return fontDescriptorWithSymbolicTraits(symbolicTraits | .TraitBold)!
+        return fontDescriptorWithSymbolicTraits(symbolicTraits.union(.TraitBold))
     }
 
     var italicFontDescriptor: UIFontDescriptor {
-        return fontDescriptorWithSymbolicTraits(symbolicTraits | .TraitItalic)!
+        return fontDescriptorWithSymbolicTraits(symbolicTraits.union(.TraitItalic))
     }
 }
