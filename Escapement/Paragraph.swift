@@ -61,7 +61,8 @@ extension Paragraph: JSONEncodable {
 
 extension Paragraph: AttributedStringConvertible {
     func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString {
-        let baseFont = stylesheet["*"][NSFontAttributeName] as? UIFont ?? UIFont.systemFontOfSize(UIFont.systemFontSize())
+        let defaultFontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+        let baseFont = stylesheet["*"][NSFontAttributeName] as? UIFont ?? UIFont(descriptor: defaultFontDescriptor, size: defaultFontDescriptor.pointSize)
 
         var baseAttributes = stylesheet["*"]
         baseAttributes[BoldTagAttributeName] = false

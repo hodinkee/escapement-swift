@@ -1,6 +1,6 @@
 //
-//  EscapementTests.swift
-//  EscapementTests
+//  Tests.swift
+//  Escapement
 //
 //  Created by Caleb Davenport on 8/24/15.
 //  Copyright (c) 2015 Hodinkee. All rights reserved.

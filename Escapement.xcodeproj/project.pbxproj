@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B1756C61B8B9B2C001E55A2 /* Escapement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B1756C51B8B9B2C001E55A2 /* Escapement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A512F251BE16D400091A124 /* Escapement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A512F1B1BE16D400091A124 /* Escapement.framework */; };
+		3A512F3E1BE16DC30091A124 /* Escapement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A512F341BE16DAA0091A124 /* Escapement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A512F3F1BE16DD60091A124 /* Escapement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A512F371BE16DAA0091A124 /* Escapement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A512F401BE16E300091A124 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* Tests.swift */; };
+		3A512F441BE1712E0091A124 /* Alexander.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A512F421BE170EF0091A124 /* Alexander.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A512F461BE171380091A124 /* Alexander.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A512F411BE170DF0091A124 /* Alexander.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A512F471BE1716F0091A124 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */; };
+		3A512F481BE1716F0091A124 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
+		3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
+		3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
+		3A512F4B1BE1716F0091A124 /* AttributedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */; };
+		3A512F4C1BE1716F0091A124 /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */; };
+		3A512F4D1BE1716F0091A124 /* FontDescriptorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */; };
 		3B1756CC1B8B9B2C001E55A2 /* Escapement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */; };
-		3B1756D31B8B9B2C001E55A2 /* EscapementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */; };
+		3B1756D31B8B9B2C001E55A2 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* Tests.swift */; };
 		3B1756E31B8B9D8F001E55A2 /* AttributedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */; };
 		3B1756E41B8B9D8F001E55A2 /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */; };
 		3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
@@ -17,10 +29,16 @@
 		3B1756E71B8B9D8F001E55A2 /* FontDescriptorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */; };
 		3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
 		3B1756E91B8B9D8F001E55A2 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */; };
-		3B1756ED1B8B9E04001E55A2 /* Alexander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1756EB1B8B9DDC001E55A2 /* Alexander.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3A512F261BE16D400091A124 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B1756B71B8B9B2C001E55A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A512F1A1BE16D400091A124;
+			remoteInfo = "Escapement tvOS";
+		};
 		3B1756CD1B8B9B2C001E55A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3B1756B71B8B9B2C001E55A2 /* Project object */;
@@ -30,13 +48,43 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3A512F431BE1712A0091A124 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3A512F441BE1712E0091A124 /* Alexander.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A512F451BE171350091A124 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3A512F461BE171380091A124 /* Alexander.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3A512F1B1BE16D400091A124 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A512F241BE16D400091A124 /* Escapement tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A512F341BE16DAA0091A124 /* Escapement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Escapement.h; sourceTree = "<group>"; };
+		3A512F351BE16DAA0091A124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A512F371BE16DAA0091A124 /* Escapement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Escapement.h; sourceTree = "<group>"; };
+		3A512F381BE16DAA0091A124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A512F3B1BE16DB10091A124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A512F3D1BE16DB10091A124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A512F411BE170DF0091A124 /* Alexander.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alexander.framework; path = Carthage/Build/tvOS/Alexander.framework; sourceTree = "<group>"; };
+		3A512F421BE170EF0091A124 /* Alexander.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alexander.framework; path = Carthage/Build/iOS/Alexander.framework; sourceTree = "<group>"; };
 		3B1756C01B8B9B2C001E55A2 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B1756C41B8B9B2C001E55A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B1756C51B8B9B2C001E55A2 /* Escapement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Escapement.h; sourceTree = "<group>"; };
 		3B1756CB1B8B9B2C001E55A2 /* Escapement iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B1756D11B8B9B2C001E55A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapementTests.swift; sourceTree = "<group>"; };
+		3B1756D21B8B9B2C001E55A2 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringConvertible.swift; sourceTree = "<group>"; };
 		3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringExtensions.swift; sourceTree = "<group>"; };
 		3B1756DE1B8B9D8F001E55A2 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -44,16 +92,28 @@
 		3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDescriptorExtensions.swift; sourceTree = "<group>"; };
 		3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
-		3B1756EB1B8B9DDC001E55A2 /* Alexander.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alexander.framework; path = Carthage/Build/iOS/Alexander.framework; sourceTree = "<group>"; };
-		3B1756EC1B8B9DE4001E55A2 /* Alexander.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alexander.framework; path = Carthage/Build/Mac/Alexander.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3A512F171BE16D400091A124 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A512F211BE16D400091A124 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A512F251BE16D400091A124 /* Escapement.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3B1756BC1B8B9B2C001E55A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B1756ED1B8B9E04001E55A2 /* Alexander.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,11 +128,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A512F321BE16DAA0091A124 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3A512F331BE16DAA0091A124 /* iOS */,
+				3A512F361BE16DAA0091A124 /* tvOS */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3A512F331BE16DAA0091A124 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3A512F341BE16DAA0091A124 /* Escapement.h */,
+				3A512F351BE16DAA0091A124 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		3A512F361BE16DAA0091A124 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				3A512F371BE16DAA0091A124 /* Escapement.h */,
+				3A512F381BE16DAA0091A124 /* Info.plist */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		3A512F391BE16DB10091A124 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3A512F3A1BE16DB10091A124 /* iOS */,
+				3A512F3C1BE16DB10091A124 /* tvOS */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3A512F3A1BE16DB10091A124 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3A512F3B1BE16DB10091A124 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		3A512F3C1BE16DB10091A124 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				3A512F3D1BE16DB10091A124 /* Info.plist */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
 		3B1756B61B8B9B2C001E55A2 = {
 			isa = PBXGroup;
 			children = (
 				3B1756C21B8B9B2C001E55A2 /* Escapement */,
-				3B1756CF1B8B9B2C001E55A2 /* Escapement Tests */,
+				3B1756CF1B8B9B2C001E55A2 /* Tests */,
 				3B1756C11B8B9B2C001E55A2 /* Products */,
 				3B1756EA1B8B9DC6001E55A2 /* Frameworks */,
 			);
@@ -83,6 +195,8 @@
 			children = (
 				3B1756C01B8B9B2C001E55A2 /* Escapement.framework */,
 				3B1756CB1B8B9B2C001E55A2 /* Escapement iOS Tests.xctest */,
+				3A512F1B1BE16D400091A124 /* Escapement.framework */,
+				3A512F241BE16D400091A124 /* Escapement tvOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,7 +204,6 @@
 		3B1756C21B8B9B2C001E55A2 /* Escapement */ = {
 			isa = PBXGroup;
 			children = (
-				3B1756C51B8B9B2C001E55A2 /* Escapement.h */,
 				3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */,
 				3B1756DE1B8B9D8F001E55A2 /* Document.swift */,
 				3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */,
@@ -98,25 +211,25 @@
 				3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */,
 				3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */,
 				3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */,
-				3B1756C41B8B9B2C001E55A2 /* Info.plist */,
+				3A512F321BE16DAA0091A124 /* Configuration */,
 			);
 			path = Escapement;
 			sourceTree = "<group>";
 		};
-		3B1756CF1B8B9B2C001E55A2 /* Escapement Tests */ = {
+		3B1756CF1B8B9B2C001E55A2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */,
-				3B1756D11B8B9B2C001E55A2 /* Info.plist */,
+				3B1756D21B8B9B2C001E55A2 /* Tests.swift */,
+				3A512F391BE16DB10091A124 /* Configuration */,
 			);
-			path = "Escapement Tests";
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		3B1756EA1B8B9DC6001E55A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3B1756EB1B8B9DDC001E55A2 /* Alexander.framework */,
-				3B1756EC1B8B9DE4001E55A2 /* Alexander.framework */,
+				3A512F421BE170EF0091A124 /* Alexander.framework */,
+				3A512F411BE170DF0091A124 /* Alexander.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,17 +237,62 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		3A512F181BE16D400091A124 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A512F3F1BE16DD60091A124 /* Escapement.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3B1756BD1B8B9B2C001E55A2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B1756C61B8B9B2C001E55A2 /* Escapement.h in Headers */,
+				3A512F3E1BE16DC30091A124 /* Escapement.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3A512F1A1BE16D400091A124 /* Escapement tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A512F301BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement tvOS" */;
+			buildPhases = (
+				3A512F161BE16D400091A124 /* Sources */,
+				3A512F171BE16D400091A124 /* Frameworks */,
+				3A512F181BE16D400091A124 /* Headers */,
+				3A512F191BE16D400091A124 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Escapement tvOS";
+			productName = "Escapement tvOS";
+			productReference = 3A512F1B1BE16D400091A124 /* Escapement.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3A512F231BE16D400091A124 /* Escapement tvOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A512F311BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement tvOS Tests" */;
+			buildPhases = (
+				3A512F201BE16D400091A124 /* Sources */,
+				3A512F211BE16D400091A124 /* Frameworks */,
+				3A512F221BE16D400091A124 /* Resources */,
+				3A512F451BE171350091A124 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A512F271BE16D400091A124 /* PBXTargetDependency */,
+			);
+			name = "Escapement tvOS Tests";
+			productName = "Escapement tvOSTests";
+			productReference = 3A512F241BE16D400091A124 /* Escapement tvOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3B1756BF1B8B9B2C001E55A2 /* Escapement iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B1756D61B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement iOS" */;
@@ -160,6 +318,7 @@
 				3B1756C71B8B9B2C001E55A2 /* Sources */,
 				3B1756C81B8B9B2C001E55A2 /* Frameworks */,
 				3B1756C91B8B9B2C001E55A2 /* Resources */,
+				3A512F431BE1712A0091A124 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -178,10 +337,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Hodinkee;
 				TargetAttributes = {
+					3A512F1A1BE16D400091A124 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					3A512F231BE16D400091A124 = {
+						CreatedOnToolsVersion = 7.1;
+					};
 					3B1756BF1B8B9B2C001E55A2 = {
 						CreatedOnToolsVersion = 6.4;
 					};
@@ -204,11 +369,27 @@
 			targets = (
 				3B1756BF1B8B9B2C001E55A2 /* Escapement iOS */,
 				3B1756CA1B8B9B2C001E55A2 /* Escapement iOS Tests */,
+				3A512F1A1BE16D400091A124 /* Escapement tvOS */,
+				3A512F231BE16D400091A124 /* Escapement tvOS Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3A512F191BE16D400091A124 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A512F221BE16D400091A124 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3B1756BE1B8B9B2C001E55A2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,6 +407,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3A512F161BE16D400091A124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A512F4C1BE1716F0091A124 /* AttributedStringExtensions.swift in Sources */,
+				3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */,
+				3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */,
+				3A512F481BE1716F0091A124 /* Document.swift in Sources */,
+				3A512F4D1BE1716F0091A124 /* FontDescriptorExtensions.swift in Sources */,
+				3A512F471BE1716F0091A124 /* Stylesheet.swift in Sources */,
+				3A512F4B1BE1716F0091A124 /* AttributedStringConvertible.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A512F201BE16D400091A124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A512F401BE16E300091A124 /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3B1756BB1B8B9B2C001E55A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,13 +447,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B1756D31B8B9B2C001E55A2 /* EscapementTests.swift in Sources */,
+				3B1756D31B8B9B2C001E55A2 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3A512F271BE16D400091A124 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A512F1A1BE16D400091A124 /* Escapement tvOS */;
+			targetProxy = 3A512F261BE16D400091A124 /* PBXContainerItemProxy */;
+		};
 		3B1756CE1B8B9B2C001E55A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3B1756BF1B8B9B2C001E55A2 /* Escapement iOS */;
@@ -259,6 +467,74 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		3A512F2C1BE16D400091A124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = Escapement/Configuration/tvOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Escapement;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		3A512F2D1BE16D400091A124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = Escapement/Configuration/tvOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Escapement;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+		3A512F2E1BE16D400091A124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Configuration/tvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+			};
+			name = Debug;
+		};
+		3A512F2F1BE16D400091A124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Configuration/tvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+			};
+			name = Release;
+		};
 		3B1756D41B8B9B2C001E55A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -295,9 +571,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -333,7 +611,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -353,9 +633,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Escapement/Info.plist;
+				INFOPLIST_FILE = Escapement/Configuration/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Escapement;
@@ -377,9 +656,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Escapement/Info.plist;
+				INFOPLIST_FILE = Escapement/Configuration/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Escapement;
@@ -396,7 +674,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Escapement Tests/Info.plist";
+				INFOPLIST_FILE = Tests/Configuration/iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,7 +686,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Escapement Tests/Info.plist";
+				INFOPLIST_FILE = Tests/Configuration/iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -419,6 +697,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3A512F301BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A512F2C1BE16D400091A124 /* Debug */,
+				3A512F2D1BE16D400091A124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3A512F311BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement tvOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A512F2E1BE16D400091A124 /* Debug */,
+				3A512F2F1BE16D400091A124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		3B1756BA1B8B9B2C001E55A2 /* Build configuration list for PBXProject "Escapement" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
