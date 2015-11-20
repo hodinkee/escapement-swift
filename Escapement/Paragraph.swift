@@ -53,7 +53,7 @@ extension Paragraph: JSONEncodable {
     var JSON: Alexander.JSON {
         return Alexander.JSON(object: [
             "text": text,
-            "entities": entities.map({ $0.JSON.object })
+            "entities": entities.map(EntityEncoder.encode).map({ $0.object })
         ])
     }
 }

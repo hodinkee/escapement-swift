@@ -66,14 +66,20 @@ private struct PositionDecoder: DecoderType {
 }
 
 
-// MARK: - JSONEncodable
+// MARK: - EncoderType
 
-extension Entity: JSONEncodable {
-    var JSON: Alexander.JSON {
-        return Alexander.JSON(object: [
-            "html_tag": tag,
-            "position": [ range.startIndex, range.endIndex ],
-            "attributes": attributes ?? NSNull()
-        ])
+struct EntityEncoder: EncoderType {
+    typealias Value = Entity
+    static func encode(value: Value) -> JSON {
+        var dictionary: [String: AnyObject] = [
+            "html_tag": value.tag,
+            "position": [ value.range.startIndex, value.range.endIndex ],
+        ]
+
+        if let attributes = value.attributes {
+            dictionary["attributes"] = attributes
+        }
+
+        return Alexander.JSON(object: dictionary)
     }
 }
