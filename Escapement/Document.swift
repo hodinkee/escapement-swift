@@ -37,11 +37,12 @@ public struct DocumentDecoder: DecoderType {
 }
 
 
-// MARK: - JSONEncodable
+// MARK: - EncoderType
 
-extension Document: JSONEncodable {
-    public var JSON: Alexander.JSON {
-        return Alexander.JSON(object: paragraphs.map({ ParagraphEncoder.encode($0).object }))
+public struct DocumentEncoder: EncoderType {
+    public typealias Value = Document
+    public static func encode(value: Value) -> JSON {
+        return JSON(object: ParagraphEncoder.encode(value.paragraphs).object)
     }
 }
 
@@ -60,5 +61,12 @@ extension Document: AttributedStringConvertible {
         }
 
         return NSAttributedString(attributedString: mutableAttributedString)
+    }
+}
+
+// TODO: Switch to the Alexander implementation of Array.encode().
+extension EncoderType {
+    public static func encode<S: SequenceType where S.Generator.Element == Value>(sequence: S) -> JSON {
+        return JSON(object: sequence.map({ encode($0).object }))
     }
 }

@@ -80,6 +80,6 @@ struct EntityEncoder: EncoderType {
             dictionary["attributes"] = attributes
         }
 
-        return Alexander.JSON(object: dictionary)
+        return JSON(object: dictionary)
     }
 }

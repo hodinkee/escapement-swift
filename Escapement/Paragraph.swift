@@ -52,9 +52,9 @@ struct ParagraphDecoder: DecoderType {
 struct ParagraphEncoder: EncoderType {
     typealias Value = Paragraph
     static func encode(value: Value) -> JSON {
-        return Alexander.JSON(object: [
+        return JSON(object: [
             "text": value.text,
-            "entities": value.entities.map({ EntityEncoder.encode($0).object })
+            "entities": EntityEncoder.encode(value.entities).object
         ])
     }
 }
