@@ -37,7 +37,7 @@ extension Paragraph: JSONDecodable {
     static func decode(JSON: Alexander.JSON) -> Paragraph? {
         if
             let text = JSON["text"]?.string,
-            let entities = JSON["entities"]?.decodeArray(Entity.self) {
+            let entities = JSON["entities"]?.decodeArray(EntityDecoder) {
                 return Paragraph(text: text, entities: entities)
         }
         return nil

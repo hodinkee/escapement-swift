@@ -39,18 +39,29 @@ func ==(lhs: Entity, rhs: Entity) -> Bool {
 }
 
 
-// MARK: - JSONDecodable
+// MARK: - DecoderType
 
-extension Entity: JSONDecodable {
-    static func decode(JSON: Alexander.JSON) -> Entity? {
-        if
-            let tag = JSON["html_tag"]?.string,
-            let locations = JSON["position"]?.object as? [Int] where locations.count == 2 {
-                let range = locations[0]..<locations[1]
-                let attributes = JSON["attributes"]?.object as? [String: AnyObject]
-                return Entity(tag: tag, range: range, attributes: attributes)
+struct EntityDecoder: DecoderType {
+    typealias Value = Entity
+    static func decode(JSON: Alexander.JSON) -> Value? {
+        guard
+            let tag = JSON["html_tag"]?.stringValue,
+            let range = JSON["position"]?.decode(PositionDecoder)
+        else {
+            return nil
         }
-        return nil
+        let attributes = JSON["attributes"]?.object as? [String: AnyObject]
+        return Entity(tag: tag, range: range, attributes: attributes)
+    }
+}
+
+private struct PositionDecoder: DecoderType {
+    typealias Value = Range<Int>
+    static func decode(JSON: Alexander.JSON) -> Value? {
+        guard let array = JSON.object as? [Int] where array.count == 2 else {
+            return nil
+        }
+        return array[0]..<array[1]
     }
 }
 
