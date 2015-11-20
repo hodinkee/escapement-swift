@@ -47,13 +47,14 @@ struct ParagraphDecoder: DecoderType {
 }
 
 
-// MARK: - JSONEncodable
+// MARK: - EncoderType
 
-extension Paragraph: JSONEncodable {
-    var JSON: Alexander.JSON {
+struct ParagraphEncoder: EncoderType {
+    typealias Value = Paragraph
+    static func encode(value: Value) -> JSON {
         return Alexander.JSON(object: [
-            "text": text,
-            "entities": entities.map(EntityEncoder.encode).map({ $0.object })
+            "text": value.text,
+            "entities": value.entities.map({ EntityEncoder.encode($0).object })
         ])
     }
 }

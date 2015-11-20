@@ -41,7 +41,7 @@ public struct DocumentDecoder: DecoderType {
 
 extension Document: JSONEncodable {
     public var JSON: Alexander.JSON {
-        return Alexander.JSON(object: paragraphs.map({ $0.JSON.object }))
+        return Alexander.JSON(object: paragraphs.map({ ParagraphEncoder.encode($0).object }))
     }
 }
 
