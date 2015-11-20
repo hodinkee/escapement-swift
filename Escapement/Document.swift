@@ -63,10 +63,3 @@ extension Document: AttributedStringConvertible {
         return NSAttributedString(attributedString: mutableAttributedString)
     }
 }
-
-// TODO: Switch to the Alexander implementation of Array.encode().
-extension EncoderType {
-    public static func encode<S: SequenceType where S.Generator.Element == Value>(sequence: S) -> JSON {
-        return JSON(object: sequence.map({ encode($0).object }))
-    }
-}
