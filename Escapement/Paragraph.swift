@@ -31,16 +31,18 @@ func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
 }
 
 
-// MARK: - JSONDecodable
+// MARK: - DecoderType
 
-extension Paragraph: JSONDecodable {
-    static func decode(JSON: Alexander.JSON) -> Paragraph? {
-        if
-            let text = JSON["text"]?.string,
-            let entities = JSON["entities"]?.decodeArray(EntityDecoder) {
-                return Paragraph(text: text, entities: entities)
+struct ParagraphDecoder: DecoderType {
+    typealias Value = Paragraph
+    static func decode(JSON: Alexander.JSON) -> Value? {
+        guard
+            let text = JSON["text"]?.stringValue,
+            let entities = JSON["entities"]?.decodeArray(EntityDecoder)
+        else {
+            return nil
         }
-        return nil
+        return Paragraph(text: text, entities: entities)
     }
 }
 

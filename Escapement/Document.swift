@@ -28,7 +28,7 @@ public func ==(lhs: Document, rhs: Document) -> Bool {
 
 extension Document: JSONDecodable {
     public static func decode(JSON: Alexander.JSON) -> Document? {
-        if let paragraphs = JSON.decodeArray(Paragraph.self) {
+        if let paragraphs = JSON.decodeArray(ParagraphDecoder) {
             return Document(paragraphs: paragraphs)
         }
         return nil
