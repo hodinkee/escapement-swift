@@ -94,7 +94,7 @@ extension Paragraph: AttributedStringConvertible {
         }
 
         let baseFontDescriptor = baseFont.fontDescriptor()
-        let fontsWithRanges: [(UIFontDescriptor, NSRange)] = string.attributesWithRanges.map({ attributes, range in
+        let fontsWithRanges = string.attributesWithRanges.map({ attributes, range -> (UIFontDescriptor, NSRange) in
             var fontDescriptor: UIFontDescriptor = baseFontDescriptor
 
             if attributes[BoldTagAttributeName] as? Bool ?? false {
