@@ -40,9 +40,8 @@ public struct DocumentDecoder: DecoderType {
 // MARK: - EncoderType
 
 public struct DocumentEncoder: EncoderType {
-    public typealias Value = Document
-    public static func encode(value: Value) -> JSON {
-        return JSON(object: ParagraphEncoder.encode(value.paragraphs).object)
+    public static func encode(value: Document) -> AnyObject {
+        return ParagraphEncoder.encodeSequence(value.paragraphs)
     }
 }
 

@@ -69,8 +69,7 @@ private struct PositionDecoder: DecoderType {
 // MARK: - EncoderType
 
 struct EntityEncoder: EncoderType {
-    typealias Value = Entity
-    static func encode(value: Value) -> JSON {
+    static func encode(value: Entity) -> AnyObject {
         var dictionary: [String: AnyObject] = [
             "html_tag": value.tag,
             "position": [ value.range.startIndex, value.range.endIndex ],
@@ -80,6 +79,6 @@ struct EntityEncoder: EncoderType {
             dictionary["attributes"] = attributes
         }
 
-        return JSON(object: dictionary)
+        return dictionary
     }
 }

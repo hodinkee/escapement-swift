@@ -34,8 +34,7 @@ func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
 // MARK: - DecoderType
 
 struct ParagraphDecoder: DecoderType {
-    typealias Value = Paragraph
-    static func decode(JSON: Alexander.JSON) -> Value? {
+    static func decode(JSON: Alexander.JSON) -> Paragraph? {
         guard
             let text = JSON["text"]?.stringValue,
             let entities = JSON["entities"]?.decodeArray(EntityDecoder)
@@ -50,12 +49,11 @@ struct ParagraphDecoder: DecoderType {
 // MARK: - EncoderType
 
 struct ParagraphEncoder: EncoderType {
-    typealias Value = Paragraph
-    static func encode(value: Value) -> JSON {
-        return JSON(object: [
+    static func encode(value: Paragraph) -> AnyObject {
+        return [
             "text": value.text,
-            "entities": EntityEncoder.encode(value.entities).object
-        ])
+            "entities": EntityEncoder.encodeSequence(value.entities)
+        ]
     }
 }
 
