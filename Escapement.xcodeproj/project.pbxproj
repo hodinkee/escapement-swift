@@ -11,8 +11,6 @@
 		3A512F3E1BE16DC30091A124 /* Escapement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A512F341BE16DAA0091A124 /* Escapement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A512F3F1BE16DD60091A124 /* Escapement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A512F371BE16DAA0091A124 /* Escapement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A512F401BE16E300091A124 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* Tests.swift */; };
-		3A512F441BE1712E0091A124 /* Alexander.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A512F421BE170EF0091A124 /* Alexander.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3A512F461BE171380091A124 /* Alexander.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A512F411BE170DF0091A124 /* Alexander.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A512F471BE1716F0091A124 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */; };
 		3A512F481BE1716F0091A124 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
 		3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
@@ -48,29 +46,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		3A512F431BE1712A0091A124 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3A512F441BE1712E0091A124 /* Alexander.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3A512F451BE171350091A124 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3A512F461BE171380091A124 /* Alexander.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		3A512F1B1BE16D400091A124 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A512F241BE16D400091A124 /* Escapement-tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement-tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,8 +55,6 @@
 		3A512F381BE16DAA0091A124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A512F3B1BE16DB10091A124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A512F3D1BE16DB10091A124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A512F411BE170DF0091A124 /* Alexander.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alexander.framework; path = Carthage/Build/tvOS/Alexander.framework; sourceTree = "<group>"; };
-		3A512F421BE170EF0091A124 /* Alexander.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alexander.framework; path = Carthage/Build/iOS/Alexander.framework; sourceTree = "<group>"; };
 		3A99114A1C63F79700A2FEC1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3A99114C1C63F79700A2FEC1 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		3A99114E1C63F79700A2FEC1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -393,7 +366,6 @@
 				3B1756CF1B8B9B2C001E55A2 /* Tests */,
 				3A9911491C63F79700A2FEC1 /* Configuration */,
 				3B1756C11B8B9B2C001E55A2 /* Products */,
-				3B1756EA1B8B9DC6001E55A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -430,15 +402,6 @@
 				3A512F391BE16DB10091A124 /* Platforms */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		3B1756EA1B8B9DC6001E55A2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3A512F421BE170EF0091A124 /* Alexander.framework */,
-				3A512F411BE170DF0091A124 /* Alexander.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,7 +451,7 @@
 				3A512F201BE16D400091A124 /* Sources */,
 				3A512F211BE16D400091A124 /* Frameworks */,
 				3A512F221BE16D400091A124 /* Resources */,
-				3A512F451BE171350091A124 /* CopyFiles */,
+				4E0FC09A1CAB20A4005C27D0 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -525,7 +488,7 @@
 				3B1756C71B8B9B2C001E55A2 /* Sources */,
 				3B1756C81B8B9B2C001E55A2 /* Frameworks */,
 				3B1756C91B8B9B2C001E55A2 /* Resources */,
-				3A512F431BE1712A0091A124 /* CopyFiles */,
+				4E0FC0991CAB2079005C27D0 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -612,6 +575,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E0FC0991CAB2079005C27D0 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alexander.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		4E0FC09A1CAB20A4005C27D0 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Alexander.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A512F161BE16D400091A124 /* Sources */ = {
