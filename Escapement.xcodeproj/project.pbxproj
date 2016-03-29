@@ -175,13 +175,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A512F321BE16DAA0091A124 /* Configuration */ = {
+		3A512F321BE16DAA0091A124 /* Platforms */ = {
 			isa = PBXGroup;
 			children = (
 				3A512F331BE16DAA0091A124 /* iOS */,
 				3A512F361BE16DAA0091A124 /* tvOS */,
 			);
-			path = Configuration;
+			path = Platforms;
 			sourceTree = "<group>";
 		};
 		3A512F331BE16DAA0091A124 /* iOS */ = {
@@ -202,13 +202,13 @@
 			path = tvOS;
 			sourceTree = "<group>";
 		};
-		3A512F391BE16DB10091A124 /* Configuration */ = {
+		3A512F391BE16DB10091A124 /* Platforms */ = {
 			isa = PBXGroup;
 			children = (
 				3A512F3A1BE16DB10091A124 /* iOS */,
 				3A512F3C1BE16DB10091A124 /* tvOS */,
 			);
-			path = Configuration;
+			path = Platforms;
 			sourceTree = "<group>";
 		};
 		3A512F3A1BE16DB10091A124 /* iOS */ = {
@@ -418,7 +418,7 @@
 				3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */,
 				3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */,
 				3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */,
-				3A512F321BE16DAA0091A124 /* Configuration */,
+				3A512F321BE16DAA0091A124 /* Platforms */,
 			);
 			path = Escapement;
 			sourceTree = "<group>";
@@ -427,7 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				3B1756D21B8B9B2C001E55A2 /* Tests.swift */,
-				3A512F391BE16DB10091A124 /* Configuration */,
+				3A512F391BE16DB10091A124 /* Platforms */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -684,7 +684,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = Escapement/Configuration/tvOS/Info.plist;
+				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 			};
 			name = Debug;
@@ -699,7 +699,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = Escapement/Configuration/tvOS/Info.plist;
+				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 			};
 			name = Release;
@@ -708,7 +708,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A99117D1C63F79700A2FEC1 /* tvOS-Application.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = Tests/Configuration/tvOS/Info.plist;
+				INFOPLIST_FILE = Tests/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -718,7 +718,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A99117D1C63F79700A2FEC1 /* tvOS-Application.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = Tests/Configuration/tvOS/Info.plist;
+				INFOPLIST_FILE = Tests/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -761,7 +761,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Escapement/Configuration/iOS/Info.plist;
+				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 			};
 			name = Debug;
@@ -778,7 +778,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Escapement/Configuration/iOS/Info.plist;
+				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 			};
 			name = Release;
@@ -789,7 +789,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
-				INFOPLIST_FILE = Tests/Configuration/iOS/Info.plist;
+				INFOPLIST_FILE = Tests/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -801,7 +801,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
-				INFOPLIST_FILE = Tests/Configuration/iOS/Info.plist;
+				INFOPLIST_FILE = Tests/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
