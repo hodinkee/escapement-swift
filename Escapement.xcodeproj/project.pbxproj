@@ -508,7 +508,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Hodinkee;
 				TargetAttributes = {
 					3A512F1A1BE16D400091A124 = {
