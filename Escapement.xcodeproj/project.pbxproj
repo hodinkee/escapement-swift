@@ -73,7 +73,7 @@
 
 /* Begin PBXFileReference section */
 		3A512F1B1BE16D400091A124 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A512F241BE16D400091A124 /* Escapement tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A512F241BE16D400091A124 /* Escapement-tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement-tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A512F341BE16DAA0091A124 /* Escapement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Escapement.h; sourceTree = "<group>"; };
 		3A512F351BE16DAA0091A124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A512F371BE16DAA0091A124 /* Escapement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Escapement.h; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		3A9911841C63F79700A2FEC1 /* watchOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Framework.xcconfig"; sourceTree = "<group>"; };
 		3A9911851C63F79700A2FEC1 /* watchOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		3B1756C01B8B9B2C001E55A2 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B1756CB1B8B9B2C001E55A2 /* Escapement iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B1756CB1B8B9B2C001E55A2 /* Escapement-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756D21B8B9B2C001E55A2 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringConvertible.swift; sourceTree = "<group>"; };
 		3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringExtensions.swift; sourceTree = "<group>"; };
@@ -401,9 +401,9 @@
 			isa = PBXGroup;
 			children = (
 				3B1756C01B8B9B2C001E55A2 /* Escapement.framework */,
-				3B1756CB1B8B9B2C001E55A2 /* Escapement iOS Tests.xctest */,
+				3B1756CB1B8B9B2C001E55A2 /* Escapement-iOS-Tests.xctest */,
 				3A512F1B1BE16D400091A124 /* Escapement.framework */,
-				3A512F241BE16D400091A124 /* Escapement tvOS Tests.xctest */,
+				3A512F241BE16D400091A124 /* Escapement-tvOS-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -463,9 +463,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3A512F1A1BE16D400091A124 /* Escapement tvOS */ = {
+		3A512F1A1BE16D400091A124 /* Escapement-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A512F301BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement tvOS" */;
+			buildConfigurationList = 3A512F301BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement-tvOS" */;
 			buildPhases = (
 				3A512F161BE16D400091A124 /* Sources */,
 				3A512F171BE16D400091A124 /* Frameworks */,
@@ -476,14 +476,14 @@
 			);
 			dependencies = (
 			);
-			name = "Escapement tvOS";
+			name = "Escapement-tvOS";
 			productName = "Escapement tvOS";
 			productReference = 3A512F1B1BE16D400091A124 /* Escapement.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3A512F231BE16D400091A124 /* Escapement tvOS Tests */ = {
+		3A512F231BE16D400091A124 /* Escapement-tvOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A512F311BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement tvOS Tests" */;
+			buildConfigurationList = 3A512F311BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement-tvOS-Tests" */;
 			buildPhases = (
 				3A512F201BE16D400091A124 /* Sources */,
 				3A512F211BE16D400091A124 /* Frameworks */,
@@ -495,14 +495,14 @@
 			dependencies = (
 				3A512F271BE16D400091A124 /* PBXTargetDependency */,
 			);
-			name = "Escapement tvOS Tests";
+			name = "Escapement-tvOS-Tests";
 			productName = "Escapement tvOSTests";
-			productReference = 3A512F241BE16D400091A124 /* Escapement tvOS Tests.xctest */;
+			productReference = 3A512F241BE16D400091A124 /* Escapement-tvOS-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3B1756BF1B8B9B2C001E55A2 /* Escapement iOS */ = {
+		3B1756BF1B8B9B2C001E55A2 /* Escapement-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B1756D61B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement iOS" */;
+			buildConfigurationList = 3B1756D61B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement-iOS" */;
 			buildPhases = (
 				3B1756BB1B8B9B2C001E55A2 /* Sources */,
 				3B1756BC1B8B9B2C001E55A2 /* Frameworks */,
@@ -513,14 +513,14 @@
 			);
 			dependencies = (
 			);
-			name = "Escapement iOS";
+			name = "Escapement-iOS";
 			productName = Escapement;
 			productReference = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3B1756CA1B8B9B2C001E55A2 /* Escapement iOS Tests */ = {
+		3B1756CA1B8B9B2C001E55A2 /* Escapement-iOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B1756D91B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement iOS Tests" */;
+			buildConfigurationList = 3B1756D91B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement-iOS-Tests" */;
 			buildPhases = (
 				3B1756C71B8B9B2C001E55A2 /* Sources */,
 				3B1756C81B8B9B2C001E55A2 /* Frameworks */,
@@ -532,9 +532,9 @@
 			dependencies = (
 				3B1756CE1B8B9B2C001E55A2 /* PBXTargetDependency */,
 			);
-			name = "Escapement iOS Tests";
+			name = "Escapement-iOS-Tests";
 			productName = EscapementTests;
-			productReference = 3B1756CB1B8B9B2C001E55A2 /* Escapement iOS Tests.xctest */;
+			productReference = 3B1756CB1B8B9B2C001E55A2 /* Escapement-iOS-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -574,10 +574,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B1756BF1B8B9B2C001E55A2 /* Escapement iOS */,
-				3B1756CA1B8B9B2C001E55A2 /* Escapement iOS Tests */,
-				3A512F1A1BE16D400091A124 /* Escapement tvOS */,
-				3A512F231BE16D400091A124 /* Escapement tvOS Tests */,
+				3B1756BF1B8B9B2C001E55A2 /* Escapement-iOS */,
+				3B1756CA1B8B9B2C001E55A2 /* Escapement-iOS-Tests */,
+				3A512F1A1BE16D400091A124 /* Escapement-tvOS */,
+				3A512F231BE16D400091A124 /* Escapement-tvOS-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -663,12 +663,12 @@
 /* Begin PBXTargetDependency section */
 		3A512F271BE16D400091A124 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3A512F1A1BE16D400091A124 /* Escapement tvOS */;
+			target = 3A512F1A1BE16D400091A124 /* Escapement-tvOS */;
 			targetProxy = 3A512F261BE16D400091A124 /* PBXContainerItemProxy */;
 		};
 		3B1756CE1B8B9B2C001E55A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3B1756BF1B8B9B2C001E55A2 /* Escapement iOS */;
+			target = 3B1756BF1B8B9B2C001E55A2 /* Escapement-iOS */;
 			targetProxy = 3B1756CD1B8B9B2C001E55A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -810,7 +810,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A512F301BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement tvOS" */ = {
+		3A512F301BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A512F2C1BE16D400091A124 /* Debug */,
@@ -819,7 +819,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A512F311BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement tvOS Tests" */ = {
+		3A512F311BE16D400091A124 /* Build configuration list for PBXNativeTarget "Escapement-tvOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A512F2E1BE16D400091A124 /* Debug */,
@@ -837,7 +837,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B1756D61B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement iOS" */ = {
+		3B1756D61B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B1756D71B8B9B2C001E55A2 /* Debug */,
@@ -846,7 +846,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B1756D91B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement iOS Tests" */ = {
+		3B1756D91B8B9B2C001E55A2 /* Build configuration list for PBXNativeTarget "Escapement-iOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B1756DA1B8B9B2C001E55A2 /* Debug */,

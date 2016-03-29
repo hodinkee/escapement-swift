@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A512F1A1BE16D400091A124"
+               BlueprintIdentifier = "3B1756BF1B8B9B2C001E55A2"
                BuildableName = "Escapement.framework"
-               BlueprintName = "Escapement tvOS"
+               BlueprintName = "Escapement-iOS"
+               ReferencedContainer = "container:Escapement.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3B1756CA1B8B9B2C001E55A2"
+               BuildableName = "Escapement-iOS-Tests.xctest"
+               BlueprintName = "Escapement-iOS-Tests"
                ReferencedContainer = "container:Escapement.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A512F231BE16D400091A124"
-               BuildableName = "Escapement tvOS Tests.xctest"
-               BlueprintName = "Escapement tvOS Tests"
+               BlueprintIdentifier = "3B1756CA1B8B9B2C001E55A2"
+               BuildableName = "Escapement-iOS-Tests.xctest"
+               BlueprintName = "Escapement-iOS-Tests"
                ReferencedContainer = "container:Escapement.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3A512F1A1BE16D400091A124"
+            BlueprintIdentifier = "3B1756BF1B8B9B2C001E55A2"
             BuildableName = "Escapement.framework"
-            BlueprintName = "Escapement tvOS"
+            BlueprintName = "Escapement-iOS"
             ReferencedContainer = "container:Escapement.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +78,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3A512F1A1BE16D400091A124"
+            BlueprintIdentifier = "3B1756BF1B8B9B2C001E55A2"
             BuildableName = "Escapement.framework"
-            BlueprintName = "Escapement tvOS"
+            BlueprintName = "Escapement-iOS"
             ReferencedContainer = "container:Escapement.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +96,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3A512F1A1BE16D400091A124"
+            BlueprintIdentifier = "3B1756BF1B8B9B2C001E55A2"
             BuildableName = "Escapement.framework"
-            BlueprintName = "Escapement tvOS"
+            BlueprintName = "Escapement-iOS"
             ReferencedContainer = "container:Escapement.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
