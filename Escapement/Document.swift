@@ -48,14 +48,14 @@ public struct DocumentEncoder: EncoderType {
 // MARK: - AttributedStringConvertible
 
 extension Document {
-    public func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString {
+    public func attributedString(stylesheet stylesheet: Stylesheet) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: "")
 
         for (index, paragraph) in paragraphs.enumerate() {
             if index != 0 {
                 mutableAttributedString.appendAttributedString(NSAttributedString(string: "\n"))
             }
-            mutableAttributedString.appendAttributedString(paragraph.attributedStringWithStylesheet(stylesheet))
+            mutableAttributedString.appendAttributedString(paragraph.attributedString(stylesheet: stylesheet))
         }
 
         return NSAttributedString(attributedString: mutableAttributedString)

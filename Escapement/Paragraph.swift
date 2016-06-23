@@ -61,7 +61,7 @@ struct ParagraphEncoder: EncoderType {
 // MARK: - AttributedStringConvertible
 
 extension Paragraph {
-    func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString {
+    func attributedString(stylesheet stylesheet: Stylesheet) -> NSAttributedString {
         var attributes = stylesheet["*"]
         attributes[BoldTagAttributeName] = false
         attributes[ItalicTagAttributeName] = false
