@@ -8,13 +8,15 @@
 
 import Alexander
 
-// MARK: - Types
+// MARK: - Entity
 
 struct Entity {
     var tag: String
     var range: Range<Int>
     private var attributes: [String: AnyObject]?
+}
 
+extension Entity {
     var href: NSURL? {
         if tag == "a" {
             return (attributes?["href"] as? String).flatMap({ NSURL(string: $0) })
@@ -22,9 +24,6 @@ struct Entity {
         return nil
     }
 }
-
-
-// MARK: - Equatable
 
 extension Entity: Equatable {}
 
@@ -35,7 +34,7 @@ func ==(lhs: Entity, rhs: Entity) -> Bool {
 }
 
 
-// MARK: - DecoderType
+// MARK: - EntityDecoder
 
 struct EntityDecoder: DecoderType {
     typealias Value = Entity
@@ -51,6 +50,9 @@ struct EntityDecoder: DecoderType {
     }
 }
 
+
+// MARK: - PositionDecoder
+
 private struct PositionDecoder: DecoderType {
     static func decode(JSON: Alexander.JSON) -> Range<Int>? {
         guard let array = JSON.object as? [Int] where array.count == 2 else {
@@ -61,7 +63,7 @@ private struct PositionDecoder: DecoderType {
 }
 
 
-// MARK: - EncoderType
+// MARK: - EntityEncoder
 
 struct EntityEncoder: EncoderType {
     static func encode(value: Entity) -> AnyObject {

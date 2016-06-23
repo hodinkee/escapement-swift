@@ -14,51 +14,12 @@ private let BoldTagAttributeName = "com.hodinkee.Escapement.BoldTag"
 private let ItalicTagAttributeName = "com.hodinkee.Escapement.ItalicTag"
 
 
-// MARK: - Types
+// MARK: - Paragraph
 
 struct Paragraph {
     var text: String
     var entities: [Entity]
 }
-
-
-// MARK: - Equatable
-
-extension Paragraph: Equatable {}
-
-func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
-    return lhs.text == rhs.text && lhs.entities == rhs.entities
-}
-
-
-// MARK: - DecoderType
-
-struct ParagraphDecoder: DecoderType {
-    static func decode(JSON: Alexander.JSON) -> Paragraph? {
-        guard let
-            text = JSON["text"]?.stringValue,
-            entities = JSON["entities"]?.decodeArray(EntityDecoder)
-        else {
-            return nil
-        }
-        return Paragraph(text: text, entities: entities)
-    }
-}
-
-
-// MARK: - EncoderType
-
-struct ParagraphEncoder: EncoderType {
-    static func encode(value: Paragraph) -> AnyObject {
-        return [
-            "text": value.text,
-            "entities": EntityEncoder.encodeSequence(value.entities)
-        ]
-    }
-}
-
-
-// MARK: - AttributedStringConvertible
 
 extension Paragraph {
     func attributedString(stylesheet stylesheet: Stylesheet) -> NSAttributedString {
@@ -105,7 +66,40 @@ extension Paragraph {
                 string.addAttribute(NSFontAttributeName, value: font, range: range)
             }
         })
-
+        
         return NSAttributedString(attributedString: string)
+    }
+}
+
+extension Paragraph: Equatable {}
+
+func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
+    return lhs.text == rhs.text && lhs.entities == rhs.entities
+}
+
+
+// MARK: - ParagraphDecoder
+
+struct ParagraphDecoder: DecoderType {
+    static func decode(JSON: Alexander.JSON) -> Paragraph? {
+        guard let
+            text = JSON["text"]?.stringValue,
+            entities = JSON["entities"]?.decodeArray(EntityDecoder)
+        else {
+            return nil
+        }
+        return Paragraph(text: text, entities: entities)
+    }
+}
+
+
+// MARK: - ParagraphEncoder
+
+struct ParagraphEncoder: EncoderType {
+    static func encode(value: Paragraph) -> AnyObject {
+        return [
+            "text": value.text,
+            "entities": EntityEncoder.encodeSequence(value.entities)
+        ]
     }
 }

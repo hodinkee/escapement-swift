@@ -8,44 +8,11 @@
 
 import Alexander
 
-// MARK: - Types
+// MARK: - Document
 
 public struct Document {
     var paragraphs: [Paragraph]
 }
-
-
-// MARK: - Equatable
-
-extension Document: Equatable {}
-
-public func ==(lhs: Document, rhs: Document) -> Bool {
-    return lhs.paragraphs == rhs.paragraphs
-}
-
-
-// MARK: - DecoderType
-
-public struct DocumentDecoder: DecoderType {
-    public static func decode(JSON: Alexander.JSON) -> Document? {
-        guard let paragraphs = JSON.decodeArray(ParagraphDecoder) else {
-            return nil
-        }
-        return Document(paragraphs: paragraphs)
-    }
-}
-
-
-// MARK: - EncoderType
-
-public struct DocumentEncoder: EncoderType {
-    public static func encode(value: Document) -> AnyObject {
-        return ParagraphEncoder.encodeSequence(value.paragraphs)
-    }
-}
-
-
-// MARK: - AttributedStringConvertible
 
 extension Document {
     public func attributedString(stylesheet stylesheet: Stylesheet) -> NSAttributedString {
@@ -59,5 +26,32 @@ extension Document {
         }
 
         return NSAttributedString(attributedString: mutableAttributedString)
+    }
+}
+
+extension Document: Equatable {}
+
+public func ==(lhs: Document, rhs: Document) -> Bool {
+    return lhs.paragraphs == rhs.paragraphs
+}
+
+
+// MARK: - DocumentDecoder
+
+public struct DocumentDecoder: DecoderType {
+    public static func decode(JSON: Alexander.JSON) -> Document? {
+        guard let paragraphs = JSON.decodeArray(ParagraphDecoder) else {
+            return nil
+        }
+        return Document(paragraphs: paragraphs)
+    }
+}
+
+
+// MARK: - DocumentEncoder
+
+public struct DocumentEncoder: EncoderType {
+    public static func encode(value: Document) -> AnyObject {
+        return ParagraphEncoder.encodeSequence(value.paragraphs)
     }
 }
