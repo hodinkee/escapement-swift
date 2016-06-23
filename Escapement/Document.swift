@@ -47,7 +47,7 @@ public struct DocumentEncoder: EncoderType {
 
 // MARK: - AttributedStringConvertible
 
-extension Document: AttributedStringConvertible {
+extension Document {
     public func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: "")
 
