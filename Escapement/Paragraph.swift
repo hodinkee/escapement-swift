@@ -71,8 +71,6 @@ extension Paragraph: AttributedStringConvertible {
         for entity in entities {
             let range = entity.NSRange
 
-            string.addAttributes(stylesheet[entity.tag], range: range)
-
             switch entity.tag {
             case "a":
                 if let URL = entity.href {
@@ -87,6 +85,8 @@ extension Paragraph: AttributedStringConvertible {
             default:
                 ()
             }
+
+            string.addAttributes(stylesheet[entity.tag], range: range)
         }
 
         string.enumerateAttributesInRange(NSRange(0..<string.length), options: [], usingBlock: { attributes, range, _ in
