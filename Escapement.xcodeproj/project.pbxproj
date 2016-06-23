@@ -15,13 +15,9 @@
 		3A512F481BE1716F0091A124 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
 		3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
 		3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
-		3A512F4B1BE1716F0091A124 /* AttributedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */; };
-		3A512F4C1BE1716F0091A124 /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */; };
 		3A512F4D1BE1716F0091A124 /* FontDescriptorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */; };
 		3B1756CC1B8B9B2C001E55A2 /* Escapement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */; };
 		3B1756D31B8B9B2C001E55A2 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* Tests.swift */; };
-		3B1756E31B8B9D8F001E55A2 /* AttributedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */; };
-		3B1756E41B8B9D8F001E55A2 /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */; };
 		3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
 		3B1756E61B8B9D8F001E55A2 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
 		3B1756E71B8B9D8F001E55A2 /* FontDescriptorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */; };
@@ -105,8 +101,6 @@
 		3B1756C01B8B9B2C001E55A2 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756CB1B8B9B2C001E55A2 /* Escapement-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756D21B8B9B2C001E55A2 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringConvertible.swift; sourceTree = "<group>"; };
-		3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringExtensions.swift; sourceTree = "<group>"; };
 		3B1756DE1B8B9D8F001E55A2 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		3B1756DF1B8B9D8F001E55A2 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDescriptorExtensions.swift; sourceTree = "<group>"; };
@@ -387,8 +381,6 @@
 				3B1756DE1B8B9D8F001E55A2 /* Document.swift */,
 				3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */,
 				3B1756DF1B8B9D8F001E55A2 /* Entity.swift */,
-				3B1756DC1B8B9D8F001E55A2 /* AttributedStringConvertible.swift */,
-				3B1756DD1B8B9D8F001E55A2 /* AttributedStringExtensions.swift */,
 				3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */,
 				3A512F321BE16DAA0091A124 /* Platforms */,
 			);
@@ -614,13 +606,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A512F4C1BE1716F0091A124 /* AttributedStringExtensions.swift in Sources */,
 				3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */,
 				3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */,
 				3A512F481BE1716F0091A124 /* Document.swift in Sources */,
 				3A512F4D1BE1716F0091A124 /* FontDescriptorExtensions.swift in Sources */,
 				3A512F471BE1716F0091A124 /* Stylesheet.swift in Sources */,
-				3A512F4B1BE1716F0091A124 /* AttributedStringConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,9 +629,7 @@
 				3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */,
 				3B1756E71B8B9D8F001E55A2 /* FontDescriptorExtensions.swift in Sources */,
 				3B1756E61B8B9D8F001E55A2 /* Entity.swift in Sources */,
-				3B1756E41B8B9D8F001E55A2 /* AttributedStringExtensions.swift in Sources */,
 				3B1756E91B8B9D8F001E55A2 /* Stylesheet.swift in Sources */,
-				3B1756E31B8B9D8F001E55A2 /* AttributedStringConvertible.swift in Sources */,
 				3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,6 +670,7 @@
 				);
 				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Debug;
 		};
@@ -697,6 +686,7 @@
 				);
 				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Release;
 		};
@@ -759,6 +749,7 @@
 				);
 				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Debug;
 		};
@@ -776,6 +767,7 @@
 				);
 				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Release;
 		};

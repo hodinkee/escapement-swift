@@ -8,17 +8,15 @@
 
 import Alexander
 
-// MARK: - Types
+// MARK: - Entity
 
 struct Entity {
     var tag: String
     var range: Range<Int>
     private var attributes: [String: AnyObject]?
+}
 
-    var NSRange: Foundation.NSRange {
-        return NSMakeRange(range.startIndex, range.endIndex - range.startIndex)
-    }
-
+extension Entity {
     var href: NSURL? {
         if tag == "a" {
             return (attributes?["href"] as? String).flatMap({ NSURL(string: $0) })
@@ -26,9 +24,6 @@ struct Entity {
         return nil
     }
 }
-
-
-// MARK: - Equatable
 
 extension Entity: Equatable {}
 
@@ -39,25 +34,27 @@ func ==(lhs: Entity, rhs: Entity) -> Bool {
 }
 
 
-// MARK: - DecoderType
+// MARK: - EntityDecoder
 
 struct EntityDecoder: DecoderType {
     typealias Value = Entity
     static func decode(JSON: Alexander.JSON) -> Value? {
-        guard
-            let tag = JSON["html_tag"]?.stringValue,
-            let range = JSON["position"]?.decode(PositionDecoder)
+        guard let
+            tag = JSON["html_tag"]?.stringValue,
+            range = JSON["position"]?.decode(PositionDecoder)
         else {
             return nil
         }
-        let attributes = JSON["attributes"]?.object as? [String: AnyObject]
+        let attributes = JSON["attributes"]?.dictionaryValue
         return Entity(tag: tag, range: range, attributes: attributes)
     }
 }
 
+
+// MARK: - PositionDecoder
+
 private struct PositionDecoder: DecoderType {
-    typealias Value = Range<Int>
-    static func decode(JSON: Alexander.JSON) -> Value? {
+    static func decode(JSON: Alexander.JSON) -> Range<Int>? {
         guard let array = JSON.object as? [Int] where array.count == 2 else {
             return nil
         }
@@ -66,18 +63,15 @@ private struct PositionDecoder: DecoderType {
 }
 
 
-// MARK: - EncoderType
+// MARK: - EntityEncoder
 
 struct EntityEncoder: EncoderType {
     static func encode(value: Entity) -> AnyObject {
-        var dictionary: [String: AnyObject] = [
-            "html_tag": value.tag,
-            "position": [ value.range.startIndex, value.range.endIndex ],
-        ]
+        var dictionary = [String: AnyObject]()
 
-        if let attributes = value.attributes {
-            dictionary["attributes"] = attributes
-        }
+        dictionary["html_tag"] = value.tag
+        dictionary["position"] = [ value.range.startIndex, value.range.endIndex ]
+        dictionary["attributes"] = value.attributes
 
         return dictionary
     }

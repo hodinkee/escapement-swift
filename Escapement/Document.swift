@@ -8,14 +8,26 @@
 
 import Alexander
 
-// MARK: - Types
+// MARK: - Document
 
 public struct Document {
     var paragraphs: [Paragraph]
 }
 
+extension Document {
+    public func attributedString(stylesheet stylesheet: Stylesheet) -> NSAttributedString {
+        let mutableAttributedString = NSMutableAttributedString(string: "")
 
-// MARK: - Equatable
+        for (index, paragraph) in paragraphs.enumerate() {
+            if index != 0 {
+                mutableAttributedString.appendAttributedString(NSAttributedString(string: "\n"))
+            }
+            mutableAttributedString.appendAttributedString(paragraph.attributedString(stylesheet: stylesheet))
+        }
+
+        return NSAttributedString(attributedString: mutableAttributedString)
+    }
+}
 
 extension Document: Equatable {}
 
@@ -24,11 +36,10 @@ public func ==(lhs: Document, rhs: Document) -> Bool {
 }
 
 
-// MARK: - DecoderType
+// MARK: - DocumentDecoder
 
 public struct DocumentDecoder: DecoderType {
-    public typealias Value = Document
-    public static func decode(JSON: Alexander.JSON) -> Value? {
+    public static func decode(JSON: Alexander.JSON) -> Document? {
         guard let paragraphs = JSON.decodeArray(ParagraphDecoder) else {
             return nil
         }
@@ -37,28 +48,10 @@ public struct DocumentDecoder: DecoderType {
 }
 
 
-// MARK: - EncoderType
+// MARK: - DocumentEncoder
 
 public struct DocumentEncoder: EncoderType {
     public static func encode(value: Document) -> AnyObject {
         return ParagraphEncoder.encodeSequence(value.paragraphs)
-    }
-}
-
-
-// MARK: - AttributedStringConvertible
-
-extension Document: AttributedStringConvertible {
-    public func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: "")
-
-        for (index, paragraph) in paragraphs.enumerate() {
-            if index != 0 {
-                mutableAttributedString.appendAttributedString(NSAttributedString(string: "\n"))
-            }
-            mutableAttributedString.appendAttributedString(paragraph.attributedStringWithStylesheet(stylesheet))
-        }
-
-        return NSAttributedString(attributedString: mutableAttributedString)
     }
 }

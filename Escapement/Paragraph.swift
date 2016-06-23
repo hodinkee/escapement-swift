@@ -14,73 +14,28 @@ private let BoldTagAttributeName = "com.hodinkee.Escapement.BoldTag"
 private let ItalicTagAttributeName = "com.hodinkee.Escapement.ItalicTag"
 
 
-// MARK: - Types
+// MARK: - Paragraph
 
 struct Paragraph {
     var text: String
     var entities: [Entity]
 }
 
+extension Paragraph {
+    func attributedString(stylesheet stylesheet: Stylesheet) -> NSAttributedString {
+        var attributes = stylesheet["*"]
+        attributes[BoldTagAttributeName] = false
+        attributes[ItalicTagAttributeName] = false
 
-// MARK: - Equatable
-
-extension Paragraph: Equatable {}
-
-func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
-    return lhs.text == rhs.text && lhs.entities == rhs.entities
-}
-
-
-// MARK: - DecoderType
-
-struct ParagraphDecoder: DecoderType {
-    static func decode(JSON: Alexander.JSON) -> Paragraph? {
-        guard
-            let text = JSON["text"]?.stringValue,
-            let entities = JSON["entities"]?.decodeArray(EntityDecoder)
-        else {
-            return nil
-        }
-        return Paragraph(text: text, entities: entities)
-    }
-}
-
-
-// MARK: - EncoderType
-
-struct ParagraphEncoder: EncoderType {
-    static func encode(value: Paragraph) -> AnyObject {
-        return [
-            "text": value.text,
-            "entities": EntityEncoder.encodeSequence(value.entities)
-        ]
-    }
-}
-
-
-// MARK: - AttributedStringConvertible
-
-extension Paragraph: AttributedStringConvertible {
-    func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString {
-        let defaultFontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
-        let baseFont = stylesheet["*"][NSFontAttributeName] as? UIFont ?? UIFont(descriptor: defaultFontDescriptor, size: defaultFontDescriptor.pointSize)
-
-        var baseAttributes = stylesheet["*"]
-        baseAttributes[BoldTagAttributeName] = false
-        baseAttributes[ItalicTagAttributeName] = false
-        baseAttributes[NSFontAttributeName] = baseFont
-
-        let string = NSMutableAttributedString(string: text, attributes: baseAttributes)
+        let string = NSMutableAttributedString(string: text, attributes: attributes)
 
         for entity in entities {
-            let range = entity.NSRange
-
-            string.addAttributes(stylesheet[entity.tag], range: range)
+            let range = NSRange(entity.range)
 
             switch entity.tag {
             case "a":
-                if let href = entity.href {
-                    string.addAttribute(NSLinkAttributeName, value: href, range: range)
+                if let URL = entity.href {
+                    string.addAttribute(NSLinkAttributeName, value: URL, range: range)
                 }
             case "strong", "b":
                 string.addAttribute(BoldTagAttributeName, value: true, range: range)
@@ -91,26 +46,60 @@ extension Paragraph: AttributedStringConvertible {
             default:
                 ()
             }
+
+            string.addAttributes(stylesheet[entity.tag], range: range)
         }
 
-        let baseFontDescriptor = baseFont.fontDescriptor()
-        let fontsWithRanges = string.attributesWithRanges.map({ attributes, range -> (UIFontDescriptor, NSRange) in
-            var fontDescriptor: UIFontDescriptor = baseFontDescriptor
+        string.enumerateAttributesInRange(NSRange(0..<string.length), options: [], usingBlock: { attributes, range, _ in
+            var descriptor = (attributes[NSFontAttributeName] as? UIFont)?.fontDescriptor()
 
             if attributes[BoldTagAttributeName] as? Bool ?? false {
-                fontDescriptor = fontDescriptor.boldFontDescriptor
+                descriptor = descriptor?.boldFontDescriptor
             }
 
             if attributes[ItalicTagAttributeName] as? Bool ?? false {
-                fontDescriptor = fontDescriptor.italicFontDescriptor
+                descriptor = descriptor?.italicFontDescriptor
             }
 
-            return (fontDescriptor, range)
+            if let descriptor = descriptor {
+                let font = UIFont(descriptor: descriptor, size: 0)
+                string.addAttribute(NSFontAttributeName, value: font, range: range)
+            }
         })
-        for (font, range) in fontsWithRanges {
-            string.addAttribute(NSFontAttributeName, value: UIFont(descriptor: font, size: baseFont.pointSize), range: range)
-        }
-
+        
         return NSAttributedString(attributedString: string)
+    }
+}
+
+extension Paragraph: Equatable {}
+
+func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
+    return lhs.text == rhs.text && lhs.entities == rhs.entities
+}
+
+
+// MARK: - ParagraphDecoder
+
+struct ParagraphDecoder: DecoderType {
+    static func decode(JSON: Alexander.JSON) -> Paragraph? {
+        guard let
+            text = JSON["text"]?.stringValue,
+            entities = JSON["entities"]?.decodeArray(EntityDecoder)
+        else {
+            return nil
+        }
+        return Paragraph(text: text, entities: entities)
+    }
+}
+
+
+// MARK: - ParagraphEncoder
+
+struct ParagraphEncoder: EncoderType {
+    static func encode(value: Paragraph) -> AnyObject {
+        return [
+            "text": value.text,
+            "entities": EntityEncoder.encodeSequence(value.entities)
+        ]
     }
 }
