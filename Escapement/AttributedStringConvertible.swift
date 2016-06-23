@@ -6,6 +6,6 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-public protocol AttributedStringConvertible {
+protocol AttributedStringConvertible {
     func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString
 }
