@@ -62,15 +62,11 @@ struct ParagraphEncoder: EncoderType {
 
 extension Paragraph: AttributedStringConvertible {
     func attributedStringWithStylesheet(stylesheet: Stylesheet) -> NSAttributedString {
-        let defaultFontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
-        let baseFont = stylesheet["*"][NSFontAttributeName] as? UIFont ?? UIFont(descriptor: defaultFontDescriptor, size: defaultFontDescriptor.pointSize)
+        var attributes = stylesheet["*"]
+        attributes[BoldTagAttributeName] = false
+        attributes[ItalicTagAttributeName] = false
 
-        var baseAttributes = stylesheet["*"]
-        baseAttributes[BoldTagAttributeName] = false
-        baseAttributes[ItalicTagAttributeName] = false
-        baseAttributes[NSFontAttributeName] = baseFont
-
-        let string = NSMutableAttributedString(string: text, attributes: baseAttributes)
+        let string = NSMutableAttributedString(string: text, attributes: attributes)
 
         for entity in entities {
             let range = entity.NSRange
@@ -79,8 +75,8 @@ extension Paragraph: AttributedStringConvertible {
 
             switch entity.tag {
             case "a":
-                if let href = entity.href {
-                    string.addAttribute(NSLinkAttributeName, value: href, range: range)
+                if let URL = entity.href {
+                    string.addAttribute(NSLinkAttributeName, value: URL, range: range)
                 }
             case "strong", "b":
                 string.addAttribute(BoldTagAttributeName, value: true, range: range)
@@ -93,23 +89,22 @@ extension Paragraph: AttributedStringConvertible {
             }
         }
 
-        let baseFontDescriptor = baseFont.fontDescriptor()
-        let fontsWithRanges = string.attributesWithRanges.map({ attributes, range -> (UIFontDescriptor, NSRange) in
-            var fontDescriptor: UIFontDescriptor = baseFontDescriptor
+        string.enumerateAttributesInRange(NSRange(0..<string.length), options: [], usingBlock: { attributes, range, _ in
+            var descriptor = (attributes[NSFontAttributeName] as? UIFont)?.fontDescriptor()
 
             if attributes[BoldTagAttributeName] as? Bool ?? false {
-                fontDescriptor = fontDescriptor.boldFontDescriptor
+                descriptor = descriptor?.boldFontDescriptor
             }
 
             if attributes[ItalicTagAttributeName] as? Bool ?? false {
-                fontDescriptor = fontDescriptor.italicFontDescriptor
+                descriptor = descriptor?.italicFontDescriptor
             }
 
-            return (fontDescriptor, range)
+            if let descriptor = descriptor {
+                let font = UIFont(descriptor: descriptor, size: 0)
+                string.addAttribute(NSFontAttributeName, value: font, range: range)
+            }
         })
-        for (font, range) in fontsWithRanges {
-            string.addAttribute(NSFontAttributeName, value: UIFont(descriptor: font, size: baseFont.pointSize), range: range)
-        }
 
         return NSAttributedString(attributedString: string)
     }

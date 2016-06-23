@@ -7,11 +7,11 @@
 //
 
 extension UIFontDescriptor {
-    var boldFontDescriptor: UIFontDescriptor {
+    var boldFontDescriptor: UIFontDescriptor? {
         return fontDescriptorWithSymbolicTraits(symbolicTraits.union(.TraitBold))
     }
 
-    var italicFontDescriptor: UIFontDescriptor {
+    var italicFontDescriptor: UIFontDescriptor? {
         return fontDescriptorWithSymbolicTraits(symbolicTraits.union(.TraitItalic))
     }
 }
