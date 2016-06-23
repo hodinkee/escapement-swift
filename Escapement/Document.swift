@@ -27,8 +27,7 @@ public func ==(lhs: Document, rhs: Document) -> Bool {
 // MARK: - DecoderType
 
 public struct DocumentDecoder: DecoderType {
-    public typealias Value = Document
-    public static func decode(JSON: Alexander.JSON) -> Value? {
+    public static func decode(JSON: Alexander.JSON) -> Document? {
         guard let paragraphs = JSON.decodeArray(ParagraphDecoder) else {
             return nil
         }

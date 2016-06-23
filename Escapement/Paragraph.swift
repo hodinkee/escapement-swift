@@ -35,9 +35,9 @@ func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
 
 struct ParagraphDecoder: DecoderType {
     static func decode(JSON: Alexander.JSON) -> Paragraph? {
-        guard
-            let text = JSON["text"]?.stringValue,
-            let entities = JSON["entities"]?.decodeArray(EntityDecoder)
+        guard let
+            text = JSON["text"]?.stringValue,
+            entities = JSON["entities"]?.decodeArray(EntityDecoder)
         else {
             return nil
         }
@@ -69,7 +69,7 @@ extension Paragraph: AttributedStringConvertible {
         let string = NSMutableAttributedString(string: text, attributes: attributes)
 
         for entity in entities {
-            let range = entity.NSRange
+            let range = NSRange(entity.range)
 
             switch entity.tag {
             case "a":
