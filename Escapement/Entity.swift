@@ -13,7 +13,7 @@ import Alexander
 struct Entity {
     var tag: String
     var range: CountableRange<Int>
-    private var attributes: [String: AnyObject]?
+    fileprivate var attributes: [String: AnyObject]?
 }
 
 extension Entity {
