@@ -51,7 +51,7 @@ public struct DocumentDecoder: DecoderType {
 // MARK: - DocumentEncoder
 
 public struct DocumentEncoder: EncoderType {
-    public static func encode(value: Document) -> AnyObject {
+    public static func encode(_ value: Document) -> Any {
         return ParagraphEncoder.encodeSequence(value.paragraphs)
     }
 }

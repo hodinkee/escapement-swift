@@ -96,7 +96,7 @@ struct ParagraphDecoder: DecoderType {
 // MARK: - ParagraphEncoder
 
 struct ParagraphEncoder: EncoderType {
-    static func encode(value: Paragraph) -> AnyObject {
+    static func encode(_ value: Paragraph) -> Any {
         return [
             "text": value.text,
             "entities": EntityEncoder.encodeSequence(value.entities)

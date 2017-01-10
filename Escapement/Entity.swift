@@ -66,7 +66,7 @@ private struct PositionDecoder: DecoderType {
 // MARK: - EntityEncoder
 
 struct EntityEncoder: EncoderType {
-    static func encode(value: Entity) -> AnyObject {
+    static func encode(_ value: Entity) -> Any {
         var dictionary = [String: AnyObject]()
 
         dictionary["html_tag"] = value.tag
