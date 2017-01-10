@@ -12,7 +12,7 @@ import Alexander
 
 struct Entity {
     var tag: String
-    var range: CountableRange<Int>
+    var range: Range<Int>
     fileprivate var attributes: [String: AnyObject]?
 }
 
@@ -54,7 +54,7 @@ struct EntityDecoder: DecoderType {
 // MARK: - PositionDecoder
 
 private struct PositionDecoder: DecoderType {
-    static func decode(_ JSON: Alexander.JSON) -> CountableRange<Int>? {
+    static func decode(_ JSON: Alexander.JSON) -> Range<Int>? {
         guard let array = JSON.object as? [Int], array.count == 2 else {
             return nil
         }
