@@ -1,5 +1,5 @@
 //
-//  FontDescriptorExtensions.swift
+//  UIFontDescriptor.swift
 //  Escapement
 //
 //  Created by Caleb Davenport on 7/28/15.
