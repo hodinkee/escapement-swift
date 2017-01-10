@@ -58,7 +58,7 @@ extension Stylesheet {
         }
 
         public init(selector: String, attributes: [String: AnyObject]) {
-            self.selectors = [ selector ]
+            self.selectors = [selector]
             self.attributes = attributes
         }
     }

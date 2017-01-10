@@ -15,14 +15,14 @@ public struct Document {
 }
 
 extension Document {
-    public func attributedString(stylesheet stylesheet: Stylesheet) -> NSAttributedString {
+    public func attributedString(stylesheet: Stylesheet) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: "")
 
-        for (index, paragraph) in paragraphs.enumerate() {
+        for (index, paragraph) in paragraphs.enumerated() {
             if index != 0 {
-                mutableAttributedString.appendAttributedString(NSAttributedString(string: "\n"))
+                mutableAttributedString.append(NSAttributedString(string: "\n"))
             }
-            mutableAttributedString.appendAttributedString(paragraph.attributedString(stylesheet: stylesheet))
+            mutableAttributedString.append(paragraph.attributedString(stylesheet: stylesheet))
         }
 
         return NSAttributedString(attributedString: mutableAttributedString)
@@ -39,8 +39,8 @@ public func ==(lhs: Document, rhs: Document) -> Bool {
 // MARK: - DocumentDecoder
 
 public struct DocumentDecoder: DecoderType {
-    public static func decode(JSON: Alexander.JSON) -> Document? {
-        guard let paragraphs = JSON.decodeArray(ParagraphDecoder) else {
+    public static func decode(_ JSON: Alexander.JSON) -> Document? {
+        guard let paragraphs = JSON.decodeArray(ParagraphDecoder.self) else {
             return nil
         }
         return Document(paragraphs: paragraphs)

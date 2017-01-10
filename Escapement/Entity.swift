@@ -12,14 +12,14 @@ import Alexander
 
 struct Entity {
     var tag: String
-    var range: Range<Int>
-    private var attributes: [String: AnyObject]?
+    var range: CountableRange<Int>
+    fileprivate var attributes: [String: AnyObject]?
 }
 
 extension Entity {
-    var href: NSURL? {
+    var href: URL? {
         if tag == "a" {
-            return (attributes?["href"] as? String).flatMap({ NSURL(string: $0) })
+            return (attributes?["href"] as? String).flatMap({ URL(string: $0) })
         }
         return nil
     }
@@ -38,15 +38,15 @@ func ==(lhs: Entity, rhs: Entity) -> Bool {
 
 struct EntityDecoder: DecoderType {
     typealias Value = Entity
-    static func decode(JSON: Alexander.JSON) -> Value? {
+    static func decode(_ JSON: Alexander.JSON) -> Value? {
         guard let
             tag = JSON["html_tag"]?.stringValue,
-            range = JSON["position"]?.decode(PositionDecoder)
+            let range = JSON["position"]?.decode(PositionDecoder.self)
         else {
             return nil
         }
         let attributes = JSON["attributes"]?.dictionaryValue
-        return Entity(tag: tag, range: range, attributes: attributes)
+        return Entity(tag: tag, range: range, attributes: attributes as [String : AnyObject]?)
     }
 }
 
@@ -54,8 +54,8 @@ struct EntityDecoder: DecoderType {
 // MARK: - PositionDecoder
 
 private struct PositionDecoder: DecoderType {
-    static func decode(JSON: Alexander.JSON) -> Range<Int>? {
-        guard let array = JSON.object as? [Int] where array.count == 2 else {
+    static func decode(_ JSON: Alexander.JSON) -> CountableRange<Int>? {
+        guard let array = JSON.object as? [Int], array.count == 2 else {
             return nil
         }
         return array[0]..<array[1]
@@ -67,12 +67,12 @@ private struct PositionDecoder: DecoderType {
 
 struct EntityEncoder: EncoderType {
     static func encode(_ value: Entity) -> Any {
-        var dictionary = [String: AnyObject]()
+        var dictionary = [String: Any]()
 
-        dictionary["html_tag"] = value.tag
-        dictionary["position"] = [ value.range.startIndex, value.range.endIndex ]
-        dictionary["attributes"] = value.attributes
+        dictionary["html_tag"] = value.tag as AnyObject?
+        dictionary["position"] = [value.range.lowerBound, value.range.upperBound]
+        dictionary["attributes"] = value.attributes as AnyObject?
 
-        return dictionary
+        return dictionary as AnyObject
     }
 }

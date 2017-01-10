@@ -22,10 +22,10 @@ struct Paragraph {
 }
 
 extension Paragraph {
-    func attributedString(stylesheet stylesheet: Stylesheet) -> NSAttributedString {
+    func attributedString(stylesheet: Stylesheet) -> NSAttributedString {
         var attributes = stylesheet["*"]
-        attributes[BoldTagAttributeName] = false
-        attributes[ItalicTagAttributeName] = false
+        attributes[BoldTagAttributeName] = false as AnyObject?
+        attributes[ItalicTagAttributeName] = false as AnyObject?
 
         let string = NSMutableAttributedString(string: text, attributes: attributes)
 
@@ -42,7 +42,7 @@ extension Paragraph {
             case "em", "i":
                 string.addAttribute(ItalicTagAttributeName, value: true, range: range)
             case "s", "del":
-                string.addAttribute(NSStrikethroughStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: range)
+                string.addAttribute(NSStrikethroughStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: range)
             default:
                 ()
             }
@@ -50,8 +50,8 @@ extension Paragraph {
             string.addAttributes(stylesheet[entity.tag], range: range)
         }
 
-        string.enumerateAttributesInRange(NSRange(0..<string.length), options: [], usingBlock: { attributes, range, _ in
-            var descriptor = (attributes[NSFontAttributeName] as? UIFont)?.fontDescriptor()
+        string.enumerateAttributes(in: NSRange(0..<string.length), options: [], using: { attributes, range, _ in
+            var descriptor = (attributes[NSFontAttributeName] as? UIFont)?.fontDescriptor
 
             if attributes[BoldTagAttributeName] as? Bool ?? false {
                 descriptor = descriptor?.boldFontDescriptor
@@ -81,10 +81,10 @@ func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
 // MARK: - ParagraphDecoder
 
 struct ParagraphDecoder: DecoderType {
-    static func decode(JSON: Alexander.JSON) -> Paragraph? {
+    static func decode(_ JSON: Alexander.JSON) -> Paragraph? {
         guard let
             text = JSON["text"]?.stringValue,
-            entities = JSON["entities"]?.decodeArray(EntityDecoder)
+            let entities = JSON["entities"]?.decodeArray(EntityDecoder.self)
         else {
             return nil
         }
