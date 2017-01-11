@@ -24,8 +24,8 @@ struct Paragraph {
 extension Paragraph {
     func attributedString(stylesheet: Stylesheet) -> NSAttributedString {
         var attributes = stylesheet["*"]
-        attributes[BoldTagAttributeName] = false as AnyObject?
-        attributes[ItalicTagAttributeName] = false as AnyObject?
+        attributes[BoldTagAttributeName] = false as AnyObject
+        attributes[ItalicTagAttributeName] = false as AnyObject
 
         let string = NSMutableAttributedString(string: text, attributes: attributes)
 
@@ -53,11 +53,11 @@ extension Paragraph {
         string.enumerateAttributes(in: NSRange(0..<string.length), options: [], using: { attributes, range, _ in
             var descriptor = (attributes[NSFontAttributeName] as? UIFont)?.fontDescriptor
 
-            if attributes[BoldTagAttributeName] as? Bool ?? false {
+            if let bold = attributes[BoldTagAttributeName] as? Bool, bold {
                 descriptor = descriptor?.boldFontDescriptor
             }
 
-            if attributes[ItalicTagAttributeName] as? Bool ?? false {
+            if let italic = attributes[ItalicTagAttributeName] as? Bool, italic {
                 descriptor = descriptor?.italicFontDescriptor
             }
 
@@ -71,20 +71,20 @@ extension Paragraph {
     }
 }
 
-extension Paragraph: Equatable {}
-
-func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
-    return lhs.text == rhs.text && lhs.entities == rhs.entities
+extension Paragraph: Equatable {
+    static func == (lhs: Paragraph, rhs: Paragraph) -> Bool {
+        return lhs.text == rhs.text && lhs.entities == rhs.entities
+    }
 }
 
 
 // MARK: - ParagraphDecoder
 
 struct ParagraphDecoder: DecoderType {
-    static func decode(_ JSON: Alexander.JSON) -> Paragraph? {
-        guard let
-            text = JSON["text"]?.stringValue,
-            let entities = JSON["entities"]?.decodeArray(EntityDecoder.self)
+    static func decode(_ json: JSON) -> Paragraph? {
+        guard
+            let text = json["text"]?.stringValue,
+            let entities = json["entities"]?.decodeArray(EntityDecoder.self)
         else {
             return nil
         }
@@ -96,10 +96,10 @@ struct ParagraphDecoder: DecoderType {
 // MARK: - ParagraphEncoder
 
 struct ParagraphEncoder: EncoderType {
-    static func encode(_ value: Paragraph) -> Any {
+    static func encode(_ paragraph: Paragraph) -> Any {
         return [
-            "text": value.text,
-            "entities": EntityEncoder.encodeSequence(value.entities)
+            "text": paragraph.text,
+            "entities": EntityEncoder.encodeSequence(paragraph.entities)
         ]
     }
 }
