@@ -8,12 +8,6 @@
 
 import Alexander
 
-// MARK: - Constants
-
-private let BoldTagAttributeName = "com.hodinkee.Escapement.BoldTag"
-private let ItalicTagAttributeName = "com.hodinkee.Escapement.ItalicTag"
-
-
 // MARK: - Paragraph
 
 struct Paragraph {
@@ -24,8 +18,8 @@ struct Paragraph {
 extension Paragraph {
     func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
         var attributes = stylesheet["*"]
-        attributes[BoldTagAttributeName] = false
-        attributes[ItalicTagAttributeName] = false
+        attributes[StringAttributeName.escapementBold] = false
+        attributes[StringAttributeName.escapementItalic] = false
 
         let string = NSMutableAttributedString(string: text, attributes: attributes)
 
@@ -38,9 +32,9 @@ extension Paragraph {
                     string.addAttribute(NSLinkAttributeName, value: URL, range: range)
                 }
             case "strong", "b":
-                string.addAttribute(BoldTagAttributeName, value: true, range: range)
+                string.addAttribute(StringAttributeName.escapementBold, value: true, range: range)
             case "em", "i":
-                string.addAttribute(ItalicTagAttributeName, value: true, range: range)
+                string.addAttribute(StringAttributeName.escapementItalic, value: true, range: range)
             case "s", "del":
                 string.addAttribute(NSStrikethroughStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: range)
             default:
@@ -53,11 +47,11 @@ extension Paragraph {
         string.enumerateAttributes(in: NSRange(0..<string.length), options: [], using: { attributes, range, _ in
             var descriptor = (attributes[NSFontAttributeName] as? UIFont)?.fontDescriptor
 
-            if let bold = attributes[BoldTagAttributeName] as? Bool, bold {
+            if let bold = attributes[StringAttributeName.escapementBold] as? Bool, bold {
                 descriptor = descriptor?.boldFontDescriptor
             }
 
-            if let italic = attributes[ItalicTagAttributeName] as? Bool, italic {
+            if let italic = attributes[StringAttributeName.escapementItalic] as? Bool, italic {
                 descriptor = descriptor?.italicFontDescriptor
             }
 
@@ -66,7 +60,7 @@ extension Paragraph {
                 string.addAttribute(NSFontAttributeName, value: font, range: range)
             }
         })
-        
+
         return NSAttributedString(attributedString: string)
     }
 }
@@ -76,7 +70,6 @@ extension Paragraph: Equatable {
         return lhs.text == rhs.text && lhs.entities == rhs.entities
     }
 }
-
 
 // MARK: - ParagraphDecoder
 
@@ -91,7 +84,6 @@ struct ParagraphDecoder: DecoderType {
         return Paragraph(text: text, entities: entities)
     }
 }
-
 
 // MARK: - ParagraphEncoder
 

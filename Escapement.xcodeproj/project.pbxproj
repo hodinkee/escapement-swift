@@ -10,19 +10,31 @@
 		3A512F251BE16D400091A124 /* Escapement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A512F1B1BE16D400091A124 /* Escapement.framework */; };
 		3A512F3E1BE16DC30091A124 /* Escapement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A512F341BE16DAA0091A124 /* Escapement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A512F3F1BE16DD60091A124 /* Escapement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A512F371BE16DAA0091A124 /* Escapement.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A512F401BE16E300091A124 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* Tests.swift */; };
+		3A512F401BE16E300091A124 /* EscapementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */; };
 		3A512F471BE1716F0091A124 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */; };
 		3A512F481BE1716F0091A124 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
 		3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
 		3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
 		3A512F4D1BE1716F0091A124 /* UIFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */; };
 		3B1756CC1B8B9B2C001E55A2 /* Escapement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */; };
-		3B1756D31B8B9B2C001E55A2 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* Tests.swift */; };
+		3B1756D31B8B9B2C001E55A2 /* EscapementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */; };
 		3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
 		3B1756E61B8B9D8F001E55A2 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
 		3B1756E71B8B9D8F001E55A2 /* UIFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */; };
 		3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
 		3B1756E91B8B9D8F001E55A2 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */; };
+		3B87682A1E4531A90050D791 /* test_bold_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B8768291E4531A90050D791 /* test_bold_tag.json */; };
+		3B87682B1E4531A90050D791 /* test_bold_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B8768291E4531A90050D791 /* test_bold_tag.json */; };
+		3B87682D1E4537C90050D791 /* test_strong_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B87682C1E4537C90050D791 /* test_strong_tag.json */; };
+		3B87682E1E4537C90050D791 /* test_strong_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B87682C1E4537C90050D791 /* test_strong_tag.json */; };
+		3B8768301E4538190050D791 /* StringAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B87682F1E4538190050D791 /* StringAttributeName.swift */; };
+		3B8768311E4538190050D791 /* StringAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B87682F1E4538190050D791 /* StringAttributeName.swift */; };
+		3B8768351E453B920050D791 /* test_italic_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B8768321E453B1D0050D791 /* test_italic_tag.json */; };
+		3B8768361E453B920050D791 /* test_italic_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B8768321E453B1D0050D791 /* test_italic_tag.json */; };
+		3B8768381E453C820050D791 /* test_emphasis_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B8768371E453C820050D791 /* test_emphasis_tag.json */; };
+		3B8768391E453C820050D791 /* test_emphasis_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B8768371E453C820050D791 /* test_emphasis_tag.json */; };
+		3B87683B1E453CF10050D791 /* test_link_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B87683A1E453CF10050D791 /* test_link_tag.json */; };
+		3B87683C1E453CF10050D791 /* test_link_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B87683A1E453CF10050D791 /* test_link_tag.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,12 +112,18 @@
 		3A9911851C63F79700A2FEC1 /* watchOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		3B1756C01B8B9B2C001E55A2 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756CB1B8B9B2C001E55A2 /* Escapement-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B1756D21B8B9B2C001E55A2 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapementTests.swift; sourceTree = "<group>"; };
 		3B1756DE1B8B9D8F001E55A2 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		3B1756DF1B8B9D8F001E55A2 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontDescriptor.swift; sourceTree = "<group>"; };
 		3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
+		3B8768291E4531A90050D791 /* test_bold_tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_bold_tag.json; sourceTree = "<group>"; };
+		3B87682C1E4537C90050D791 /* test_strong_tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_strong_tag.json; sourceTree = "<group>"; };
+		3B87682F1E4538190050D791 /* StringAttributeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributeName.swift; sourceTree = "<group>"; };
+		3B8768321E453B1D0050D791 /* test_italic_tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_italic_tag.json; sourceTree = "<group>"; };
+		3B8768371E453C820050D791 /* test_emphasis_tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_emphasis_tag.json; sourceTree = "<group>"; };
+		3B87683A1E453CF10050D791 /* test_link_tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_link_tag.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +400,7 @@
 				3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */,
 				3B1756DF1B8B9D8F001E55A2 /* Entity.swift */,
 				3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */,
+				3B87682F1E4538190050D791 /* StringAttributeName.swift */,
 				3A512F321BE16DAA0091A124 /* Platforms */,
 			);
 			path = Escapement;
@@ -390,7 +409,12 @@
 		3B1756CF1B8B9B2C001E55A2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3B1756D21B8B9B2C001E55A2 /* Tests.swift */,
+				3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */,
+				3B8768291E4531A90050D791 /* test_bold_tag.json */,
+				3B87682C1E4537C90050D791 /* test_strong_tag.json */,
+				3B8768321E453B1D0050D791 /* test_italic_tag.json */,
+				3B8768371E453C820050D791 /* test_emphasis_tag.json */,
+				3B87683A1E453CF10050D791 /* test_link_tag.json */,
 				3A512F391BE16DB10091A124 /* Platforms */,
 			);
 			path = Tests;
@@ -555,6 +579,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B87682E1E4537C90050D791 /* test_strong_tag.json in Resources */,
+				3B8768391E453C820050D791 /* test_emphasis_tag.json in Resources */,
+				3B8768351E453B920050D791 /* test_italic_tag.json in Resources */,
+				3B87683C1E453CF10050D791 /* test_link_tag.json in Resources */,
+				3B87682B1E4531A90050D791 /* test_bold_tag.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +598,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B87682D1E4537C90050D791 /* test_strong_tag.json in Resources */,
+				3B8768381E453C820050D791 /* test_emphasis_tag.json in Resources */,
+				3B8768361E453B920050D791 /* test_italic_tag.json in Resources */,
+				3B87683B1E453CF10050D791 /* test_link_tag.json in Resources */,
+				3B87682A1E4531A90050D791 /* test_bold_tag.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8768311E4538190050D791 /* StringAttributeName.swift in Sources */,
 				3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */,
 				3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */,
 				3A512F481BE1716F0091A124 /* Document.swift in Sources */,
@@ -624,7 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A512F401BE16E300091A124 /* Tests.swift in Sources */,
+				3A512F401BE16E300091A124 /* EscapementTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +667,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8768301E4538190050D791 /* StringAttributeName.swift in Sources */,
 				3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */,
 				3B1756E71B8B9D8F001E55A2 /* UIFontDescriptor.swift in Sources */,
 				3B1756E61B8B9D8F001E55A2 /* Entity.swift in Sources */,
@@ -644,7 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B1756D31B8B9B2C001E55A2 /* Tests.swift in Sources */,
+				3B1756D31B8B9B2C001E55A2 /* EscapementTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +738,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A99117D1C63F79700A2FEC1 /* tvOS-Application.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/tvOS";
 				INFOPLIST_FILE = Tests/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -713,6 +750,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A99117D1C63F79700A2FEC1 /* tvOS-Application.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/tvOS";
 				INFOPLIST_FILE = Tests/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -783,6 +821,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A9911711C63F79700A2FEC1 /* iOS-Application.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Tests/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -794,6 +833,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A9911711C63F79700A2FEC1 /* iOS-Application.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Tests/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,0 +1,11 @@
+[
+  {
+    "entities": [
+      {
+        "html_tag": "em",
+        "position": [17, 23],
+      }
+    ],
+    "text": "This text has an italic word."
+  }
+]
