@@ -1,0 +1,54 @@
+language: objective-c
+osx_image: xcode8
+install:
+  - carthage bootstrap --no-use-binaries
+matrix:
+  include:
+
+    # iOS 9.3
+    - script:
+      - >-
+        xcodebuild
+        build-for-testing test-without-building
+        -project Escapement.xcodeproj
+        -scheme Escapement-iOS
+        -sdk iphonesimulator
+        -destination "platform=iOS Simulator,name=iPhone 6s,OS=9.3"
+        -configuration Debug
+
+    # iOS 10.1
+    - script:
+      - >-
+        xcodebuild
+        build-for-testing test-without-building
+        -project Escapement.xcodeproj
+        -scheme Escapement-iOS
+        -sdk iphonesimulator
+        -destination "platform=iOS Simulator,name=iPhone 7,OS=10.1"
+        -configuration Debug
+
+    # tvOS 9.2
+    - script:
+      - >-
+        xcodebuild
+        build-for-testing test-without-building
+        -project Escapement.xcodeproj
+        -scheme Escapement-tvOS
+        -sdk appletvsimulator
+        -destination "platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2"
+        -configuration Debug
+
+    # tvOS 10.0
+    - script:
+      - >-
+        xcodebuild
+        build-for-testing test-without-building
+        -project Escapement.xcodeproj
+        -scheme Escapement-tvOS
+        -sdk appletvsimulator
+        -destination "platform=tvOS Simulator,name=Apple TV 1080p,OS=10.0"
+        -configuration Debug
+
+    # Carthage
+    - script:
+      - carthage build --no-skip-current
