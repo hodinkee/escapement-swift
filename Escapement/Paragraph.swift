@@ -24,8 +24,8 @@ struct Paragraph {
 extension Paragraph {
     func attributedString(stylesheet: Stylesheet) -> NSAttributedString {
         var attributes = stylesheet["*"]
-        attributes[BoldTagAttributeName] = false as AnyObject
-        attributes[ItalicTagAttributeName] = false as AnyObject
+        attributes[BoldTagAttributeName] = false
+        attributes[ItalicTagAttributeName] = false
 
         let string = NSMutableAttributedString(string: text, attributes: attributes)
 

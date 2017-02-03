@@ -16,10 +16,16 @@ public struct Document {
 
 extension Document {
     public func attributedString(stylesheet: Stylesheet) -> NSAttributedString {
-        return paragraphs.lazy
-            .map({ $0.attributedString(stylesheet: stylesheet) })
-            .joined(separator: { NSAttributedString(string: "\n") })
-            .reduce(NSAttributedString(string: ""), +)
+        let mutableAttributedString = NSMutableAttributedString(string: "")
+
+        for (index, paragraph) in paragraphs.enumerated() {
+            if index != 0 {
+                mutableAttributedString.append(NSAttributedString(string: "\n"))
+            }
+            mutableAttributedString.append(paragraph.attributedString(stylesheet: stylesheet))
+        }
+
+        return NSAttributedString(attributedString: mutableAttributedString)
     }
 }
 
@@ -48,19 +54,4 @@ public struct DocumentEncoder: EncoderType {
     public static func encode(_ document: Document) -> Any {
         return ParagraphEncoder.encodeSequence(document.paragraphs)
     }
-}
-
-extension Sequence {
-    fileprivate func joined(separator: @escaping () -> Iterator.Element) -> AnySequence<Iterator.Element> {
-        return AnySequence(sequence(state: (makeIterator(), false), next: { (state: inout (Iterator, Bool)) -> Iterator.Element? in
-            defer { state.1 = !state.1 }
-            return state.1 ? separator() : state.0.next()
-        }))
-    }
-}
-
-fileprivate func + (lhs: NSAttributedString, rhs: NSAttributedString) -> NSAttributedString {
-    let string = NSMutableAttributedString(attributedString: lhs)
-    string.append(rhs)
-    return string
 }

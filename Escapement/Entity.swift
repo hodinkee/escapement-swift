@@ -22,7 +22,7 @@ struct Entity {
 
     var href: URL? {
         if tag == "a" {
-            return (attributes?["href"] as? String).flatMap({ URL(string: $0) })
+            return (attributes?["href"] as? String).flatMap(URL.init)
         }
         return nil
     }
