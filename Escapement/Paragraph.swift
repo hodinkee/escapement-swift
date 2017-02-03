@@ -22,7 +22,7 @@ struct Paragraph {
 }
 
 extension Paragraph {
-    func attributedString(stylesheet stylesheet: Stylesheet) -> NSAttributedString {
+    func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
         var attributes = stylesheet["*"]
         attributes[BoldTagAttributeName] = false
         attributes[ItalicTagAttributeName] = false
@@ -42,7 +42,7 @@ extension Paragraph {
             case "em", "i":
                 string.addAttribute(ItalicTagAttributeName, value: true, range: range)
             case "s", "del":
-                string.addAttribute(NSStrikethroughStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: range)
+                string.addAttribute(NSStrikethroughStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: range)
             default:
                 ()
             }
@@ -50,14 +50,14 @@ extension Paragraph {
             string.addAttributes(stylesheet[entity.tag], range: range)
         }
 
-        string.enumerateAttributesInRange(NSRange(0..<string.length), options: [], usingBlock: { attributes, range, _ in
-            var descriptor = (attributes[NSFontAttributeName] as? UIFont)?.fontDescriptor()
+        string.enumerateAttributes(in: NSRange(0..<string.length), options: [], using: { attributes, range, _ in
+            var descriptor = (attributes[NSFontAttributeName] as? UIFont)?.fontDescriptor
 
-            if attributes[BoldTagAttributeName] as? Bool ?? false {
+            if let bold = attributes[BoldTagAttributeName] as? Bool, bold {
                 descriptor = descriptor?.boldFontDescriptor
             }
 
-            if attributes[ItalicTagAttributeName] as? Bool ?? false {
+            if let italic = attributes[ItalicTagAttributeName] as? Bool, italic {
                 descriptor = descriptor?.italicFontDescriptor
             }
 
@@ -71,20 +71,20 @@ extension Paragraph {
     }
 }
 
-extension Paragraph: Equatable {}
-
-func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
-    return lhs.text == rhs.text && lhs.entities == rhs.entities
+extension Paragraph: Equatable {
+    static func == (lhs: Paragraph, rhs: Paragraph) -> Bool {
+        return lhs.text == rhs.text && lhs.entities == rhs.entities
+    }
 }
 
 
 // MARK: - ParagraphDecoder
 
 struct ParagraphDecoder: DecoderType {
-    static func decode(JSON: Alexander.JSON) -> Paragraph? {
-        guard let
-            text = JSON["text"]?.stringValue,
-            entities = JSON["entities"]?.decodeArray(EntityDecoder)
+    static func decode(_ json: JSON) -> Paragraph? {
+        guard
+            let text = json["text"]?.stringValue,
+            let entities = json["entities"]?.decodeArray(EntityDecoder.self)
         else {
             return nil
         }
@@ -96,10 +96,10 @@ struct ParagraphDecoder: DecoderType {
 // MARK: - ParagraphEncoder
 
 struct ParagraphEncoder: EncoderType {
-    static func encode(value: Paragraph) -> AnyObject {
+    static func encode(_ paragraph: Paragraph) -> Any {
         return [
-            "text": value.text,
-            "entities": EntityEncoder.encodeSequence(value.entities)
+            "text": paragraph.text,
+            "entities": EntityEncoder.encodeSequence(paragraph.entities)
         ]
     }
 }

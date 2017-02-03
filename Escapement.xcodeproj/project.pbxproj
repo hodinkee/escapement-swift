@@ -15,12 +15,12 @@
 		3A512F481BE1716F0091A124 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
 		3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
 		3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
-		3A512F4D1BE1716F0091A124 /* FontDescriptorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */; };
+		3A512F4D1BE1716F0091A124 /* UIFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */; };
 		3B1756CC1B8B9B2C001E55A2 /* Escapement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */; };
 		3B1756D31B8B9B2C001E55A2 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* Tests.swift */; };
 		3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
 		3B1756E61B8B9D8F001E55A2 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
-		3B1756E71B8B9D8F001E55A2 /* FontDescriptorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */; };
+		3B1756E71B8B9D8F001E55A2 /* UIFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */; };
 		3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
 		3B1756E91B8B9D8F001E55A2 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */; };
 /* End PBXBuildFile section */
@@ -103,7 +103,7 @@
 		3B1756D21B8B9B2C001E55A2 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		3B1756DE1B8B9D8F001E55A2 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		3B1756DF1B8B9D8F001E55A2 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDescriptorExtensions.swift; sourceTree = "<group>"; };
+		3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontDescriptor.swift; sourceTree = "<group>"; };
 		3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -381,7 +381,7 @@
 				3B1756DE1B8B9D8F001E55A2 /* Document.swift */,
 				3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */,
 				3B1756DF1B8B9D8F001E55A2 /* Entity.swift */,
-				3B1756E01B8B9D8F001E55A2 /* FontDescriptorExtensions.swift */,
+				3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */,
 				3A512F321BE16DAA0091A124 /* Platforms */,
 			);
 			path = Escapement;
@@ -505,15 +505,21 @@
 				TargetAttributes = {
 					3A512F1A1BE16D400091A124 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0820;
 					};
 					3A512F231BE16D400091A124 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 					3B1756BF1B8B9B2C001E55A2 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0820;
 					};
 					3B1756CA1B8B9B2C001E55A2 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -609,7 +615,7 @@
 				3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */,
 				3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */,
 				3A512F481BE1716F0091A124 /* Document.swift in Sources */,
-				3A512F4D1BE1716F0091A124 /* FontDescriptorExtensions.swift in Sources */,
+				3A512F4D1BE1716F0091A124 /* UIFontDescriptor.swift in Sources */,
 				3A512F471BE1716F0091A124 /* Stylesheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,7 +633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */,
-				3B1756E71B8B9D8F001E55A2 /* FontDescriptorExtensions.swift in Sources */,
+				3B1756E71B8B9D8F001E55A2 /* UIFontDescriptor.swift in Sources */,
 				3B1756E61B8B9D8F001E55A2 /* Entity.swift in Sources */,
 				3B1756E91B8B9D8F001E55A2 /* Stylesheet.swift in Sources */,
 				3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */,
@@ -671,6 +677,7 @@
 				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -687,6 +694,7 @@
 				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -697,6 +705,7 @@
 				INFOPLIST_FILE = Tests/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -707,6 +716,7 @@
 				INFOPLIST_FILE = Tests/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -739,8 +749,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A9911731C63F79700A2FEC1 /* iOS-Framework.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -750,6 +758,7 @@
 				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -757,8 +766,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A9911731C63F79700A2FEC1 /* iOS-Framework.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -768,6 +775,7 @@
 				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -775,11 +783,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A9911711C63F79700A2FEC1 /* iOS-Application.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = Tests/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -787,11 +794,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A9911711C63F79700A2FEC1 /* iOS-Application.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = Tests/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

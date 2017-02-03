@@ -1,5 +1,5 @@
 //
-//  FontDescriptorExtensions.swift
+//  UIFontDescriptor.swift
 //  Escapement
 //
 //  Created by Caleb Davenport on 7/28/15.
@@ -8,10 +8,10 @@
 
 extension UIFontDescriptor {
     @nonobjc var boldFontDescriptor: UIFontDescriptor? {
-        return fontDescriptorWithSymbolicTraits(symbolicTraits.union(.TraitBold))
+        return withSymbolicTraits(symbolicTraits.union(.traitBold))
     }
 
     @nonobjc var italicFontDescriptor: UIFontDescriptor? {
-        return fontDescriptorWithSymbolicTraits(symbolicTraits.union(.TraitItalic))
+        return withSymbolicTraits(symbolicTraits.union(.traitItalic))
     }
 }

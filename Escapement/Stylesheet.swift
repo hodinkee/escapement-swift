@@ -15,9 +15,9 @@ public struct Stylesheet {
 
     // MARK: - Subscripts
 
-    public subscript(selector: String) -> [String: AnyObject] {
+    public subscript(selector: String) -> [String: Any] {
         get {
-            var dictionary = [String: AnyObject]()
+            var dictionary = [String: Any]()
 
             for rule in rules.filter({ $0.selectors.contains(selector) }) {
                 for (key, value) in rule.attributes {
@@ -47,18 +47,18 @@ extension Stylesheet {
 
         var selectors: [String]
 
-        var attributes: [String: AnyObject]
+        var attributes: [String: Any]
         
 
         // MARK: - Initializers
 
-        public init(selectors: [String], attributes: [String: AnyObject]) {
+        public init(selectors: [String], attributes: [String: Any]) {
             self.selectors = selectors
             self.attributes = attributes
         }
 
-        public init(selector: String, attributes: [String: AnyObject]) {
-            self.selectors = [ selector ]
+        public init(selector: String, attributes: [String: Any]) {
+            self.selectors = [selector]
             self.attributes = attributes
         }
     }

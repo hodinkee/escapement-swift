@@ -15,32 +15,37 @@ public struct Document {
 }
 
 extension Document {
-    public func attributedString(stylesheet stylesheet: Stylesheet) -> NSAttributedString {
+    public func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: "")
 
-        for (index, paragraph) in paragraphs.enumerate() {
+        for (index, paragraph) in paragraphs.enumerated() {
             if index != 0 {
-                mutableAttributedString.appendAttributedString(NSAttributedString(string: "\n"))
+                mutableAttributedString.append(NSAttributedString(string: "\n"))
             }
-            mutableAttributedString.appendAttributedString(paragraph.attributedString(stylesheet: stylesheet))
+            mutableAttributedString.append(paragraph.attributedString(with: stylesheet))
         }
 
         return NSAttributedString(attributedString: mutableAttributedString)
     }
+
+    @available(*, deprecated, renamed: "attributedString(with:)")
+    public func attributedString(stylesheet: Stylesheet) -> NSAttributedString {
+        return attributedString(with: stylesheet)
+    }
 }
 
-extension Document: Equatable {}
-
-public func ==(lhs: Document, rhs: Document) -> Bool {
-    return lhs.paragraphs == rhs.paragraphs
+extension Document: Equatable {
+    public static func == (lhs: Document, rhs: Document) -> Bool {
+        return lhs.paragraphs == rhs.paragraphs
+    }
 }
 
 
 // MARK: - DocumentDecoder
 
 public struct DocumentDecoder: DecoderType {
-    public static func decode(JSON: Alexander.JSON) -> Document? {
-        guard let paragraphs = JSON.decodeArray(ParagraphDecoder) else {
+    public static func decode(_ json: JSON) -> Document? {
+        guard let paragraphs = json.decodeArray(ParagraphDecoder.self) else {
             return nil
         }
         return Document(paragraphs: paragraphs)
@@ -51,7 +56,7 @@ public struct DocumentDecoder: DecoderType {
 // MARK: - DocumentEncoder
 
 public struct DocumentEncoder: EncoderType {
-    public static func encode(value: Document) -> AnyObject {
-        return ParagraphEncoder.encodeSequence(value.paragraphs)
+    public static func encode(_ document: Document) -> Any {
+        return ParagraphEncoder.encodeSequence(document.paragraphs)
     }
 }
