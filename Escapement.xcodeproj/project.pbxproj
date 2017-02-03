@@ -510,6 +510,7 @@
 					3A512F231BE16D400091A124 = {
 						CreatedOnToolsVersion = 7.1;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 					3B1756BF1B8B9B2C001E55A2 = {
 						CreatedOnToolsVersion = 6.4;
@@ -518,6 +519,7 @@
 					3B1756CA1B8B9B2C001E55A2 = {
 						CreatedOnToolsVersion = 6.4;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -781,8 +783,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A9911711C63F79700A2FEC1 /* iOS-Application.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = Tests/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -794,8 +794,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A9911711C63F79700A2FEC1 /* iOS-Application.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = Tests/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
