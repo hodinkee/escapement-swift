@@ -15,17 +15,22 @@ public struct Document {
 }
 
 extension Document {
-    public func attributedString(stylesheet: Stylesheet) -> NSAttributedString {
+    public func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: "")
 
         for (index, paragraph) in paragraphs.enumerated() {
             if index != 0 {
                 mutableAttributedString.append(NSAttributedString(string: "\n"))
             }
-            mutableAttributedString.append(paragraph.attributedString(stylesheet: stylesheet))
+            mutableAttributedString.append(paragraph.attributedString(with: stylesheet))
         }
 
         return NSAttributedString(attributedString: mutableAttributedString)
+    }
+
+    @available(*, deprecated, renamed: "attributedString(with:)")
+    public func attributedString(stylesheet: Stylesheet) -> NSAttributedString {
+        return attributedString(with: stylesheet)
     }
 }
 
@@ -39,7 +44,7 @@ extension Document: Equatable {
 // MARK: - DocumentDecoder
 
 public struct DocumentDecoder: DecoderType {
-    public static func decode(_ json: Alexander.JSON) -> Document? {
+    public static func decode(_ json: JSON) -> Document? {
         guard let paragraphs = json.decodeArray(ParagraphDecoder.self) else {
             return nil
         }

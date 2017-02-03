@@ -22,7 +22,7 @@ struct Paragraph {
 }
 
 extension Paragraph {
-    func attributedString(stylesheet: Stylesheet) -> NSAttributedString {
+    func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
         var attributes = stylesheet["*"]
         attributes[BoldTagAttributeName] = false
         attributes[ItalicTagAttributeName] = false
