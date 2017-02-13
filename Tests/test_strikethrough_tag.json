@@ -1,0 +1,11 @@
+[
+  {
+    "entities": [
+      {
+        "html_tag": "s",
+        "position": [16, 26]
+      }
+    ],
+    "text": "This text has a struck-out word."
+  }
+]

@@ -139,6 +139,33 @@ final class EscapementTests: XCTestCase {
 
         XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
     }
+
+    func testStrikethroughTag() {
+        let document = makeDocument(name: "test_strikethrough_tag")
+
+        let font = UIFont(name: "HelveticaNeue", size: 18)!
+
+        let expected = NSMutableAttributedString()
+        expected.append(NSAttributedString(string: "This text has a ", attributes: [
+            NSFontAttributeName: font,
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false]))
+        expected.append(NSAttributedString(string: "struck-out", attributes: [
+            NSFontAttributeName: font,
+            NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false]))
+        expected.append(NSAttributedString(string: " word.", attributes: [
+            NSFontAttributeName: font,
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false]))
+
+        let stylesheet = Stylesheet(rules: [
+            Stylesheet.Rule(selector: "*", attributes: [NSFontAttributeName: font])])
+
+        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
+    }
+
 }
 
 func makeDocument(name: String) -> Document? {
