@@ -166,6 +166,22 @@ final class EscapementTests: XCTestCase {
         XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
     }
 
+    func testStylesheetSubscriptSetter() {
+        let document = makeDocument(name: "test_plain")
+
+        let font = UIFont(name: "HelveticaNeue", size: 18)!
+
+        let expected = NSAttributedString(string: "This is an plain span of text.", attributes: [
+            NSFontAttributeName: font,
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false
+        ])
+
+        var stylesheet = Stylesheet()
+        stylesheet["*"] = [NSFontAttributeName: font]
+
+        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
+    }
 }
 
 func makeDocument(name: String) -> Document? {
