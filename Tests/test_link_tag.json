@@ -1,14 +1,10 @@
-[
-  {
-    "entities": [
-      {
-        "attributes": {
-          "href": "https://www.apple.com"
-        },
-        "html_tag": "a",
-        "position": [16, 20],
-      }
-    ],
-    "text": "This text has a link."
-  }
-]
+[{
+  "entities": [{
+    "attributes": {
+      "href": "https://www.apple.com"
+    },
+    "html_tag": "a",
+    "position": [16, 20],
+  }],
+  "text": "This text has a link."
+}]

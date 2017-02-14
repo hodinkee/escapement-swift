@@ -1,10 +1,7 @@
-[
-  {
-    "entities": [],
-    "text": "This is paragraph one."
-  },
-  {
-    "entities": [],
-    "text": "This is paragraph two."
-  }
-]
+[{
+  "entities": [],
+  "text": "This is paragraph one."
+}, {
+  "entities": [],
+  "text": "This is paragraph two."
+}]

@@ -1,11 +1,7 @@
-[
-  {
-    "entities": [
-      {
-        "html_tag": "strong",
-        "position": [16, 20],
-      }
-    ],
-    "text": "This text has a bold word."
-  }
-]
+[{
+  "entities": [{
+    "html_tag": "strong",
+    "position": [16, 20],
+  }],
+  "text": "This text has a bold word."
+}]

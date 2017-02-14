@@ -1,11 +1,7 @@
-[
-  {
-    "entities": [
-      {
-        "html_tag": "i",
-        "position": [17, 23],
-      }
-    ],
-    "text": "This text has an italic word."
-  }
-]
+[{
+  "entities": [{
+    "html_tag": "i",
+    "position": [17, 23],
+  }],
+  "text": "This text has an italic word."
+}]
