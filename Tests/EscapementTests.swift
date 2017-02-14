@@ -12,7 +12,9 @@ import Alexander
 
 final class EscapementTests: XCTestCase {
     func testBoldTag() {
-        let document = makeDocument(name: "test_bold_tag")
+        guard let document = makeDocument(name: "test_bold_tag") else {
+            XCTFail("Failed to load test document."); return
+        }
 
         let regularFont = UIFont(name: "HelveticaNeue", size: 18)!
         let boldFont = UIFont(name: "HelveticaNeue-Bold", size: 18)!
@@ -34,11 +36,13 @@ final class EscapementTests: XCTestCase {
         let stylesheet = Stylesheet(rules: [
             Stylesheet.Rule(selector: "*", attributes: [NSFontAttributeName: regularFont])])
 
-        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
     func testStrongTag() {
-        let document = makeDocument(name: "test_strong_tag")
+        guard let document = makeDocument(name: "test_strong_tag") else {
+            XCTFail("Failed to load test document."); return
+        }
 
         let regularFont = UIFont(name: "HelveticaNeue", size: 18)!
         let boldFont = UIFont(name: "HelveticaNeue-Bold", size: 18)!
@@ -60,11 +64,13 @@ final class EscapementTests: XCTestCase {
         let stylesheet = Stylesheet(rules: [
             Stylesheet.Rule(selector: "*", attributes: [NSFontAttributeName: regularFont])])
 
-        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
     func testItalicTag() {
-        let document = makeDocument(name: "test_italic_tag")
+        guard let document = makeDocument(name: "test_italic_tag") else {
+            XCTFail("Failed to load test document."); return
+        }
 
         let regularFont = UIFont(name: "HelveticaNeue", size: 18)!
         let italicFont = UIFont(name: "HelveticaNeue-Italic", size: 18)!
@@ -86,11 +92,13 @@ final class EscapementTests: XCTestCase {
         let stylesheet = Stylesheet(rules: [
             Stylesheet.Rule(selector: "*", attributes: [NSFontAttributeName: regularFont])])
 
-        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
     func testEmphasisTag() {
-        let document = makeDocument(name: "test_emphasis_tag")
+        guard let document = makeDocument(name: "test_emphasis_tag") else {
+            XCTFail("Failed to load test document."); return
+        }
 
         let regularFont = UIFont(name: "HelveticaNeue", size: 18)!
         let italicFont = UIFont(name: "HelveticaNeue-Italic", size: 18)!
@@ -112,11 +120,13 @@ final class EscapementTests: XCTestCase {
         let stylesheet = Stylesheet(rules: [
             Stylesheet.Rule(selector: "*", attributes: [NSFontAttributeName: regularFont])])
 
-        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
     func testLinkTag() {
-        let document = makeDocument(name: "test_link_tag")
+        guard let document = makeDocument(name: "test_link_tag") else {
+            XCTFail("Failed to load test document."); return
+        }
 
         let regularAttributes: [String: Any] = [
             StringAttributeName.escapementBold: false,
@@ -137,11 +147,13 @@ final class EscapementTests: XCTestCase {
 
         let stylesheet = Stylesheet()
 
-        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
     func testStrikethroughTag() {
-        let document = makeDocument(name: "test_strikethrough_tag")
+        guard let document = makeDocument(name: "test_strikethrough_tag") else {
+            XCTFail("Failed to load test document."); return
+        }
 
         let font = UIFont(name: "HelveticaNeue", size: 18)!
 
@@ -163,11 +175,13 @@ final class EscapementTests: XCTestCase {
         let stylesheet = Stylesheet(rules: [
             Stylesheet.Rule(selector: "*", attributes: [NSFontAttributeName: font])])
 
-        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
     func testStylesheetSubscriptSetter() {
-        let document = makeDocument(name: "test_plain")
+        guard let document = makeDocument(name: "test_plain") else {
+            XCTFail("Failed to load test document."); return
+        }
 
         let font = UIFont(name: "HelveticaNeue", size: 18)!
 
@@ -180,7 +194,7 @@ final class EscapementTests: XCTestCase {
         var stylesheet = Stylesheet()
         stylesheet["*"] = [NSFontAttributeName: font]
 
-        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
     func testDocumentMultipleParagraphs() {
