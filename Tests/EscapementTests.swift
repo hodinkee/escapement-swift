@@ -258,6 +258,8 @@ final class EscapementTests: XCTestCase {
         XCTAssertNotNil(boldTwo)
 
         XCTAssertEqual(boldOne, boldTwo)
+
+        XCTAssertNotEqual(foo, boldTwo)
     }
 }
 
