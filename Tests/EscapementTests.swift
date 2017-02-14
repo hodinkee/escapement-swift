@@ -182,6 +182,32 @@ final class EscapementTests: XCTestCase {
 
         XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
     }
+
+    func testDocumentMultipleParagraphs() {
+        guard let document = makeDocument(name: "test_paragraphs") else {
+            XCTFail("Failed to load test document."); return
+        }
+
+        let font = UIFont(name: "HelveticaNeue", size: 18)!
+
+        let expected = NSMutableAttributedString()
+        expected.append(NSAttributedString(string: "This is paragraph one.", attributes: [
+            NSFontAttributeName: font,
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false
+        ]))
+        expected.append(NSAttributedString(string: "\n"))
+        expected.append(NSAttributedString(string: "This is paragraph two.", attributes: [
+            NSFontAttributeName: font,
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false
+        ]))
+
+        var stylesheet = Stylesheet()
+        stylesheet["*"] = [NSFontAttributeName: font]
+
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+    }
 }
 
 func makeDocument(name: String) -> Document? {
