@@ -16,6 +16,8 @@
 		3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
 		3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
 		3A512F4D1BE1716F0091A124 /* UIFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */; };
+		3B1599A71E5358070020DF49 /* test_delete_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1599A61E5358070020DF49 /* test_delete_tag.json */; };
+		3B1599A81E5358070020DF49 /* test_delete_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1599A61E5358070020DF49 /* test_delete_tag.json */; };
 		3B1756CC1B8B9B2C001E55A2 /* Escapement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */; };
 		3B1756D31B8B9B2C001E55A2 /* EscapementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */; };
 		3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
@@ -116,6 +118,7 @@
 		3A9911831C63F79700A2FEC1 /* watchOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Base.xcconfig"; sourceTree = "<group>"; };
 		3A9911841C63F79700A2FEC1 /* watchOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Framework.xcconfig"; sourceTree = "<group>"; };
 		3A9911851C63F79700A2FEC1 /* watchOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		3B1599A61E5358070020DF49 /* test_delete_tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_delete_tag.json; sourceTree = "<group>"; };
 		3B1756C01B8B9B2C001E55A2 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756CB1B8B9B2C001E55A2 /* Escapement-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapementTests.swift; sourceTree = "<group>"; };
@@ -427,6 +430,7 @@
 				3B87683A1E453CF10050D791 /* test_link_tag.json */,
 				4E8A0D5B1E526A6900D71DE2 /* test_strikethrough_tag.json */,
 				4E8A0D631E53561100D71DE2 /* test_paragraphs.json */,
+				3B1599A61E5358070020DF49 /* test_delete_tag.json */,
 				3A512F391BE16DB10091A124 /* Platforms */,
 			);
 			path = Tests;
@@ -592,6 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B87682E1E4537C90050D791 /* test_strong_tag.json in Resources */,
+				3B1599A81E5358070020DF49 /* test_delete_tag.json in Resources */,
 				3B8768391E453C820050D791 /* test_emphasis_tag.json in Resources */,
 				3B8768351E453B920050D791 /* test_italic_tag.json in Resources */,
 				4E8A0D621E526D4900D71DE2 /* test_plain.json in Resources */,
@@ -614,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B87682D1E4537C90050D791 /* test_strong_tag.json in Resources */,
+				3B1599A71E5358070020DF49 /* test_delete_tag.json in Resources */,
 				3B8768381E453C820050D791 /* test_emphasis_tag.json in Resources */,
 				3B8768361E453B920050D791 /* test_italic_tag.json in Resources */,
 				4E8A0D611E526D4900D71DE2 /* test_plain.json in Resources */,

@@ -155,25 +155,53 @@ final class EscapementTests: XCTestCase {
             XCTFail("Failed to load test document."); return
         }
 
-        let font = UIFont(name: "HelveticaNeue", size: 18)!
+        let color = UIColor.red
 
         let expected = NSMutableAttributedString()
         expected.append(NSAttributedString(string: "This text has a ", attributes: [
-            NSFontAttributeName: font,
+            NSForegroundColorAttributeName: color,
             StringAttributeName.escapementBold: false,
             StringAttributeName.escapementItalic: false]))
         expected.append(NSAttributedString(string: "struck-out", attributes: [
-            NSFontAttributeName: font,
+            NSForegroundColorAttributeName: color,
             NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
             StringAttributeName.escapementBold: false,
             StringAttributeName.escapementItalic: false]))
         expected.append(NSAttributedString(string: " word.", attributes: [
-            NSFontAttributeName: font,
+            NSForegroundColorAttributeName: color,
             StringAttributeName.escapementBold: false,
             StringAttributeName.escapementItalic: false]))
 
         let stylesheet = Stylesheet(rules: [
-            Stylesheet.Rule(selector: "*", attributes: [NSFontAttributeName: font])])
+            Stylesheet.Rule(selector: "*", attributes: [NSForegroundColorAttributeName: color])])
+
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+    }
+
+    func testDeleteTag() {
+        guard let document = makeDocument(name: "test_delete_tag") else {
+            XCTFail("Failed to load test document."); return
+        }
+
+        let color = UIColor.red
+
+        let expected = NSMutableAttributedString()
+        expected.append(NSAttributedString(string: "This text has a ", attributes: [
+            NSForegroundColorAttributeName: color,
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false]))
+        expected.append(NSAttributedString(string: "struck-out", attributes: [
+            NSForegroundColorAttributeName: color,
+            NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false]))
+        expected.append(NSAttributedString(string: " word.", attributes: [
+            NSForegroundColorAttributeName: color,
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false]))
+
+        let stylesheet = Stylesheet(rules: [
+            Stylesheet.Rule(selector: "*", attributes: [NSForegroundColorAttributeName: color])])
 
         XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
