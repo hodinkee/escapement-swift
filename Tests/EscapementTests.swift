@@ -171,7 +171,7 @@ final class EscapementTests: XCTestCase {
 
         let font = UIFont(name: "HelveticaNeue", size: 18)!
 
-        let expected = NSAttributedString(string: "This is an plain span of text.", attributes: [
+        let expected = NSAttributedString(string: "This is an span of plain text.", attributes: [
             NSFontAttributeName: font,
             StringAttributeName.escapementBold: false,
             StringAttributeName.escapementItalic: false
