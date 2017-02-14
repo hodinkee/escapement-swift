@@ -42,10 +42,8 @@ final class EscapementTests: XCTestCase {
         expected.append(NSAttributedString(string: "bold", attributes: boldAttributes))
         expected.append(NSAttributedString(string: " word.", attributes: regularAttributes))
 
-        let stylesheetAttributes = [NSFontAttributeName: regularFont]
-
-        let stylesheet = Stylesheet(rules: [
-            Stylesheet.Rule(selector: "*", attributes: stylesheetAttributes)])
+        var stylesheet = Stylesheet()
+        stylesheet["*"] = [NSFontAttributeName: regularFont]
 
         XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
@@ -81,10 +79,8 @@ final class EscapementTests: XCTestCase {
         expected.append(NSAttributedString(string: "bold", attributes: boldAttributes))
         expected.append(NSAttributedString(string: " word.", attributes: regularAttributes))
 
-        let stylesheetAttributes = [NSFontAttributeName: regularFont]
-
-        let stylesheet = Stylesheet(rules: [
-            Stylesheet.Rule(selector: "*", attributes: stylesheetAttributes)])
+        var stylesheet = Stylesheet()
+        stylesheet["*"] = [NSFontAttributeName: regularFont]
 
         XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
@@ -120,10 +116,8 @@ final class EscapementTests: XCTestCase {
         expected.append(NSAttributedString(string: "italic", attributes: italicAttributes))
         expected.append(NSAttributedString(string: " word.", attributes: regularAttributes))
 
-        let stylesheetAttributes = [NSFontAttributeName: regularFont]
-
-        let stylesheet = Stylesheet(rules: [
-            Stylesheet.Rule(selector: "*", attributes: stylesheetAttributes)])
+        var stylesheet = Stylesheet()
+        stylesheet["*"] = [NSFontAttributeName: regularFont]
 
         XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
@@ -159,10 +153,8 @@ final class EscapementTests: XCTestCase {
         expected.append(NSAttributedString(string: "italic", attributes: italicAttributes))
         expected.append(NSAttributedString(string: " word.", attributes: regularAttributes))
 
-        let stylesheetAttributes = [NSFontAttributeName: regularFont]
-
-        let stylesheet = Stylesheet(rules: [
-            Stylesheet.Rule(selector: "*", attributes: stylesheetAttributes)])
+        var stylesheet = Stylesheet()
+        stylesheet["*"] = [NSFontAttributeName: regularFont]
 
         XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
@@ -272,54 +264,38 @@ final class EscapementTests: XCTestCase {
         XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
-    func testStylesheetSubscriptSetter() {
-        let document = makeDocument(name: "test_plain")
-        XCTAssertNotNil(document)
-
-        let font = UIFont(name: "HelveticaNeue", size: 18)!
-
-        let expected = NSAttributedString(string: "This is an span of plain text.", attributes: [
-            NSFontAttributeName: font,
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false
-        ])
-
-        var stylesheet = Stylesheet()
-        stylesheet["*"] = [NSFontAttributeName: font]
-
-        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
-    }
-
     func testDocumentMultipleParagraphs() {
-        let document = makeDocument(name: "test_paragraphs")
-        XCTAssertNotNil(document)
+        guard let document = makeDocument(name: "test_multiple_paragraphs") else {
+            XCTFail("Missing document.")
+            return
+        }
 
-        let font = UIFont(name: "HelveticaNeue", size: 18)!
+        guard let font = UIFont(name: "HelveticaNeue", size: 18) else {
+            XCTFail("Missing font.")
+            return
+        }
+
+        let attributes: [String: Any] = [
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false,
+            NSFontAttributeName: font]
 
         let expected = NSMutableAttributedString()
-        expected.append(NSAttributedString(string: "This is paragraph one.", attributes: [
-            NSFontAttributeName: font,
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false
-        ]))
+        expected.append(NSAttributedString(string: "This is paragraph one.", attributes: attributes))
         expected.append(NSAttributedString(string: "\n"))
-        expected.append(NSAttributedString(string: "This is paragraph two.", attributes: [
-            NSFontAttributeName: font,
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false
-        ]))
+        expected.append(NSAttributedString(string: "This is paragraph two.", attributes: attributes))
 
         var stylesheet = Stylesheet()
         stylesheet["*"] = [NSFontAttributeName: font]
 
-        XCTAssertEqual(expected, document?.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
     func testDocumentEquatable() {
-        let foo = makeDocument(name: "test_paragraphs")
+        let foo = makeDocument(name: "test_multiple_paragraphs")
         XCTAssertNotNil(foo)
 
-        let bar = makeDocument(name: "test_paragraphs")
+        let bar = makeDocument(name: "test_multiple_paragraphs")
         XCTAssertNotNil(bar)
 
         XCTAssertEqual(foo, bar)
