@@ -1,0 +1,10 @@
+[{
+  "entities": [{
+    "html_tag": "strong",
+    "position": [5, 12],
+  }, {
+    "html_tag": "em",
+    "position": [8, 17],
+  }],
+  "text": "Here is some text."
+}]

@@ -310,6 +310,65 @@ final class EscapementTests: XCTestCase {
 
         XCTAssertNotEqual(foo, boldTwo)
     }
+
+    func testOverlappingBoldEmphasisTags() {
+        guard let document = makeDocument(name: "test_overlapping_strong_emphasis_tags") else {
+            XCTFail("Missing document.")
+            return
+        }
+
+        guard let regularFont = UIFont(name: "HelveticaNeue", size: 18) else {
+            XCTFail("Missing regular font.")
+            return
+        }
+
+        guard let boldFont = UIFont(name: "HelveticaNeue-Bold", size: 18) else {
+            XCTFail("Missing bold font.")
+            return
+        }
+
+        guard let italicFont = UIFont(name: "HelveticaNeue-Italic", size: 18) else {
+            XCTFail("Missing italic font.")
+            return
+        }
+
+        guard let boldItalicFont = UIFont(name: "HelveticaNeue-BoldItalic", size: 18) else {
+            XCTFail("Missing bold italic font.")
+            return
+        }
+
+        let regularAttributes: [String: Any] = [
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false,
+            NSFontAttributeName: regularFont]
+
+        let boldAttributes: [String: Any] = [
+            StringAttributeName.escapementBold: true,
+            StringAttributeName.escapementItalic: false,
+            NSFontAttributeName: boldFont]
+
+        let italicAttributes: [String: Any] = [
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: true,
+            NSFontAttributeName: italicFont]
+
+        let boldItalicAttributes: [String: Any] = [
+            StringAttributeName.escapementBold: true,
+            StringAttributeName.escapementItalic: true,
+            NSFontAttributeName: boldItalicFont]
+
+        let expected = NSMutableAttributedString()
+        expected.append(NSAttributedString(string: "Here ", attributes: regularAttributes))
+        expected.append(NSAttributedString(string: "is ", attributes: boldAttributes))
+        expected.append(NSAttributedString(string: "some", attributes: boldItalicAttributes))
+        expected.append(NSAttributedString(string: " text", attributes: italicAttributes))
+        expected.append(NSAttributedString(string: ".", attributes: regularAttributes))
+
+        var stylesheet = Stylesheet()
+        stylesheet["*"] = [NSFontAttributeName: regularFont]
+
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+    }
 }
 
 func makeDocument(name: String) -> Document? {
