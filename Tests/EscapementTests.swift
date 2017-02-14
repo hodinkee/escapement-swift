@@ -250,6 +250,14 @@ final class EscapementTests: XCTestCase {
         XCTAssertNotNil(bar)
 
         XCTAssertEqual(foo, bar)
+
+        let boldOne = makeDocument(name: "test_bold_tag")
+        XCTAssertNotNil(boldOne)
+
+        let boldTwo = makeDocument(name: "test_bold_tag")
+        XCTAssertNotNil(boldTwo)
+
+        XCTAssertEqual(boldOne, boldTwo)
     }
 }
 
