@@ -1,6 +1,6 @@
 [{
   "entities": [{
-    "html_tag": "s",
+    "html_tag": "del",
     "position": [16, 26]
   }],
   "text": "This text has a struck-out word."
