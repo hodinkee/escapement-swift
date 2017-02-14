@@ -18,6 +18,8 @@
 		3A512F4D1BE1716F0091A124 /* UIFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */; };
 		3B1599A71E5358070020DF49 /* test_delete_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1599A61E5358070020DF49 /* test_delete_tag.json */; };
 		3B1599A81E5358070020DF49 /* test_delete_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1599A61E5358070020DF49 /* test_delete_tag.json */; };
+		3B1599AA1E537E7C0020DF49 /* test_underline_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1599A91E537E7C0020DF49 /* test_underline_tag.json */; };
+		3B1599AB1E537E7C0020DF49 /* test_underline_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1599A91E537E7C0020DF49 /* test_underline_tag.json */; };
 		3B1756CC1B8B9B2C001E55A2 /* Escapement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */; };
 		3B1756D31B8B9B2C001E55A2 /* EscapementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */; };
 		3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Document.swift */; };
@@ -119,6 +121,7 @@
 		3A9911841C63F79700A2FEC1 /* watchOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Framework.xcconfig"; sourceTree = "<group>"; };
 		3A9911851C63F79700A2FEC1 /* watchOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		3B1599A61E5358070020DF49 /* test_delete_tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_delete_tag.json; sourceTree = "<group>"; };
+		3B1599A91E537E7C0020DF49 /* test_underline_tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_underline_tag.json; sourceTree = "<group>"; };
 		3B1756C01B8B9B2C001E55A2 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756CB1B8B9B2C001E55A2 /* Escapement-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapementTests.swift; sourceTree = "<group>"; };
@@ -431,6 +434,7 @@
 				4E8A0D5B1E526A6900D71DE2 /* test_strikethrough_tag.json */,
 				4E8A0D631E53561100D71DE2 /* test_paragraphs.json */,
 				3B1599A61E5358070020DF49 /* test_delete_tag.json */,
+				3B1599A91E537E7C0020DF49 /* test_underline_tag.json */,
 				3A512F391BE16DB10091A124 /* Platforms */,
 			);
 			path = Tests;
@@ -602,6 +606,7 @@
 				4E8A0D621E526D4900D71DE2 /* test_plain.json in Resources */,
 				4E8A0D651E53561100D71DE2 /* test_paragraphs.json in Resources */,
 				3B87683C1E453CF10050D791 /* test_link_tag.json in Resources */,
+				3B1599AB1E537E7C0020DF49 /* test_underline_tag.json in Resources */,
 				4E8A0D5E1E526A7200D71DE2 /* test_strikethrough_tag.json in Resources */,
 				3B87682B1E4531A90050D791 /* test_bold_tag.json in Resources */,
 			);
@@ -625,6 +630,7 @@
 				4E8A0D611E526D4900D71DE2 /* test_plain.json in Resources */,
 				4E8A0D641E53561100D71DE2 /* test_paragraphs.json in Resources */,
 				3B87683B1E453CF10050D791 /* test_link_tag.json in Resources */,
+				3B1599AA1E537E7C0020DF49 /* test_underline_tag.json in Resources */,
 				4E8A0D5D1E526A7100D71DE2 /* test_strikethrough_tag.json in Resources */,
 				3B87682A1E4531A90050D791 /* test_bold_tag.json in Resources */,
 			);

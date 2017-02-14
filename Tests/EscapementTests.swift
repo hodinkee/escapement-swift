@@ -247,6 +247,31 @@ final class EscapementTests: XCTestCase {
         XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
+    func testUnderlineTag() {
+        guard let document = makeDocument(name: "test_underline_tag") else {
+            XCTFail("Missing document.")
+            return
+        }
+
+        let regularAttributes: [String: Any] = [
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false]
+
+        let underlineAttributes: [String: Any] = [
+            StringAttributeName.escapementBold: false,
+            StringAttributeName.escapementItalic: false,
+            NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
+
+        let expected = NSMutableAttributedString()
+        expected.append(NSAttributedString(string: "This text has an ", attributes: regularAttributes))
+        expected.append(NSAttributedString(string: "underlined", attributes: underlineAttributes))
+        expected.append(NSAttributedString(string: " word.", attributes: regularAttributes))
+
+        let stylesheet = Stylesheet()
+
+        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+    }
+
     func testStylesheetSubscriptSetter() {
         let document = makeDocument(name: "test_plain")
         XCTAssertNotNil(document)

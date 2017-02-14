@@ -37,6 +37,8 @@ extension Paragraph {
                 string.addAttribute(StringAttributeName.escapementItalic, value: true, range: range)
             case "s", "del":
                 string.addAttribute(NSStrikethroughStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: range)
+            case "u":
+                string.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: range)
             default:
                 ()
             }
