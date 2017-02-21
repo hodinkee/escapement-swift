@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Alexander
 @testable import Escapement
 
 final class EscapementTests: XCTestCase {
@@ -380,9 +379,9 @@ func makeDocument(name: String) -> Document? {
         return nil
     }
 
-    guard let json = try? JSON(data: data) else {
+    guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else {
         return nil
     }
 
-    return DocumentDecoder.decode(json)
+    return (json as? [Any]).flatMap(Document.init)
 }

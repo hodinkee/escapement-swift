@@ -6,12 +6,18 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-import Alexander
-
-// MARK: - Document
-
 public struct Document {
     var paragraphs: [Paragraph]
+}
+
+extension Document {
+    public func makeJSON() -> [Any] {
+        return paragraphs.map({ $0.makeJSON() })
+    }
+
+    public init?(json: [Any]) {
+        self.paragraphs = json.flatMap({ $0 as? [String: Any] }).flatMap(Paragraph.init)
+    }
 }
 
 extension Document {
@@ -40,23 +46,8 @@ extension Document: Equatable {
     }
 }
 
+@available(*, unavailable, message: "Use Document(json:) instead.")
+typealias DocumentDecoder = Void
 
-// MARK: - DocumentDecoder
-
-public struct DocumentDecoder: DecoderType {
-    public static func decode(_ json: JSON) -> Document? {
-        guard let paragraphs = json.decodeArray(ParagraphDecoder.self) else {
-            return nil
-        }
-        return Document(paragraphs: paragraphs)
-    }
-}
-
-
-// MARK: - DocumentEncoder
-
-public struct DocumentEncoder: EncoderType {
-    public static func encode(_ document: Document) -> Any {
-        return ParagraphEncoder.encodeSequence(document.paragraphs)
-    }
-}
+@available(*, unavailable, message: "Use Document.makeJSON() instead.")
+typealias DocumentEncoder = Void
