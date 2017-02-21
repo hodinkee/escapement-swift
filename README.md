@@ -20,7 +20,7 @@ If you use [Carthage][] to manage your dependencies, add
 Escapement to your `Cartfile`:
 
 ```
-github "hodinkee/escapement-swift" ~> 4.0
+github "hodinkee/escapement-swift" ~> 5.0
 ```
 
 ## Usage
