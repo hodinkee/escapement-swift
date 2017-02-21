@@ -47,7 +47,7 @@ extension Document: Equatable {
 }
 
 @available(*, unavailable, message: "Use Document(json:) instead.")
-typealias DocumentDecoder = Void
+public typealias DocumentDecoder = Void
 
 @available(*, unavailable, message: "Use Document.makeJSON() instead.")
-typealias DocumentEncoder = Void
+public typealias DocumentEncoder = Void
