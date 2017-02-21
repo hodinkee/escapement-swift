@@ -368,6 +368,22 @@ final class EscapementTests: XCTestCase {
 
         XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
+
+    func testJSONEncodeDecode() {
+        guard let one = makeDocument(name: "test_overlapping_strong_emphasis_tags") else {
+            XCTFail("Missing document.")
+            return
+        }
+
+        let json = one.makeJSON()
+
+        guard let two = Document.init(json: json) else {
+            XCTFail("Missing document.")
+            return
+        }
+
+        XCTAssertEqual(one, two)
+    }
 }
 
 func makeDocument(name: String) -> Document? {
