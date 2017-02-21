@@ -6,13 +6,30 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-import Alexander
-
-// MARK: - Paragraph
-
 struct Paragraph {
     var text: String
     var entities: [Entity]
+}
+
+extension Paragraph {
+    func makeJSON() -> [String: Any] {
+        var dictionary = [String: Any]()
+        dictionary["text"] = text
+        dictionary["entities"] = entities.map({ $0.makeJSON() })
+        return dictionary
+    }
+
+    init?(json: [String: Any]) {
+        guard let text = json["text"] as? String else {
+            return nil
+        }
+        self.text = text
+
+        guard let entities = json["entities"] as? [Any] else {
+            return nil
+        }
+        self.entities = entities.flatMap({ $0 as? [String: Any] }).flatMap(Entity.init)
+    }
 }
 
 extension Paragraph {
@@ -70,30 +87,5 @@ extension Paragraph {
 extension Paragraph: Equatable {
     static func == (lhs: Paragraph, rhs: Paragraph) -> Bool {
         return lhs.text == rhs.text && lhs.entities == rhs.entities
-    }
-}
-
-// MARK: - ParagraphDecoder
-
-struct ParagraphDecoder: DecoderType {
-    static func decode(_ json: JSON) -> Paragraph? {
-        guard
-            let text = json["text"]?.stringValue,
-            let entities = json["entities"]?.decodeArray(EntityDecoder.self)
-        else {
-            return nil
-        }
-        return Paragraph(text: text, entities: entities)
-    }
-}
-
-// MARK: - ParagraphEncoder
-
-struct ParagraphEncoder: EncoderType {
-    static func encode(_ paragraph: Paragraph) -> Any {
-        return [
-            "text": paragraph.text,
-            "entities": EntityEncoder.encodeSequence(paragraph.entities)
-        ]
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Alexander
 @testable import Escapement
 
 final class EscapementTests: XCTestCase {
@@ -369,6 +368,22 @@ final class EscapementTests: XCTestCase {
 
         XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
+
+    func testJSONEncodeDecode() {
+        guard let one = makeDocument(name: "test_overlapping_strong_emphasis_tags") else {
+            XCTFail("Missing document.")
+            return
+        }
+
+        let json = one.makeJSON()
+
+        guard let two = Document.init(json: json) else {
+            XCTFail("Missing document.")
+            return
+        }
+
+        XCTAssertEqual(one, two)
+    }
 }
 
 func makeDocument(name: String) -> Document? {
@@ -380,9 +395,9 @@ func makeDocument(name: String) -> Document? {
         return nil
     }
 
-    guard let json = try? JSON(data: data) else {
+    guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else {
         return nil
     }
 
-    return DocumentDecoder.decode(json)
+    return (json as? [Any]).flatMap(Document.init)
 }
