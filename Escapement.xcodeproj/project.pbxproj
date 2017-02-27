@@ -706,7 +706,7 @@
 			baseConfigurationReference = 3A99117F1C63F79700A2FEC1 /* tvOS-Framework.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 8;
+				DYLIB_CURRENT_VERSION = 9;
 				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_VERSION = 3.0;
@@ -718,7 +718,7 @@
 			baseConfigurationReference = 3A99117F1C63F79700A2FEC1 /* tvOS-Framework.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 8;
+				DYLIB_CURRENT_VERSION = 9;
 				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_VERSION = 3.0;
@@ -751,7 +751,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A99114E1C63F79700A2FEC1 /* Debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -763,7 +763,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A9911501C63F79700A2FEC1 /* Release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -776,7 +776,7 @@
 			baseConfigurationReference = 3A9911731C63F79700A2FEC1 /* iOS-Framework.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 8;
+				DYLIB_CURRENT_VERSION = 9;
 				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_VERSION = 3.0;
@@ -788,7 +788,7 @@
 			baseConfigurationReference = 3A9911731C63F79700A2FEC1 /* iOS-Framework.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 8;
+				DYLIB_CURRENT_VERSION = 9;
 				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_VERSION = 3.0;
