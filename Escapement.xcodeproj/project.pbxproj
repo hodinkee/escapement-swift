@@ -709,7 +709,6 @@
 				DYLIB_CURRENT_VERSION = 8;
 				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
-				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -722,7 +721,6 @@
 				DYLIB_CURRENT_VERSION = 8;
 				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
-				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -781,7 +779,6 @@
 				DYLIB_CURRENT_VERSION = 8;
 				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
-				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -794,7 +791,6 @@
 				DYLIB_CURRENT_VERSION = 8;
 				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
-				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
