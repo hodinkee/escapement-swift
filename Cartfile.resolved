@@ -1,1 +1,2 @@
+github "apple/swift-protobuf" "0.9.27"
 github "jspahrsummers/xcconfigs" "0.10"

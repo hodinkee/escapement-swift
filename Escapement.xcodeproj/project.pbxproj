@@ -29,6 +29,8 @@
 		3B1756E71B8B9D8F001E55A2 /* UIFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */; };
 		3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
 		3B1756E91B8B9D8F001E55A2 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */; };
+		3B2F4D4D1E81ADCC0043D21B /* Escapement.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F4D4C1E81ADCC0043D21B /* Escapement.pb.swift */; };
+		3B2F4D4E1E81ADCC0043D21B /* Escapement.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2F4D4C1E81ADCC0043D21B /* Escapement.pb.swift */; };
 		3B87682A1E4531A90050D791 /* test_bold_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B8768291E4531A90050D791 /* test_bold_tag.json */; };
 		3B87682B1E4531A90050D791 /* test_bold_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B8768291E4531A90050D791 /* test_bold_tag.json */; };
 		3B87682D1E4537C90050D791 /* test_strong_tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B87682C1E4537C90050D791 /* test_strong_tag.json */; };
@@ -133,6 +135,7 @@
 		3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontDescriptor.swift; sourceTree = "<group>"; };
 		3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
+		3B2F4D4C1E81ADCC0043D21B /* Escapement.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Escapement.pb.swift; sourceTree = "<group>"; };
 		3B8768291E4531A90050D791 /* test_bold_tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_bold_tag.json; sourceTree = "<group>"; };
 		3B87682C1E4537C90050D791 /* test_strong_tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_strong_tag.json; sourceTree = "<group>"; };
 		3B87682F1E4538190050D791 /* StringAttributeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributeName.swift; sourceTree = "<group>"; };
@@ -419,6 +422,7 @@
 				3B1756DF1B8B9D8F001E55A2 /* Entity.swift */,
 				3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */,
 				3B87682F1E4538190050D791 /* StringAttributeName.swift */,
+				3B2F4D4C1E81ADCC0043D21B /* Escapement.pb.swift */,
 				3A512F321BE16DAA0091A124 /* Platforms */,
 			);
 			path = Escapement;
@@ -491,6 +495,7 @@
 				3A512F201BE16D400091A124 /* Sources */,
 				3A512F211BE16D400091A124 /* Frameworks */,
 				3A512F221BE16D400091A124 /* Resources */,
+				3B2F4D511E81AE2E0043D21B /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -527,6 +532,7 @@
 				3B1756C71B8B9B2C001E55A2 /* Sources */,
 				3B1756C81B8B9B2C001E55A2 /* Frameworks */,
 				3B1756C91B8B9B2C001E55A2 /* Resources */,
+				3B2F4D4F1E81ADFC0043D21B /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -642,6 +648,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B2F4D4F1E81ADFC0043D21B /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftProtobuf.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		3B2F4D511E81AE2E0043D21B /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftProtobuf.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A512F161BE16D400091A124 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -650,6 +689,7 @@
 				3B8768311E4538190050D791 /* StringAttributeName.swift in Sources */,
 				3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */,
 				3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */,
+				3B2F4D4E1E81ADCC0043D21B /* Escapement.pb.swift in Sources */,
 				3A512F481BE1716F0091A124 /* Document.swift in Sources */,
 				3A512F4D1BE1716F0091A124 /* UIFontDescriptor.swift in Sources */,
 				3A512F471BE1716F0091A124 /* Stylesheet.swift in Sources */,
@@ -671,6 +711,7 @@
 				3B8768301E4538190050D791 /* StringAttributeName.swift in Sources */,
 				3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */,
 				3B1756E71B8B9D8F001E55A2 /* UIFontDescriptor.swift in Sources */,
+				3B2F4D4D1E81ADCC0043D21B /* Escapement.pb.swift in Sources */,
 				3B1756E61B8B9D8F001E55A2 /* Entity.swift in Sources */,
 				3B1756E91B8B9D8F001E55A2 /* Stylesheet.swift in Sources */,
 				3B1756E51B8B9D8F001E55A2 /* Document.swift in Sources */,
@@ -707,6 +748,7 @@
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 8;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/tvOS";
 				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -720,6 +762,7 @@
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 8;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/tvOS";
 				INFOPLIST_FILE = Escapement/Platforms/tvOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -779,6 +822,7 @@
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 8;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -792,6 +836,7 @@
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 8;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Escapement/Platforms/iOS/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hodinkee.$(PRODUCT_NAME:rfc1034identifier)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package hodinkee.protobuf.escapement;
+
+option swift_prefix="ProtoEscapement";
+
+message Element {
+  oneof kind {
+    Paragraph paragraph = 1;
+    OrderedList ordered_list = 2;
+    UnorderedList unordered_list = 3;
+  }
+}
+
+message Paragraph {
+  // The paragraph's raw text. Required.
+  string text = 1;
+
+  // The paragraph's associated entities. Optional.
+  repeated Entity entities = 2;
+}
+
+message OrderedList {
+  // The list's items. Required.
+  repeated Paragraph items = 1;
+}
+
+message UnorderedList {
+  // The list's items. Required.
+  repeated Paragraph items = 1;
+}
+
+message Entity {
+  // The HTML tag. Required.
+  string tag = 1;
+
+  // A half-closed interval, where possible values are
+  // within [lower_bound, upper_bound).
+  message Range {
+    uint32 lower_bound = 1;
+    uint32 upper_bound = 2;
+  }
+
+  // The position of the entity within it's parent
+  // paragraph's text. Required.
+  Range position = 2;
+
+  // The associated attributes. Optional.
+  map<string, string> attributes = 3;
+}
