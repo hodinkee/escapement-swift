@@ -63,10 +63,6 @@ extension Document {
     init?(json: [Any]) {
         self.paragraphs = json.flatMap({ $0 as? [String: Any] }).flatMap(Paragraph.init)
     }
-
-    func makeJSON() -> [Any] {
-        return paragraphs.map({ $0.makeJSON() })
-    }
 }
 
 extension Paragraph {
@@ -80,13 +76,6 @@ extension Paragraph {
             return nil
         }
         self.entities = entities.flatMap({ $0 as? [String: Any] }).flatMap(Entity.init)
-    }
-
-    func makeJSON() -> [String: Any] {
-        var dictionary = [String: Any]()
-        dictionary["text"] = text
-        dictionary["entities"] = entities.flatMap({ $0 as? Entity }).map({ $0.makeJSON() })
-        return dictionary
     }
 }
 
@@ -103,13 +92,5 @@ extension Entity {
         self.range = positions[0]..<positions[1]
 
         self.attributes = json["attributes"] as? [String: String] ?? [:]
-    }
-
-    func makeJSON() -> [String: Any] {
-        var dictionary = [String: Any]()
-        dictionary["html_tag"] = tag
-        dictionary["position"] = [range.lowerBound, range.upperBound]
-        dictionary["attributes"] = attributes
-        return dictionary
     }
 }
