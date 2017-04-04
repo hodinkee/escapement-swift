@@ -13,9 +13,3 @@ public protocol Entity {
 
     var attributes: [String: String] { get }
 }
-
-extension Entity {
-    var selector: Stylesheet.Selector {
-        return Stylesheet.Selector(tag)
-    }
-}

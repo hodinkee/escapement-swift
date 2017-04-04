@@ -15,7 +15,7 @@ public struct Stylesheet {
 
     // MARK: - Subscripts
 
-    public subscript(selector: Selector) -> [String: Any] {
+    public subscript(selector: String) -> [String: Any] {
         get {
             var dictionary = [String: Any]()
 
@@ -45,53 +45,21 @@ extension Stylesheet {
 
         // MARK: - Properties
 
-        var selectors: [Selector]
+        var selectors: [String]
 
         var attributes: [String: Any]
         
 
         // MARK: - Initializers
 
-        public init(selectors: [Selector], attributes: [String: Any]) {
+        public init(selectors: [String], attributes: [String: Any]) {
             self.selectors = selectors
             self.attributes = attributes
         }
 
-        public init(selector: Selector, attributes: [String: Any]) {
+        public init(selector: String, attributes: [String: Any]) {
             self.selectors = [selector]
             self.attributes = attributes
-        }
-    }
-}
-
-extension Stylesheet {
-    public struct Selector: RawRepresentable, ExpressibleByStringLiteral, Equatable {
-
-        // MARK: - Properties
-
-        public let rawValue: String
-
-
-        // MARK: - Initializers
-
-        public init(_ value: String) {
-            self.rawValue = value.lowercased()
-        }
-
-        public init(rawValue: String) {
-            self.init(rawValue)
-        }
-
-        public init(stringLiteral value: String) {
-            self.init(value)
-        }
-
-        public init(unicodeScalarLiteral value: String) {
-            self.init(value)
-        }
-
-        public init(extendedGraphemeClusterLiteral value: String) {
-            self.init(value)
         }
     }
 }
