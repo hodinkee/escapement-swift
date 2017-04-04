@@ -36,7 +36,7 @@ extension Paragraph {
                 ()
             }
 
-            string.addAttributes(stylesheet[entity.tag], range: range)
+            string.addAttributes(stylesheet[Stylesheet.Selector(entity.tag)], range: range)
         }
 
         string.enumerateAttributes(in: NSRange(0..<string.length), options: [], using: { attributes, range, _ in
