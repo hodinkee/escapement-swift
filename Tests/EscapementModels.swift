@@ -8,12 +8,12 @@
 
 @testable import Escapement
 
-struct Document: Escapement.Document {
-    var elements: [Escapement.Element] {
-        return paragraphs
-    }
-
+struct Document {
     var paragraphs: [Paragraph]
+
+    func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
+        return paragraphs.attributedString(with: stylesheet)
+    }
 }
 
 struct Paragraph: Escapement.Paragraph {
