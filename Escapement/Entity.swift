@@ -6,25 +6,34 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-struct Entity {
+public struct Entity {
 
     // MARK: - Properties
 
-    let tag: String
+    public var tag: String
 
-    let range: Range<Int>
+    public var range: Range<Int>
 
-    fileprivate let attributes: [String: Any]?
+    public var attributes: [String: String]?
 
-    var href: URL? {
-        if tag == "a" {
-            return (attributes?["href"] as? String).flatMap(URL.init)
-        }
-        return nil
+
+    // MARK: - Initializers
+
+    public init(tag: String, range: Range<Int>, attributes: [String: String]? = nil) {
+        self.tag = tag
+        self.range = range
+        self.attributes = attributes
     }
 }
 
 extension Entity {
+    var href: URL? {
+        if tag == "a" {
+            return attributes?["href"].flatMap(URL.init)
+        }
+        return nil
+    }
+
     func makeJSON() -> [String: Any] {
         var dictionary = [String: Any]()
         dictionary["html_tag"] = tag
@@ -44,12 +53,12 @@ extension Entity {
         }
         self.range = positions[0]..<positions[1]
 
-        self.attributes = json["attributes"] as? [String: Any]
+        self.attributes = json["attributes"] as? [String: String]
     }
 }
 
 extension Entity: Equatable {
-    static func == (lhs: Entity, rhs: Entity) -> Bool {
+    public static func == (lhs: Entity, rhs: Entity) -> Bool {
         return lhs.tag == rhs.tag
             && lhs.range == rhs.range
             && lhs.href == rhs.href

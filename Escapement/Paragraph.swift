@@ -6,9 +6,21 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-struct Paragraph {
-    var text: String
-    var entities: [Entity]
+public struct Paragraph {
+
+    // MARK: - Properties
+
+    public var text: String
+
+    public var entities: [Entity]
+
+
+    // MARK: - Initializers
+
+    public init(text: String, entities: [Entity] = []) {
+        self.text = text
+        self.entities = entities
+    }
 }
 
 extension Paragraph {
@@ -85,7 +97,7 @@ extension Paragraph {
 }
 
 extension Paragraph: Equatable {
-    static func == (lhs: Paragraph, rhs: Paragraph) -> Bool {
+    public static func == (lhs: Paragraph, rhs: Paragraph) -> Bool {
         return lhs.text == rhs.text && lhs.entities == rhs.entities
     }
 }
