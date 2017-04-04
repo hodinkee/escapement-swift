@@ -8,10 +8,14 @@
 
 extension Collection where Iterator.Element: Element {
     public func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: "")
+        if isEmpty {
+            return NSAttributedString()
+        }
+
+        let mutableAttributedString = NSMutableAttributedString()
 
         for (index, element) in enumerated() {
-            if index != 0 {
+            if index > 0 {
                 mutableAttributedString.append(NSAttributedString(string: "\n"))
             }
             mutableAttributedString.append(element.attributedString(with: stylesheet))

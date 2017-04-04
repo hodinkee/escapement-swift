@@ -14,20 +14,24 @@ public protocol List: Element {
 
 extension List {
     public func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
-        guard !items.isEmpty else { return NSAttributedString() }
+        if items.isEmpty {
+            return NSAttributedString()
+        }
 
         return attributedString(with: stylesheet, depth: 0)
     }
 
     private func attributedString(with stylesheet: Stylesheet, depth: Int) -> NSAttributedString {
-        guard !items.isEmpty else { return NSAttributedString() }
+        if items.isEmpty {
+            return NSAttributedString()
+        }
 
         var trueIndex: Int = 0
 
         let attributedString = NSMutableAttributedString()
 
         for (index, item) in items.enumerated() {
-            if index != 0 {
+            if index > 0 {
                 attributedString.append(NSAttributedString(string: "\n"))
             }
             if let list = item as? List {
