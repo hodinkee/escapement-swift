@@ -290,26 +290,6 @@ final class EscapementTests: XCTestCase {
         XCTAssertEqual(expected, document.attributedString(with: stylesheet))
     }
 
-//    func testDocumentEquatable() {
-//        let foo = makeDocument(name: "test_multiple_paragraphs")
-//        XCTAssertNotNil(foo)
-//
-//        let bar = makeDocument(name: "test_multiple_paragraphs")
-//        XCTAssertNotNil(bar)
-//
-//        XCTAssertEqual(foo, bar)
-//
-//        let boldOne = makeDocument(name: "test_bold_tag")
-//        XCTAssertNotNil(boldOne)
-//
-//        let boldTwo = makeDocument(name: "test_bold_tag")
-//        XCTAssertNotNil(boldTwo)
-//
-//        XCTAssertEqual(boldOne, boldTwo)
-//
-//        XCTAssertNotEqual(foo, boldTwo)
-//    }
-
     func testOverlappingBoldEmphasisTags() {
         guard let document = makeDocument(name: "test_overlapping_strong_emphasis_tags") else {
             XCTFail("Missing document.")

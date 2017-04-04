@@ -61,12 +61,6 @@ extension Document {
     }
 }
 
-extension Document: Equatable {
-    static func ==(lhs: Document, rhs: Document) -> Bool {
-        return true
-    }
-}
-
 extension Paragraph {
     init?(json: [String: Any]) {
         guard let text = json["text"] as? String else {
@@ -87,13 +81,6 @@ extension Paragraph {
         return dictionary
     }
 }
-
-//extension Paragraph: Equatable {
-//    static func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
-//        return lhs.text == rhs.text
-//            && lhs.entities == rhs.entities
-//    }
-//}
 
 extension Entity {
     init?(json: [String: Any]) {
@@ -118,11 +105,3 @@ extension Entity {
         return dictionary
     }
 }
-
-//extension Entity: Equatable {
-//    static func ==(lhs: Entity, rhs: Entity) -> Bool {
-//        return lhs.tag == rhs.tag
-//            && lhs.range == rhs.range
-//            && lhs.attributes == rhs.attributes
-//    }
-//}
