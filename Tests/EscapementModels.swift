@@ -88,12 +88,12 @@ extension Paragraph {
     }
 }
 
-extension Paragraph: Equatable {
-    static func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
-        return lhs.text == rhs.text
-            && lhs.entities == rhs.entities
-    }
-}
+//extension Paragraph: Equatable {
+//    static func ==(lhs: Paragraph, rhs: Paragraph) -> Bool {
+//        return lhs.text == rhs.text
+//            && lhs.entities == rhs.entities
+//    }
+//}
 
 extension Entity {
     init?(json: [String: Any]) {
@@ -119,10 +119,10 @@ extension Entity {
     }
 }
 
-extension Entity: Equatable {
-    static func ==(lhs: Entity, rhs: Entity) -> Bool {
-        return lhs.tag == rhs.tag
-            && lhs.range == rhs.range
-            && lhs.attributes == rhs.attributes
-    }
-}
+//extension Entity: Equatable {
+//    static func ==(lhs: Entity, rhs: Entity) -> Bool {
+//        return lhs.tag == rhs.tag
+//            && lhs.range == rhs.range
+//            && lhs.attributes == rhs.attributes
+//    }
+//}
