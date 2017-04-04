@@ -13,6 +13,7 @@ final class ListTests: XCTestCase {
     func testOrderedList() {
         var stylesheet = Stylesheet()
         stylesheet["*"] = [
+            NSForegroundColorAttributeName: UIColor.red,
             NSFontAttributeName: UIFont.systemFont(ofSize: 16)
         ]
         stylesheet["ol"] = [
@@ -33,10 +34,12 @@ final class ListTests: XCTestCase {
         let actual = OrderedList(items: items).makeAttributedString(stylesheet: stylesheet)
 
         let expectedIndexAttributes: [String: Any] = [
+            NSForegroundColorAttributeName: UIColor.red,
             NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16)
         ]
 
         let expectedItemAttributes: [String: Any] = [
+            NSForegroundColorAttributeName: UIColor.red,
             NSFontAttributeName: UIFont.systemFont(ofSize: 16),
         ]
 
@@ -68,6 +71,7 @@ final class ListTests: XCTestCase {
     func testUnorderedList() {
         var stylesheet = Stylesheet()
         stylesheet["*"] = [
+            NSForegroundColorAttributeName: UIColor.red,
             NSFontAttributeName: UIFont.systemFont(ofSize: 16)
         ]
         stylesheet["ul"] = [
@@ -88,10 +92,12 @@ final class ListTests: XCTestCase {
         let actual = UnorderedList(items: items).makeAttributedString(stylesheet: stylesheet)
 
         let expectedIndexAttributes: [String: Any] = [
+            NSForegroundColorAttributeName: UIColor.red,
             NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16)
         ]
 
         let expectedItemAttributes: [String: Any] = [
+            NSForegroundColorAttributeName: UIColor.red,
             NSFontAttributeName: UIFont.systemFont(ofSize: 16),
         ]
 
