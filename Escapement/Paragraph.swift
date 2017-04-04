@@ -13,7 +13,7 @@ public protocol Paragraph: Element {
 }
 
 extension Paragraph {
-    public func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
+    public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
         let string = NSMutableAttributedString(string: text, attributes: stylesheet["*"])
 
         for entity in entities {

@@ -13,7 +13,7 @@ public protocol List: Element {
 }
 
 extension List {
-    public func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
+    public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
         if items.isEmpty {
             return NSAttributedString()
         }
@@ -43,7 +43,7 @@ extension List {
                 itemAttributedString.append(NSAttributedString(string: indent))
                 itemAttributedString.append(attributedIndex(with: stylesheet, index: trueIndex + 1, depth: depth))
                 itemAttributedString.append(NSAttributedString(string: " "))
-                itemAttributedString.append(item.attributedString(with: stylesheet))
+                itemAttributedString.append(item.makeAttributedString(stylesheet: stylesheet))
                 attributedString.append(itemAttributedString)
                 trueIndex += 1
             }

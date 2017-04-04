@@ -26,7 +26,7 @@ extension Collection where Iterator.Element: Element {
             if index > 0 {
                 mutableAttributedString.append(NSAttributedString(string: "\n"))
             }
-            mutableAttributedString.append(element.attributedString(with: stylesheet))
+            mutableAttributedString.append(element.makeAttributedString(stylesheet: stylesheet))
         }
 
         return NSAttributedString(attributedString: mutableAttributedString)

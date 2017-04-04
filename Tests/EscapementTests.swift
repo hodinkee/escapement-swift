@@ -33,7 +33,7 @@ final class EscapementTests: XCTestCase {
         var stylesheet = Stylesheet()
         stylesheet["*"] = [NSFontAttributeName: regularFont]
 
-        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.makeAttributedString(stylesheet: stylesheet))
     }
 
     func testStrongTag() {
@@ -59,7 +59,7 @@ final class EscapementTests: XCTestCase {
         var stylesheet = Stylesheet()
         stylesheet["*"] = [NSFontAttributeName: regularFont]
 
-        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.makeAttributedString(stylesheet: stylesheet))
     }
 
     func testItalicTag() {
@@ -85,7 +85,7 @@ final class EscapementTests: XCTestCase {
         var stylesheet = Stylesheet()
         stylesheet["*"] = [NSFontAttributeName: regularFont]
 
-        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.makeAttributedString(stylesheet: stylesheet))
     }
 
     func testEmphasisTag() {
@@ -111,7 +111,7 @@ final class EscapementTests: XCTestCase {
         var stylesheet = Stylesheet()
         stylesheet["*"] = [NSFontAttributeName: regularFont]
 
-        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.makeAttributedString(stylesheet: stylesheet))
     }
 
     func testLinkTag() {
@@ -135,7 +135,7 @@ final class EscapementTests: XCTestCase {
 
         let stylesheet = Stylesheet()
 
-        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.makeAttributedString(stylesheet: stylesheet))
     }
 
     func testStrikethroughTag() {
@@ -154,7 +154,7 @@ final class EscapementTests: XCTestCase {
 
         let stylesheet = Stylesheet()
 
-        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.makeAttributedString(stylesheet: stylesheet))
     }
 
     func testDeleteTag() {
@@ -173,7 +173,7 @@ final class EscapementTests: XCTestCase {
 
         let stylesheet = Stylesheet()
 
-        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.makeAttributedString(stylesheet: stylesheet))
     }
 
     func testUnderlineTag() {
@@ -192,7 +192,7 @@ final class EscapementTests: XCTestCase {
 
         let stylesheet = Stylesheet()
 
-        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.makeAttributedString(stylesheet: stylesheet))
     }
 
     func testDocumentMultipleParagraphs() {
@@ -217,7 +217,7 @@ final class EscapementTests: XCTestCase {
         var stylesheet = Stylesheet()
         stylesheet["*"] = [NSFontAttributeName: font]
 
-        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.makeAttributedString(stylesheet: stylesheet))
     }
 
     func testOverlappingBoldEmphasisTags() {
@@ -272,7 +272,7 @@ final class EscapementTests: XCTestCase {
         var stylesheet = Stylesheet()
         stylesheet["*"] = [NSFontAttributeName: regularFont]
 
-        XCTAssertEqual(expected, document.attributedString(with: stylesheet))
+        XCTAssertEqual(expected, document.makeAttributedString(stylesheet: stylesheet))
     }
 }
 

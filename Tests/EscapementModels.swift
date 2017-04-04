@@ -11,7 +11,7 @@
 struct Document {
     var paragraphs: [Paragraph]
 
-    func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
+    func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
         return paragraphs.makeAttributedString(stylesheet: stylesheet)
     }
 }

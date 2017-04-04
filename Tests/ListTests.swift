@@ -30,7 +30,7 @@ final class ListTests: XCTestCase {
             Paragraph(text: "Paragraph 2")
         ]
 
-        let actual = OrderedList(items: items).attributedString(with: stylesheet)
+        let actual = OrderedList(items: items).makeAttributedString(stylesheet: stylesheet)
 
         let expectedIndexAttributes: [String: Any] = [
             NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16)
@@ -85,7 +85,7 @@ final class ListTests: XCTestCase {
             Paragraph(text: "Paragraph 2")
         ]
 
-        let actual = UnorderedList(items: items).attributedString(with: stylesheet)
+        let actual = UnorderedList(items: items).makeAttributedString(stylesheet: stylesheet)
 
         let expectedIndexAttributes: [String: Any] = [
             NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16)
