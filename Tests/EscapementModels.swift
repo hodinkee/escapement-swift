@@ -39,7 +39,15 @@ struct UnorderedList: Escapement.List {
     var items: [Escapement.Element]
 
     func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString {
-        return NSAttributedString(string: "\u{2022}", attributes: stylesheet["ul"])
+        let bullet: String = {
+            switch depth {
+            case 1:
+                return "\u{25E6}"
+            default:
+                return "\u{2022}"
+            }
+        }()
+        return NSAttributedString(string: bullet, attributes: stylesheet["ul"])
     }
 }
 

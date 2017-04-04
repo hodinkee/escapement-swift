@@ -106,13 +106,13 @@ final class ListTests: XCTestCase {
         expected.append(NSAttributedString(string: "\n"))
 
         expected.append(NSAttributedString(string: "\t"))
-        expected.append(NSAttributedString(string: "\u{2022}", attributes: expectedIndexAttributes))
+        expected.append(NSAttributedString(string: "\u{25E6}", attributes: expectedIndexAttributes))
         expected.append(NSAttributedString(string: " "))
         expected.append(NSAttributedString(string: "Sub-Paragraph 1", attributes: expectedItemAttributes))
         expected.append(NSAttributedString(string: "\n"))
 
         expected.append(NSAttributedString(string: "\t"))
-        expected.append(NSAttributedString(string: "\u{2022}", attributes: expectedIndexAttributes))
+        expected.append(NSAttributedString(string: "\u{25E6}", attributes: expectedIndexAttributes))
         expected.append(NSAttributedString(string: " "))
         expected.append(NSAttributedString(string: "Sub-Paragraph 2", attributes: expectedItemAttributes))
         expected.append(NSAttributedString(string: "\n"))
