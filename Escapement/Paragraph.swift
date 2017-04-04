@@ -14,11 +14,7 @@ public protocol Paragraph: Element {
 
 extension Paragraph {
     public func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
-        var attributes = stylesheet["*"]
-        attributes[StringAttributeName.escapementBold] = false
-        attributes[StringAttributeName.escapementItalic] = false
-
-        let string = NSMutableAttributedString(string: text, attributes: attributes)
+        let string = NSMutableAttributedString(string: text, attributes: stylesheet["*"])
 
         for entity in entities {
             let range = NSRange(entity.range)

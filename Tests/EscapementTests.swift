@@ -27,13 +27,10 @@ final class EscapementTests: XCTestCase {
         }
 
         let regularAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
             NSFontAttributeName: regularFont]
 
         let boldAttributes: [String: Any] = [
             StringAttributeName.escapementBold: true,
-            StringAttributeName.escapementItalic: false,
             NSFontAttributeName: boldFont]
 
         let expected = NSMutableAttributedString()
@@ -64,13 +61,10 @@ final class EscapementTests: XCTestCase {
         }
 
         let regularAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
             NSFontAttributeName: regularFont]
 
         let boldAttributes: [String: Any] = [
             StringAttributeName.escapementBold: true,
-            StringAttributeName.escapementItalic: false,
             NSFontAttributeName: boldFont]
 
         let expected = NSMutableAttributedString()
@@ -101,12 +95,9 @@ final class EscapementTests: XCTestCase {
         }
 
         let regularAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
             NSFontAttributeName: regularFont]
 
         let italicAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
             StringAttributeName.escapementItalic: true,
             NSFontAttributeName: italicFont]
 
@@ -138,12 +129,9 @@ final class EscapementTests: XCTestCase {
         }
 
         let regularAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
             NSFontAttributeName: regularFont]
 
         let italicAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
             StringAttributeName.escapementItalic: true,
             NSFontAttributeName: italicFont]
 
@@ -169,19 +157,13 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        let regularAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false]
-
         let linkAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
             NSLinkAttributeName: link]
 
         let expected = NSMutableAttributedString()
-        expected.append(NSAttributedString(string: "This text has a ", attributes: regularAttributes))
+        expected.append(NSAttributedString(string: "This text has a ", attributes: nil))
         expected.append(NSAttributedString(string: "link", attributes: linkAttributes))
-        expected.append(NSAttributedString(string: ".", attributes: regularAttributes))
+        expected.append(NSAttributedString(string: ".", attributes: nil))
 
         let stylesheet = Stylesheet()
 
@@ -194,19 +176,13 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        let regularAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false]
-
         let strikethroughAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
             NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
 
         let expected = NSMutableAttributedString()
-        expected.append(NSAttributedString(string: "This text has a ", attributes: regularAttributes))
+        expected.append(NSAttributedString(string: "This text has a ", attributes: nil))
         expected.append(NSAttributedString(string: "struck-out", attributes: strikethroughAttributes))
-        expected.append(NSAttributedString(string: " word.", attributes: regularAttributes))
+        expected.append(NSAttributedString(string: " word.", attributes: nil))
 
         let stylesheet = Stylesheet()
 
@@ -219,19 +195,13 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        let regularAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false]
-
         let strikethroughAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
             NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
 
         let expected = NSMutableAttributedString()
-        expected.append(NSAttributedString(string: "This text has a ", attributes: regularAttributes))
+        expected.append(NSAttributedString(string: "This text has a ", attributes: nil))
         expected.append(NSAttributedString(string: "struck-out", attributes: strikethroughAttributes))
-        expected.append(NSAttributedString(string: " word.", attributes: regularAttributes))
+        expected.append(NSAttributedString(string: " word.", attributes: nil))
 
         let stylesheet = Stylesheet()
 
@@ -244,19 +214,13 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        let regularAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false]
-
         let underlineAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
             NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
 
         let expected = NSMutableAttributedString()
-        expected.append(NSAttributedString(string: "This text has an ", attributes: regularAttributes))
+        expected.append(NSAttributedString(string: "This text has an ", attributes: nil))
         expected.append(NSAttributedString(string: "underlined", attributes: underlineAttributes))
-        expected.append(NSAttributedString(string: " word.", attributes: regularAttributes))
+        expected.append(NSAttributedString(string: " word.", attributes: nil))
 
         let stylesheet = Stylesheet()
 
@@ -275,8 +239,6 @@ final class EscapementTests: XCTestCase {
         }
 
         let attributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
             NSFontAttributeName: font]
 
         let expected = NSMutableAttributedString()
@@ -317,17 +279,13 @@ final class EscapementTests: XCTestCase {
         }
 
         let regularAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
             NSFontAttributeName: regularFont]
 
         let boldAttributes: [String: Any] = [
             StringAttributeName.escapementBold: true,
-            StringAttributeName.escapementItalic: false,
             NSFontAttributeName: boldFont]
 
         let italicAttributes: [String: Any] = [
-            StringAttributeName.escapementBold: false,
             StringAttributeName.escapementItalic: true,
             NSFontAttributeName: italicFont]
 

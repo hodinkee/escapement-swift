@@ -38,8 +38,6 @@ final class ListTests: XCTestCase {
 
         let expectedItemAttributes: [String: Any] = [
             NSFontAttributeName: UIFont.systemFont(ofSize: 16),
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
         ]
 
         let expected = NSMutableAttributedString()
@@ -95,8 +93,6 @@ final class ListTests: XCTestCase {
 
         let expectedItemAttributes: [String: Any] = [
             NSFontAttributeName: UIFont.systemFont(ofSize: 16),
-            StringAttributeName.escapementBold: false,
-            StringAttributeName.escapementItalic: false,
         ]
 
         let expected = NSMutableAttributedString()
