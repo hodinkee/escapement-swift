@@ -6,46 +6,14 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-public struct Paragraph {
+public protocol Paragraph: Element {
+    var text: String { get }
 
-    // MARK: - Properties
-
-    public var text: String
-
-    public var entities: [Entity]
-
-
-    // MARK: - Initializers
-
-    public init(text: String, entities: [Entity] = []) {
-        self.text = text
-        self.entities = entities
-    }
+    var entities: [Entity] { get }
 }
 
 extension Paragraph {
-    func makeJSON() -> [String: Any] {
-        var dictionary = [String: Any]()
-        dictionary["text"] = text
-        dictionary["entities"] = entities.map({ $0.makeJSON() })
-        return dictionary
-    }
-
-    init?(json: [String: Any]) {
-        guard let text = json["text"] as? String else {
-            return nil
-        }
-        self.text = text
-
-        guard let entities = json["entities"] as? [Any] else {
-            return nil
-        }
-        self.entities = entities.flatMap({ $0 as? [String: Any] }).flatMap(Entity.init)
-    }
-}
-
-extension Paragraph {
-    func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
+    public func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
         var attributes = stylesheet["*"]
         attributes[StringAttributeName.escapementBold] = false
         attributes[StringAttributeName.escapementItalic] = false
@@ -57,8 +25,8 @@ extension Paragraph {
 
             switch entity.tag {
             case "a":
-                if let URL = entity.href {
-                    string.addAttribute(NSLinkAttributeName, value: URL, range: range)
+                if let url = entity.attributes?["href"].flatMap(URL.init) {
+                    string.addAttribute(NSLinkAttributeName, value: url, range: range)
                 }
             case "strong", "b":
                 string.addAttribute(StringAttributeName.escapementBold, value: true, range: range)
@@ -91,13 +59,7 @@ extension Paragraph {
                 string.addAttribute(NSFontAttributeName, value: font, range: range)
             }
         })
-
+        
         return NSAttributedString(attributedString: string)
-    }
-}
-
-extension Paragraph: Equatable {
-    public static func == (lhs: Paragraph, rhs: Paragraph) -> Bool {
-        return lhs.text == rhs.text && lhs.entities == rhs.entities
     }
 }
