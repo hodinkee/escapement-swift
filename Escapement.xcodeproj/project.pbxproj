@@ -455,9 +455,17 @@
 				3B1599A61E5358070020DF49 /* test_delete_tag.json */,
 				3B1599A91E537E7C0020DF49 /* test_underline_tag.json */,
 				3B1599AC1E538C1B0020DF49 /* test_overlapping_strong_emphasis_tags.json */,
+				3BE4B8901E9439B200DEDB92 /* Resources */,
 				3A512F391BE16DB10091A124 /* Platforms */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		3BE4B8901E9439B200DEDB92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
