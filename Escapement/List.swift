@@ -22,6 +22,8 @@ extension List {
     private func attributedString(with stylesheet: Stylesheet, depth: Int) -> NSAttributedString {
         guard !items.isEmpty else { return NSAttributedString() }
 
+        var trueIndex: Int = 0
+
         let attributedString = NSMutableAttributedString()
 
         for (index, item) in items.enumerated() {
@@ -35,10 +37,11 @@ extension List {
                 let itemAttributedString = NSMutableAttributedString()
                 let indent = Array(repeating: "\t", count: depth).joined(separator: "")
                 itemAttributedString.append(NSAttributedString(string: indent))
-                itemAttributedString.append(attributedIndex(with: stylesheet, index: index + 1, depth: depth))
+                itemAttributedString.append(attributedIndex(with: stylesheet, index: trueIndex + 1, depth: depth))
                 itemAttributedString.append(NSAttributedString(string: " "))
                 itemAttributedString.append(item.attributedString(with: stylesheet))
                 attributedString.append(itemAttributedString)
+                trueIndex += 1
             }
         }
 
