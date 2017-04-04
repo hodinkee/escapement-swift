@@ -12,12 +12,28 @@ public struct Stylesheet {
 
     var rules: [Rule]
 
+    var globalAttributes: [String: Any] {
+        var dictionary = [String: Any]()
+
+        for rule in rules.filter({ $0.selectors.contains("*") }) {
+            for (key, value) in rule.attributes {
+                dictionary[key] = value
+            }
+        }
+
+        return dictionary
+    }
+
 
     // MARK: - Subscripts
 
     public subscript(selector: String) -> [String: Any] {
         get {
-            var dictionary = [String: Any]()
+            var dictionary = globalAttributes
+
+            if selector == "*" {
+                return dictionary
+            }
 
             for rule in rules.filter({ $0.selectors.contains(selector) }) {
                 for (key, value) in rule.attributes {
