@@ -12,13 +12,18 @@ public protocol UnorderedList: Element {
 
 extension UnorderedList {
     public func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
+        guard !items.isEmpty else { return NSAttributedString() }
+
+        let indexAttributes = stylesheet["ul"]
         let attributedString = NSMutableAttributedString()
+
         for item in items {
             let itemAttributedString = NSMutableAttributedString()
-            itemAttributedString.append(NSAttributedString(string: "* "))
+            itemAttributedString.append(NSAttributedString(string: "\u{2022} ", attributes: indexAttributes))
             itemAttributedString.append(item.attributedString(with: stylesheet))
             attributedString.append(itemAttributedString)
         }
+        
         return attributedString
     }
 }
