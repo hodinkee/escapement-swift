@@ -16,22 +16,14 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        guard let regularFont = UIFont(name: "HelveticaNeue", size: 18) else {
-            XCTFail("Missing regular font.")
-            return
-        }
-
-        guard let boldFont = UIFont(name: "HelveticaNeue-Bold", size: 18) else {
-            XCTFail("Missing bold font.")
-            return
-        }
+        let regularFont = UIFont.systemFont(ofSize: 18)
 
         let regularAttributes: [String: Any] = [
             NSFontAttributeName: regularFont]
 
         let boldAttributes: [String: Any] = [
             StringAttributeName.escapementBold: true,
-            NSFontAttributeName: boldFont]
+            NSFontAttributeName: UIFont.boldSystemFont(ofSize: 18)]
 
         let expected = NSMutableAttributedString()
         expected.append(NSAttributedString(string: "This text has a ", attributes: regularAttributes))
@@ -50,22 +42,14 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        guard let regularFont = UIFont(name: "HelveticaNeue", size: 18) else {
-            XCTFail("Missing regular font.")
-            return
-        }
-
-        guard let boldFont = UIFont(name: "HelveticaNeue-Bold", size: 18) else {
-            XCTFail("Missing bold font.")
-            return
-        }
+        let regularFont = UIFont.systemFont(ofSize: 18)
 
         let regularAttributes: [String: Any] = [
             NSFontAttributeName: regularFont]
 
         let boldAttributes: [String: Any] = [
             StringAttributeName.escapementBold: true,
-            NSFontAttributeName: boldFont]
+            NSFontAttributeName: UIFont.boldSystemFont(ofSize: 18)]
 
         let expected = NSMutableAttributedString()
         expected.append(NSAttributedString(string: "This text has a ", attributes: regularAttributes))
@@ -84,22 +68,14 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        guard let regularFont = UIFont(name: "HelveticaNeue", size: 18) else {
-            XCTFail("Missing regular font.")
-            return
-        }
-
-        guard let italicFont = UIFont(name: "HelveticaNeue-Italic", size: 18) else {
-            XCTFail("Missing italic font.")
-            return
-        }
+        let regularFont = UIFont.systemFont(ofSize: 18)
 
         let regularAttributes: [String: Any] = [
             NSFontAttributeName: regularFont]
 
         let italicAttributes: [String: Any] = [
             StringAttributeName.escapementItalic: true,
-            NSFontAttributeName: italicFont]
+            NSFontAttributeName: UIFont.italicSystemFont(ofSize: 18)]
 
         let expected = NSMutableAttributedString()
         expected.append(NSAttributedString(string: "This text has an ", attributes: regularAttributes))
@@ -118,22 +94,14 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        guard let regularFont = UIFont(name: "HelveticaNeue", size: 18) else {
-            XCTFail("Missing regular font.")
-            return
-        }
-
-        guard let italicFont = UIFont(name: "HelveticaNeue-Italic", size: 18) else {
-            XCTFail("Missing italic font.")
-            return
-        }
+        let regularFont = UIFont.systemFont(ofSize: 18)
 
         let regularAttributes: [String: Any] = [
             NSFontAttributeName: regularFont]
 
         let italicAttributes: [String: Any] = [
             StringAttributeName.escapementItalic: true,
-            NSFontAttributeName: italicFont]
+            NSFontAttributeName: UIFont.italicSystemFont(ofSize: 18)]
 
         let expected = NSMutableAttributedString()
         expected.append(NSAttributedString(string: "This text has an ", attributes: regularAttributes))
@@ -157,12 +125,12 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        let linkAttributes: [String: Any] = [
+        let attributes: [String: Any] = [
             NSLinkAttributeName: link]
 
         let expected = NSMutableAttributedString()
         expected.append(NSAttributedString(string: "This text has a ", attributes: nil))
-        expected.append(NSAttributedString(string: "link", attributes: linkAttributes))
+        expected.append(NSAttributedString(string: "link", attributes: attributes))
         expected.append(NSAttributedString(string: ".", attributes: nil))
 
         let stylesheet = Stylesheet()
@@ -176,12 +144,12 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        let strikethroughAttributes: [String: Any] = [
+        let attributes: [String: Any] = [
             NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
 
         let expected = NSMutableAttributedString()
         expected.append(NSAttributedString(string: "This text has a ", attributes: nil))
-        expected.append(NSAttributedString(string: "struck-out", attributes: strikethroughAttributes))
+        expected.append(NSAttributedString(string: "struck-out", attributes: attributes))
         expected.append(NSAttributedString(string: " word.", attributes: nil))
 
         let stylesheet = Stylesheet()
@@ -195,12 +163,12 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        let strikethroughAttributes: [String: Any] = [
+        let attributes: [String: Any] = [
             NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
 
         let expected = NSMutableAttributedString()
         expected.append(NSAttributedString(string: "This text has a ", attributes: nil))
-        expected.append(NSAttributedString(string: "struck-out", attributes: strikethroughAttributes))
+        expected.append(NSAttributedString(string: "struck-out", attributes: attributes))
         expected.append(NSAttributedString(string: " word.", attributes: nil))
 
         let stylesheet = Stylesheet()
@@ -214,12 +182,12 @@ final class EscapementTests: XCTestCase {
             return
         }
 
-        let underlineAttributes: [String: Any] = [
+        let attributes: [String: Any] = [
             NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
 
         let expected = NSMutableAttributedString()
         expected.append(NSAttributedString(string: "This text has an ", attributes: nil))
-        expected.append(NSAttributedString(string: "underlined", attributes: underlineAttributes))
+        expected.append(NSAttributedString(string: "underlined", attributes: attributes))
         expected.append(NSAttributedString(string: " word.", attributes: nil))
 
         let stylesheet = Stylesheet()
