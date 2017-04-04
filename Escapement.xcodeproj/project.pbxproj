@@ -444,6 +444,15 @@
 				4E7601FF1E93F2D30045416C /* ListTests.swift */,
 				3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */,
 				4E7602021E941A860045416C /* EscapementModels.swift */,
+				3BE4B8901E9439B200DEDB92 /* Resources */,
+				3A512F391BE16DB10091A124 /* Platforms */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		3BE4B8901E9439B200DEDB92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				4E8A0D5F1E526CF100D71DE2 /* test_plain.json */,
 				3B8768291E4531A90050D791 /* test_bold_tag.json */,
 				3B87682C1E4537C90050D791 /* test_strong_tag.json */,
@@ -455,15 +464,6 @@
 				3B1599A61E5358070020DF49 /* test_delete_tag.json */,
 				3B1599A91E537E7C0020DF49 /* test_underline_tag.json */,
 				3B1599AC1E538C1B0020DF49 /* test_overlapping_strong_emphasis_tags.json */,
-				3BE4B8901E9439B200DEDB92 /* Resources */,
-				3A512F391BE16DB10091A124 /* Platforms */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		3BE4B8901E9439B200DEDB92 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			name = Resources;
 			sourceTree = "<group>";
