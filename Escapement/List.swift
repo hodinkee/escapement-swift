@@ -49,6 +49,6 @@ extension List {
             }
         }
 
-        return attributedString
+        return NSAttributedString(attributedString: attributedString)
     }
 }
