@@ -8,8 +8,8 @@
 
 extension Collection where Iterator.Element: Element {
 
-    /// Make an attributed string by calling `attributedString(with:)` on all
-    /// items and joining the resuls with new lines.
+    /// Make an attributed string by calling `makeAttributedString(stylesheet:)`
+    /// on all items and joining the resuls with new lines.
     ///
     /// - parameter stylesheet: The stylesheet to pass to every call to
     ///     `attributedString(with:)`.
