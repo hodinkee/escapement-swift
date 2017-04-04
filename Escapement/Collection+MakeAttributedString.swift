@@ -15,7 +15,7 @@ extension Collection where Iterator.Element: Element {
     ///     `attributedString(with:)`.
     ///
     /// - returns: An attributed string representation of the elements.
-    public func makeAttributedString(_ stylesheet: Stylesheet) -> NSAttributedString {
+    public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
         if isEmpty {
             return NSAttributedString()
         }
