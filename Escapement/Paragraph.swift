@@ -25,7 +25,7 @@ extension Paragraph {
 
             switch entity.tag {
             case "a":
-                if let url = entity.attributes?["href"].flatMap(URL.init) {
+                if let url = entity.attributes["href"].flatMap(URL.init) {
                     string.addAttribute(NSLinkAttributeName, value: url, range: range)
                 }
             case "strong", "b":
