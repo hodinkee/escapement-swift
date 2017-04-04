@@ -11,5 +11,5 @@ public protocol Entity {
 
     var range: Range<Int> { get }
 
-    var attributes: [String: String]? { get }
+    var attributes: [String: String] { get }
 }
