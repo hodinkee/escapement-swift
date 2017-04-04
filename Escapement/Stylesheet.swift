@@ -11,35 +11,25 @@ public struct Stylesheet {
     // MARK: - Properties
 
     var rules: [Rule]
-
-    var globalAttributes: [String: Any] {
-        var dictionary = [String: Any]()
-
-        for rule in rules.filter({ $0.selectors.contains("*") }) {
-            for (key, value) in rule.attributes {
-                dictionary[key] = value
-            }
-        }
-
-        return dictionary
-    }
-
+    
 
     // MARK: - Subscripts
 
     public subscript(selector: String) -> [String: Any] {
         get {
-            var dictionary = globalAttributes
+            var dictionary = [String: Any]()
+
+            rules.lazy.filter({ $0.selectors.contains("*") }).forEach({
+                $0.attributes.forEach({ dictionary[$0] = $1 })
+            })
 
             if selector == "*" {
                 return dictionary
             }
 
-            for rule in rules.filter({ $0.selectors.contains(selector) }) {
-                for (key, value) in rule.attributes {
-                    dictionary[key] = value
-                }
-            }
+            rules.forEach({
+                $0.attributes.forEach({ dictionary[$0] = $1 })
+            })
 
             return dictionary
         }
@@ -61,14 +51,14 @@ extension Stylesheet {
 
         // MARK: - Properties
 
-        var selectors: [String]
+        var selectors: Set<String>
 
         var attributes: [String: Any]
         
 
         // MARK: - Initializers
 
-        public init(selectors: [String], attributes: [String: Any]) {
+        public init(selectors: Set<String>, attributes: [String: Any]) {
             self.selectors = selectors
             self.attributes = attributes
         }
