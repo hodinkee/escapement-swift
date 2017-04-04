@@ -55,7 +55,7 @@ extension Paragraph {
                 string.addAttribute(NSFontAttributeName, value: font, range: range)
             }
         })
-        
+
         return NSAttributedString(attributedString: string)
     }
 }
