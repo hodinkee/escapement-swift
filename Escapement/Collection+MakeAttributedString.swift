@@ -1,5 +1,5 @@
 //
-//  Document.swift
+//  Collection+MakeAttributedString.swift
 //  Escapement
 //
 //  Created by Caleb Davenport on 7/16/15.
@@ -7,7 +7,15 @@
 //
 
 extension Collection where Iterator.Element: Element {
-    public func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
+
+    /// Make an attributed string by calling `attributedString(with:)` on all
+    /// items and joining the resuls with new lines.
+    ///
+    /// - parameter stylesheet: The stylesheet to pass to every call to
+    ///     `attributedString(with:)`.
+    ///
+    /// - returns: An attributed string representation of the elements.
+    public func makeAttributedString(_ stylesheet: Stylesheet) -> NSAttributedString {
         if isEmpty {
             return NSAttributedString()
         }
