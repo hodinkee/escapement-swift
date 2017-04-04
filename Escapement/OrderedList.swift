@@ -18,6 +18,9 @@ extension OrderedList {
         let attributedString = NSMutableAttributedString()
 
         for (index, item) in items.enumerated() {
+            if index != 0 {
+                attributedString.append(NSAttributedString(string: "\n"))
+            }
             let itemAttributedString = NSMutableAttributedString()
             itemAttributedString.append(NSAttributedString(string: "\(index + 1). ", attributes: indexAttributes))
             itemAttributedString.append(item.attributedString(with: stylesheet))

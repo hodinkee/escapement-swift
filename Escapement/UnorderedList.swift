@@ -17,7 +17,10 @@ extension UnorderedList {
         let indexAttributes = stylesheet["ul"]
         let attributedString = NSMutableAttributedString()
 
-        for item in items {
+        for (index, item) in items.enumerated() {
+            if index != 0 {
+                attributedString.append(NSAttributedString(string: "\n"))
+            }
             let itemAttributedString = NSMutableAttributedString()
             itemAttributedString.append(NSAttributedString(string: "\u{2022} ", attributes: indexAttributes))
             itemAttributedString.append(item.attributedString(with: stylesheet))
