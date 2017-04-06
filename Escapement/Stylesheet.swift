@@ -10,62 +10,77 @@ public struct Stylesheet {
 
     // MARK: - Properties
 
-    var rules: [Rule]
+    var rules: [String: [String: Any]] = [:]
     
 
     // MARK: - Subscripts
 
+    @available(*, deprecated)
     public subscript(selector: String) -> [String: Any] {
         get {
-            var dictionary = [String: Any]()
-
-            rules.lazy.filter({ $0.selectors.contains("*") }).forEach({
-                $0.attributes.forEach({ dictionary[$0] = $1 })
-            })
-
-            if selector == "*" {
-                return dictionary
-            }
-
-            rules.forEach({
-                $0.attributes.forEach({ dictionary[$0] = $1 })
-            })
-
-            return dictionary
+            return attributes(forSelector: selector)
         }
         set {
-            rules.append(Rule(selector: selector, attributes: newValue))
+            setAttributes(newValue, forSelectors: [selector])
         }
     }
 
 
     // MARK: - Initializers
 
-    public init(rules: [Rule] = []) {
-        self.rules = rules
+    public init() {}
+
+
+    // MARK: - Public
+
+    public func attributes(forSelector selector: String) -> [String: Any] {
+        var dictionary = [String: Any]()
+
+        rules["*"]?.forEach({ dictionary[$0] = $1 })
+        rules[selector]?.forEach({ dictionary[$0] = $1 })
+
+        return dictionary
     }
-}
 
-extension Stylesheet {
-    public struct Rule {
+    public mutating func addAttributes(_ attributes: [String: Any], forSelectors selectors: Set<String>) {
+        selectors.forEach({
+            addAttributes(attributes, forSelector: $0)
+        })
+    }
 
-        // MARK: - Properties
+    public mutating func addAttributes(_ attributes: [String: Any], forSelector selector: String) {
+        var dictionary = rules[selector] ?? [:]
+        attributes.forEach({ dictionary[$0] = $1 })
+        rules[selector] = dictionary
+    }
 
-        var selectors: Set<String>
+    public func addingAttributes(_ attributes: [String: Any], forSelectors selectors: Set<String>) -> Stylesheet {
+        var stylesheet = self
+        stylesheet.addAttributes(attributes, forSelectors: selectors)
+        return stylesheet
+    }
 
-        var attributes: [String: Any]
-        
+    public func addingAttributes(_ attributes: [String: Any], forSelector selector: String) -> Stylesheet {
+        return addingAttributes(attributes, forSelectors: [selector])
+    }
 
-        // MARK: - Initializers
+    public mutating func setAttributes(_ attributes: [String: Any], forSelectors selectors: Set<String>) {
+        selectors.forEach({
+            setAttributes(attributes, forSelector: $0)
+        })
+    }
 
-        public init(selectors: Set<String>, attributes: [String: Any]) {
-            self.selectors = selectors
-            self.attributes = attributes
-        }
+    public mutating func setAttributes(_ attributes: [String: Any], forSelector selector: String) {
+        rules[selector] = attributes
+    }
 
-        public init(selector: String, attributes: [String: Any]) {
-            self.selectors = [selector]
-            self.attributes = attributes
-        }
+    public func settingAttributes(_ attributes: [String: Any], forSelectors selectors: Set<String>) -> Stylesheet {
+        var stylesheet = self
+        stylesheet.setAttributes(attributes, forSelectors: selectors)
+        return stylesheet
+    }
+
+    public func settingAttributes(_ attributes: [String: Any], forSelector selector: String) -> Stylesheet {
+        return settingAttributes(attributes, forSelectors: [selector])
     }
 }

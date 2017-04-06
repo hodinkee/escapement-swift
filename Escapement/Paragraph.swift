@@ -14,7 +14,7 @@ public protocol Paragraph: Element {
 
 extension Paragraph {
     public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
-        let string = NSMutableAttributedString(string: text, attributes: stylesheet["*"])
+        let string = NSMutableAttributedString(string: text, attributes: stylesheet.attributes(forSelector: "*"))
 
         for entity in entities {
             let range = NSRange(entity.range)
@@ -36,7 +36,7 @@ extension Paragraph {
                 ()
             }
 
-            string.addAttributes(stylesheet[entity.tag], range: range)
+            string.addAttributes(stylesheet.attributes(forSelector: entity.tag), range: range)
         }
 
         string.enumerateAttributes(in: NSRange(0..<string.length), options: [], using: { attributes, range, _ in
