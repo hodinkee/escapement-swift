@@ -27,7 +27,7 @@ struct Paragraph: Escapement.Paragraph {
     }
 }
 
-struct OrderedList: Escapement.List {
+struct OrderedList: Escapement.ListProtocol {
     var items: [Escapement.ElementProtocol]
 
     func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString {
@@ -35,7 +35,7 @@ struct OrderedList: Escapement.List {
     }
 }
 
-struct UnorderedList: Escapement.List {
+struct UnorderedList: Escapement.ListProtocol {
     var items: [Escapement.ElementProtocol]
 
     func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString {

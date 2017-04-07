@@ -6,13 +6,13 @@
 //  Copyright © 2017 Hodinkee. All rights reserved.
 //
 
-public protocol List: ElementProtocol {
+public protocol ListProtocol: ElementProtocol {
     var items: [ElementProtocol] { get }
 
     func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString
 }
 
-extension List {
+extension ListProtocol {
     public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
         if items.isEmpty {
             return NSAttributedString()
@@ -34,7 +34,7 @@ extension List {
             if index > 0 {
                 attributedString.append(NSAttributedString(string: "\n"))
             }
-            if let list = item as? List {
+            if let list = item as? ListProtocol {
                 attributedString.append(list.attributedString(with: stylesheet, depth: depth + 1))
             }
             else {
