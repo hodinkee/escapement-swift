@@ -6,13 +6,23 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-public protocol ParagraphProtocol: ElementProtocol {
-    var text: String { get }
+public struct Paragraph: ElementProtocol {
 
-    var entities: [Entity] { get }
-}
+    // MARK: - Properties
 
-extension ParagraphProtocol {
+    public var text: String
+
+    public var entities: [Entity]
+
+    // MARK: - Initializers
+
+    public init(text: String, entities: [Entity] = []) {
+        self.text = text
+        self.entities = entities
+    }
+
+    // MARK: - ElementProtocol
+
     public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
         let string = NSMutableAttributedString(string: text, attributes: stylesheet.attributes(forSelector: "*"))
 
@@ -55,24 +65,7 @@ extension ParagraphProtocol {
                 string.addAttribute(NSFontAttributeName, value: font, range: range)
             }
         })
-
+        
         return NSAttributedString(attributedString: string)
-    }
-}
-
-public struct Paragraph: ParagraphProtocol {
-
-    // MARK: - Properties
-
-    public var text: String
-
-    public var entities: [Entity]
-
-
-    // MARK: - Initializers
-
-    public init(text: String, entities: [Entity] = []) {
-        self.text = text
-        self.entities = entities
     }
 }
