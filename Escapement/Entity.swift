@@ -24,3 +24,11 @@ public struct Entity {
         self.attributes = attributes
     }
 }
+
+extension Entity: Equatable {
+    public static func == (lhs: Entity, rhs: Entity) -> Bool {
+        return lhs.tag == rhs.tag
+            && lhs.range == rhs.range
+            && lhs.attributes == rhs.attributes
+    }
+}
