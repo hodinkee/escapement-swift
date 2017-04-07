@@ -69,3 +69,10 @@ public struct Paragraph: Styleable {
         return NSAttributedString(attributedString: string)
     }
 }
+
+extension Paragraph: Equatable {
+    public static func == (lhs: Paragraph, rhs: Paragraph) -> Bool {
+        return lhs.text == rhs.text
+            && lhs.entities == rhs.entities
+    }
+}
