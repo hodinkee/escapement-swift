@@ -6,15 +6,7 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-public protocol EntityProtocol {
-    var tag: String { get }
-
-    var range: Range<Int> { get }
-
-    var attributes: [String: String] { get }
-}
-
-public struct Entity: EntityProtocol {
+public struct Entity {
 
     // MARK: - Properties
 

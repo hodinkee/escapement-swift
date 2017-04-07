@@ -9,7 +9,7 @@
 public protocol ParagraphProtocol: ElementProtocol {
     var text: String { get }
 
-    var entities: [EntityProtocol] { get }
+    var entities: [Entity] { get }
 }
 
 extension ParagraphProtocol {
@@ -66,12 +66,12 @@ public struct Paragraph: ParagraphProtocol {
 
     public var text: String
 
-    public var entities: [EntityProtocol]
+    public var entities: [Entity]
 
 
     // MARK: - Initializers
 
-    public init(text: String, entities: [EntityProtocol] = []) {
+    public init(text: String, entities: [Entity] = []) {
         self.text = text
         self.entities = entities
     }
