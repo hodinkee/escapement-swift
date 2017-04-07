@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-public protocol Entity {
+public protocol EntityProtocol {
     var tag: String { get }
 
     var range: Range<Int> { get }

@@ -9,7 +9,7 @@
 public protocol ParagraphProtocol: ElementProtocol {
     var text: String { get }
 
-    var entities: [Entity] { get }
+    var entities: [EntityProtocol] { get }
 }
 
 extension ParagraphProtocol {

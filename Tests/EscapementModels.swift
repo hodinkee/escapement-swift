@@ -19,9 +19,9 @@ struct Document {
 struct Paragraph: Escapement.ParagraphProtocol {
     var text: String
 
-    var entities: [Escapement.Entity]
+    var entities: [Escapement.EntityProtocol]
 
-    init(text: String, entities: [Escapement.Entity] = []) {
+    init(text: String, entities: [Escapement.EntityProtocol] = []) {
         self.text = text
         self.entities = entities
     }
@@ -51,7 +51,7 @@ struct UnorderedList: Escapement.ListProtocol {
     }
 }
 
-struct Entity: Escapement.Entity {
+struct Entity: Escapement.EntityProtocol {
     var tag: String
 
     var range: Range<Int>
