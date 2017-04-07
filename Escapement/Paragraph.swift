@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-public struct Paragraph: ElementProtocol {
+public struct Paragraph: Styleable {
 
     // MARK: - Properties
 
@@ -21,7 +21,7 @@ public struct Paragraph: ElementProtocol {
         self.entities = entities
     }
 
-    // MARK: - ElementProtocol
+    // MARK: - Styleable
 
     public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
         let string = NSMutableAttributedString(string: text, attributes: stylesheet.attributes(forSelector: "*"))

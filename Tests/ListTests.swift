@@ -20,15 +20,15 @@ final class ListTests: XCTestCase {
             NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16)
         ]
 
-        let subitems = [
-            Paragraph(text: "Sub-Paragraph 1"),
-            Paragraph(text: "Sub-Paragraph 2"),
+        let subitems: [Element] = [
+            .paragraph(Paragraph(text: "Sub-Paragraph 1")),
+            .paragraph(Paragraph(text: "Sub-Paragraph 2")),
         ]
 
-        let items: [ElementProtocol] = [
-            Paragraph(text: "Paragraph 1"),
-            OrderedList(items: subitems),
-            Paragraph(text: "Paragraph 2")
+        let items: [Element] = [
+            .paragraph(Paragraph(text: "Paragraph 1")),
+            .orderedList(OrderedList(items: subitems)),
+            .paragraph(Paragraph(text: "Paragraph 2"))
         ]
 
         let actual = OrderedList(items: items).makeAttributedString(stylesheet: stylesheet)
@@ -78,15 +78,15 @@ final class ListTests: XCTestCase {
             NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16)
         ]
 
-        let subitems = [
-            Paragraph(text: "Sub-Paragraph 1"),
-            Paragraph(text: "Sub-Paragraph 2"),
+        let subitems: [Element] = [
+            .paragraph(Paragraph(text: "Sub-Paragraph 1")),
+            .paragraph(Paragraph(text: "Sub-Paragraph 2")),
         ]
 
-        let items: [ElementProtocol] = [
-            Paragraph(text: "Paragraph 1"),
-            UnorderedList(items: subitems),
-            Paragraph(text: "Paragraph 2")
+        let items: [Element] = [
+            .paragraph(Paragraph(text: "Paragraph 1")),
+            .unorderedList(UnorderedList(items: subitems)),
+            .paragraph(Paragraph(text: "Paragraph 2"))
         ]
 
         let actual = UnorderedList(items: items).makeAttributedString(stylesheet: stylesheet)

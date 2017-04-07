@@ -6,21 +6,21 @@
 //  Copyright © 2017 Hodinkee. All rights reserved.
 //
 
-public protocol ElementProtocol {
+public enum Element: Styleable {
+    case paragraph(Paragraph)
+    case orderedList(OrderedList)
+    case unorderedList(UnorderedList)
 
-    /// Ask the receiver to make an attributed string representation of itself.
-    ///
-    /// - parameter stylesheet: The stylesheet to apply to the returned
-    ///     attributed string.
-    ///
-    /// - returns: An attributed string representation of the receiver.
-    func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString
-}
+    // MARK: - ElementProtocol
 
-extension ElementProtocol {
-
-    @available(*, deprecated, renamed: "makeAttributedString(stylesheet:)")
-    func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
-        return makeAttributedString(stylesheet: stylesheet)
+    public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
+        switch self {
+        case .paragraph(let paragraph):
+            return paragraph.makeAttributedString(stylesheet: stylesheet)
+        case .orderedList(let orderedList):
+            return orderedList.makeAttributedString(stylesheet: stylesheet)
+        case .unorderedList(let unorderedList):
+            return unorderedList.makeAttributedString(stylesheet: stylesheet)
+        }
     }
 }

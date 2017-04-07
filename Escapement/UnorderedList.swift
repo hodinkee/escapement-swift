@@ -10,11 +10,11 @@ public struct UnorderedList: ListProtocol {
 
     // MARK: - Properties
 
-    public var items: [ElementProtocol]
+    public var items: [Element]
 
     // MARK: - Initializers
 
-    public init(items: [ElementProtocol]) {
+    public init(items: [Element]) {
         self.items = items
     }
 
