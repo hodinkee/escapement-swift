@@ -1,5 +1,5 @@
 //
-//  Collection+MakeAttributedString.swift
+//  Collection+Styleable.swift
 //  Escapement
 //
 //  Created by Caleb Davenport on 7/16/15.

@@ -11,7 +11,7 @@
 		3A512F3E1BE16DC30091A124 /* Escapement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A512F341BE16DAA0091A124 /* Escapement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A512F3F1BE16DD60091A124 /* Escapement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A512F371BE16DAA0091A124 /* Escapement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A512F471BE1716F0091A124 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */; };
-		3A512F481BE1716F0091A124 /* Collection+MakeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Collection+MakeAttributedString.swift */; };
+		3A512F481BE1716F0091A124 /* Collection+Styleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Collection+Styleable.swift */; };
 		3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
 		3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
 		3A512F4D1BE1716F0091A124 /* UIFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */; };
@@ -22,7 +22,7 @@
 		3B1599AD1E538C1B0020DF49 /* test_overlapping_strong_emphasis_tags.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1599AC1E538C1B0020DF49 /* test_overlapping_strong_emphasis_tags.json */; };
 		3B1599AE1E538C1B0020DF49 /* test_overlapping_strong_emphasis_tags.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1599AC1E538C1B0020DF49 /* test_overlapping_strong_emphasis_tags.json */; };
 		3B1756CC1B8B9B2C001E55A2 /* Escapement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1756C01B8B9B2C001E55A2 /* Escapement.framework */; };
-		3B1756E51B8B9D8F001E55A2 /* Collection+MakeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Collection+MakeAttributedString.swift */; };
+		3B1756E51B8B9D8F001E55A2 /* Collection+Styleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DE1B8B9D8F001E55A2 /* Collection+Styleable.swift */; };
 		3B1756E61B8B9D8F001E55A2 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756DF1B8B9D8F001E55A2 /* Entity.swift */; };
 		3B1756E71B8B9D8F001E55A2 /* UIFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */; };
 		3B1756E81B8B9D8F001E55A2 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */; };
@@ -140,7 +140,7 @@
 		3B1756C01B8B9B2C001E55A2 /* Escapement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Escapement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756CB1B8B9B2C001E55A2 /* Escapement-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Escapement-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1756D21B8B9B2C001E55A2 /* EscapementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapementTests.swift; sourceTree = "<group>"; };
-		3B1756DE1B8B9D8F001E55A2 /* Collection+MakeAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+MakeAttributedString.swift"; sourceTree = "<group>"; };
+		3B1756DE1B8B9D8F001E55A2 /* Collection+Styleable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Styleable.swift"; sourceTree = "<group>"; };
 		3B1756DF1B8B9D8F001E55A2 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		3B1756E01B8B9D8F001E55A2 /* UIFontDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontDescriptor.swift; sourceTree = "<group>"; };
 		3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
@@ -432,7 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				3B1756E21B8B9D8F001E55A2 /* Stylesheet.swift */,
-				3B1756DE1B8B9D8F001E55A2 /* Collection+MakeAttributedString.swift */,
+				3B1756DE1B8B9D8F001E55A2 /* Collection+Styleable.swift */,
 				4E7601F31E93E6350045416C /* Element.swift */,
 				4E7601FC1E93F2560045416C /* List.swift */,
 				3B1756E11B8B9D8F001E55A2 /* Paragraph.swift */,
@@ -684,7 +684,7 @@
 				3A512F4A1BE1716F0091A124 /* Entity.swift in Sources */,
 				3A512F491BE1716F0091A124 /* Paragraph.swift in Sources */,
 				4E7601FE1E93F2560045416C /* List.swift in Sources */,
-				3A512F481BE1716F0091A124 /* Collection+MakeAttributedString.swift in Sources */,
+				3A512F481BE1716F0091A124 /* Collection+Styleable.swift in Sources */,
 				3A512F4D1BE1716F0091A124 /* UIFontDescriptor.swift in Sources */,
 				4E7601F51E93E6350045416C /* Element.swift in Sources */,
 				4E1E58421E97DF9500726849 /* UnorderedList.swift in Sources */,
@@ -715,7 +715,7 @@
 				3B1756E91B8B9D8F001E55A2 /* Stylesheet.swift in Sources */,
 				4E7601F41E93E6350045416C /* Element.swift in Sources */,
 				4E1E58411E97DF9500726849 /* UnorderedList.swift in Sources */,
-				3B1756E51B8B9D8F001E55A2 /* Collection+MakeAttributedString.swift in Sources */,
+				3B1756E51B8B9D8F001E55A2 /* Collection+Styleable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
