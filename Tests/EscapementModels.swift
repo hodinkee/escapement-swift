@@ -16,14 +16,6 @@ struct Document {
     }
 }
 
-struct OrderedList: Escapement.ListProtocol {
-    var items: [Escapement.ElementProtocol]
-
-    func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString {
-        return NSAttributedString(string: "\(index).", attributes: stylesheet["ol"])
-    }
-}
-
 struct UnorderedList: Escapement.ListProtocol {
     var items: [Escapement.ElementProtocol]
 
