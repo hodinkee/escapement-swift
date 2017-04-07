@@ -28,3 +28,9 @@ public struct OrderedList: List {
         return NSAttributedString(string: indexFormatter(index, depth), attributes: indexAttributes)
     }
 }
+
+extension OrderedList: Equatable {
+    public static func == (lhs: OrderedList, rhs: OrderedList) -> Bool {
+        return lhs.items == rhs.items
+    }
+}

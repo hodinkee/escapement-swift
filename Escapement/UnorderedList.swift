@@ -28,3 +28,9 @@ public struct UnorderedList: List {
         return NSAttributedString(string: indexFormatter(index, depth), attributes: indexAttributes)
     }
 }
+
+extension UnorderedList: Equatable {
+    public static func == (lhs: UnorderedList, rhs: UnorderedList) -> Bool {
+        return lhs.items == rhs.items
+    }
+}

@@ -24,3 +24,18 @@ public enum Element: Styleable {
         }
     }
 }
+
+extension Element: Equatable {
+    public static func == (lhs: Element, rhs: Element) -> Bool {
+        switch (lhs, rhs) {
+        case (.paragraph(let lhsParagraph), .paragraph(let rhsParagraph)):
+            return lhsParagraph == rhsParagraph
+        case (.orderedList(let lhsList), .orderedList(let rhsList)):
+            return lhsList == rhsList
+        case (.unorderedList(let lhsList), .unorderedList(let rhsList)):
+            return lhsList == rhsList
+        default:
+            return false
+        }
+    }
+}
