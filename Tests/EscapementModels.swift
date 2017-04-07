@@ -16,22 +16,6 @@ struct Document {
     }
 }
 
-struct UnorderedList: Escapement.ListProtocol {
-    var items: [Escapement.ElementProtocol]
-
-    func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString {
-        let bullet: String = {
-            switch depth {
-            case 1:
-                return "\u{25E6}"
-            default:
-                return "\u{2022}"
-            }
-        }()
-        return NSAttributedString(string: bullet, attributes: stylesheet["ul"])
-    }
-}
-
 extension Document {
     init?(json: [Any]) {
         self.paragraphs = json.flatMap({ $0 as? [String: Any] }).flatMap(Paragraph.init)
