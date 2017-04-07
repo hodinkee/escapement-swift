@@ -6,6 +6,10 @@
 //  Copyright © 2017 Hodinkee. All rights reserved.
 //
 
+public typealias ListItemIndexFormatter = (_ index: Int, _ depth: Int) -> String
+
+public let ListItemIndexFormatterAttribute = "com.escapement.ListItemIndexFormatterAttribute"
+
 public protocol List: Styleable {
     var items: [Element] { get }
 

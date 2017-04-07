@@ -21,6 +21,10 @@ public struct OrderedList: List {
     // MARK: - ListProtocol
 
     public func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString {
-        return NSAttributedString(string: "\(index).", attributes: stylesheet.attributes(forSelector: "ol"))
+        let indexAttributes = stylesheet.attributes(forSelector: "ol")
+        let indexFormatter = indexAttributes[ListItemIndexFormatterAttribute] as? ListItemIndexFormatter ?? { index, _ in
+            "\(index)."
+        }
+        return NSAttributedString(string: indexFormatter(index, depth), attributes: indexAttributes)
     }
 }
