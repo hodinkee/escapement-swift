@@ -6,13 +6,13 @@
 //  Copyright © 2017 Hodinkee. All rights reserved.
 //
 
-public protocol ListProtocol: Styleable {
+public protocol List: Styleable {
     var items: [Element] { get }
 
     func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString
 }
 
-extension ListProtocol {
+extension List {
     public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
         if items.isEmpty {
             return NSAttributedString()

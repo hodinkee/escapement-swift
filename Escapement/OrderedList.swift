@@ -6,7 +6,7 @@
 //  Copyright © 2017 Hodinkee. All rights reserved.
 //
 
-public struct OrderedList: ListProtocol {
+public struct OrderedList: List {
 
     // MARK: - Properties
 
