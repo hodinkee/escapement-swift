@@ -16,17 +16,6 @@ struct Document {
     }
 }
 
-struct Paragraph: Escapement.ParagraphProtocol {
-    var text: String
-
-    var entities: [Escapement.EntityProtocol]
-
-    init(text: String, entities: [Escapement.EntityProtocol] = []) {
-        self.text = text
-        self.entities = entities
-    }
-}
-
 struct OrderedList: Escapement.ListProtocol {
     var items: [Escapement.ElementProtocol]
 

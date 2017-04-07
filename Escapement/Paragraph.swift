@@ -59,3 +59,20 @@ extension ParagraphProtocol {
         return NSAttributedString(attributedString: string)
     }
 }
+
+public struct Paragraph: ParagraphProtocol {
+
+    // MARK: - Properties
+
+    public var text: String
+
+    public var entities: [EntityProtocol]
+
+
+    // MARK: - Initializers
+
+    public init(text: String, entities: [EntityProtocol] = []) {
+        self.text = text
+        self.entities = entities
+    }
+}
