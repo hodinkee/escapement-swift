@@ -16,7 +16,7 @@ struct Document {
     }
 }
 
-struct Paragraph: Escapement.Paragraph {
+struct Paragraph: Escapement.ParagraphProtocol {
     var text: String
 
     var entities: [Escapement.Entity]

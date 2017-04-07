@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-public protocol Paragraph: ElementProtocol {
+public protocol ParagraphProtocol: ElementProtocol {
     var text: String { get }
 
     var entities: [Entity] { get }
 }
 
-extension Paragraph {
+extension ParagraphProtocol {
     public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
         let string = NSMutableAttributedString(string: text, attributes: stylesheet.attributes(forSelector: "*"))
 
