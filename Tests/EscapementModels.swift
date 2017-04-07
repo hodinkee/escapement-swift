@@ -28,7 +28,7 @@ struct Paragraph: Escapement.Paragraph {
 }
 
 struct OrderedList: Escapement.List {
-    var items: [Escapement.Element]
+    var items: [Escapement.ElementProtocol]
 
     func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString {
         return NSAttributedString(string: "\(index).", attributes: stylesheet["ol"])
@@ -36,7 +36,7 @@ struct OrderedList: Escapement.List {
 }
 
 struct UnorderedList: Escapement.List {
-    var items: [Escapement.Element]
+    var items: [Escapement.ElementProtocol]
 
     func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString {
         let bullet: String = {

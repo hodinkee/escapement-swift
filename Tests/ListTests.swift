@@ -25,7 +25,7 @@ final class ListTests: XCTestCase {
             Paragraph(text: "Sub-Paragraph 2"),
         ]
 
-        let items: [Element] = [
+        let items: [ElementProtocol] = [
             Paragraph(text: "Paragraph 1"),
             OrderedList(items: subitems),
             Paragraph(text: "Paragraph 2")
@@ -83,7 +83,7 @@ final class ListTests: XCTestCase {
             Paragraph(text: "Sub-Paragraph 2"),
         ]
 
-        let items: [Element] = [
+        let items: [ElementProtocol] = [
             Paragraph(text: "Paragraph 1"),
             UnorderedList(items: subitems),
             Paragraph(text: "Paragraph 2")

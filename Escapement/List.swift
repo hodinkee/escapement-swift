@@ -6,8 +6,8 @@
 //  Copyright © 2017 Hodinkee. All rights reserved.
 //
 
-public protocol List: Element {
-    var items: [Element] { get }
+public protocol List: ElementProtocol {
+    var items: [ElementProtocol] { get }
 
     func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString
 }

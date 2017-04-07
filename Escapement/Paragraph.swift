@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-public protocol Paragraph: Element {
+public protocol Paragraph: ElementProtocol {
     var text: String { get }
 
     var entities: [Entity] { get }

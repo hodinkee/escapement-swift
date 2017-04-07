@@ -6,7 +6,7 @@
 //  Copyright © 2017 Hodinkee. All rights reserved.
 //
 
-public protocol Element {
+public protocol ElementProtocol {
 
     /// Ask the receiver to make an attributed string representation of itself.
     ///
@@ -17,7 +17,7 @@ public protocol Element {
     func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString
 }
 
-extension Element {
+extension ElementProtocol {
 
     @available(*, deprecated, renamed: "makeAttributedString(stylesheet:)")
     func attributedString(with stylesheet: Stylesheet) -> NSAttributedString {
