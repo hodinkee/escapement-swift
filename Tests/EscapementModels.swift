@@ -51,14 +51,6 @@ struct UnorderedList: Escapement.ListProtocol {
     }
 }
 
-struct Entity: Escapement.EntityProtocol {
-    var tag: String
-
-    var range: Range<Int>
-
-    var attributes: [String: String]
-}
-
 extension Document {
     init?(json: [Any]) {
         self.paragraphs = json.flatMap({ $0 as? [String: Any] }).flatMap(Paragraph.init)
