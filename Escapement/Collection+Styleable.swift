@@ -1,12 +1,12 @@
 //
-//  Collection+MakeAttributedString.swift
+//  Collection+Styleable.swift
 //  Escapement
 //
 //  Created by Caleb Davenport on 7/16/15.
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-extension Collection where Iterator.Element: Element {
+extension Collection where Iterator.Element: Styleable {
 
     /// Make an attributed string by calling `makeAttributedString(stylesheet:)`
     /// on all items and joining the resuls with new lines.

@@ -6,7 +6,11 @@
 //  Copyright © 2017 Hodinkee. All rights reserved.
 //
 
-public protocol List: Element {
+public typealias ListItemIndexFormatter = (_ index: Int, _ depth: Int) -> String
+
+public let ListItemIndexFormatterAttribute = "com.escapement.ListItemIndexFormatterAttribute"
+
+public protocol List: Styleable {
     var items: [Element] { get }
 
     func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString
@@ -34,16 +38,19 @@ extension List {
             if index > 0 {
                 attributedString.append(NSAttributedString(string: "\n"))
             }
-            if let list = item as? List {
+
+            switch item {
+            case .orderedList(let list):
                 attributedString.append(list.attributedString(with: stylesheet, depth: depth + 1))
-            }
-            else {
+            case .unorderedList(let list):
+                attributedString.append(list.attributedString(with: stylesheet, depth: depth + 1))
+            case .paragraph(let paragraph):
                 let itemAttributedString = NSMutableAttributedString()
                 let indent = Array(repeating: "\t", count: depth).joined(separator: "")
                 itemAttributedString.append(NSAttributedString(string: indent))
                 itemAttributedString.append(attributedIndex(with: stylesheet, index: trueIndex + 1, depth: depth))
                 itemAttributedString.append(NSAttributedString(string: " "))
-                itemAttributedString.append(item.makeAttributedString(stylesheet: stylesheet))
+                itemAttributedString.append(paragraph.makeAttributedString(stylesheet: stylesheet))
                 attributedString.append(itemAttributedString)
                 trueIndex += 1
             }

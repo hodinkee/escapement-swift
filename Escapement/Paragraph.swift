@@ -6,13 +6,23 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-public protocol Paragraph: Element {
-    var text: String { get }
+public struct Paragraph: Styleable {
 
-    var entities: [Entity] { get }
-}
+    // MARK: - Properties
 
-extension Paragraph {
+    public var text: String
+
+    public var entities: [Entity]
+
+    // MARK: - Initializers
+
+    public init(text: String, entities: [Entity] = []) {
+        self.text = text
+        self.entities = entities
+    }
+
+    // MARK: - Styleable
+
     public func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString {
         let string = NSMutableAttributedString(string: text, attributes: stylesheet.attributes(forSelector: "*"))
 
@@ -55,7 +65,14 @@ extension Paragraph {
                 string.addAttribute(NSFontAttributeName, value: font, range: range)
             }
         })
-
+        
         return NSAttributedString(attributedString: string)
+    }
+}
+
+extension Paragraph: Equatable {
+    public static func == (lhs: Paragraph, rhs: Paragraph) -> Bool {
+        return lhs.text == rhs.text
+            && lhs.entities == rhs.entities
     }
 }

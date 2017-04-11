@@ -6,6 +6,16 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
+public protocol Styleable {
+    /// Ask the receiver to make an attributed string representation of itself.
+    ///
+    /// - parameter stylesheet: The stylesheet to apply to the returned
+    ///     attributed string.
+    ///
+    /// - returns: An attributed string representation of the receiver.
+    func makeAttributedString(stylesheet: Stylesheet) -> NSAttributedString
+}
+
 public struct Stylesheet {
 
     // MARK: - Properties

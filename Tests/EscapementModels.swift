@@ -16,49 +16,6 @@ struct Document {
     }
 }
 
-struct Paragraph: Escapement.Paragraph {
-    var text: String
-
-    var entities: [Escapement.Entity]
-
-    init(text: String, entities: [Escapement.Entity] = []) {
-        self.text = text
-        self.entities = entities
-    }
-}
-
-struct OrderedList: Escapement.List {
-    var items: [Escapement.Element]
-
-    func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString {
-        return NSAttributedString(string: "\(index).", attributes: stylesheet["ol"])
-    }
-}
-
-struct UnorderedList: Escapement.List {
-    var items: [Escapement.Element]
-
-    func attributedIndex(with stylesheet: Stylesheet, index: Int, depth: Int) -> NSAttributedString {
-        let bullet: String = {
-            switch depth {
-            case 1:
-                return "\u{25E6}"
-            default:
-                return "\u{2022}"
-            }
-        }()
-        return NSAttributedString(string: bullet, attributes: stylesheet["ul"])
-    }
-}
-
-struct Entity: Escapement.Entity {
-    var tag: String
-
-    var range: Range<Int>
-
-    var attributes: [String: String]
-}
-
 extension Document {
     init?(json: [Any]) {
         self.paragraphs = json.flatMap({ $0 as? [String: Any] }).flatMap(Paragraph.init)

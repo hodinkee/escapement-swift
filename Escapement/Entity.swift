@@ -6,10 +6,29 @@
 //  Copyright (c) 2015 Hodinkee. All rights reserved.
 //
 
-public protocol Entity {
-    var tag: String { get }
+public struct Entity {
 
-    var range: Range<Int> { get }
+    // MARK: - Properties
 
-    var attributes: [String: String] { get }
+    public var tag: String
+
+    public var range: Range<Int>
+
+    public var attributes: [String: String]
+
+    // MARK: - Initializers
+
+    public init(tag: String, range: Range<Int>, attributes: [String: String] = [:]) {
+        self.tag = tag
+        self.range = range
+        self.attributes = attributes
+    }
+}
+
+extension Entity: Equatable {
+    public static func == (lhs: Entity, rhs: Entity) -> Bool {
+        return lhs.tag == rhs.tag
+            && lhs.range == rhs.range
+            && lhs.attributes == rhs.attributes
+    }
 }
